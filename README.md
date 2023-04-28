@@ -12,11 +12,11 @@ Não é necessário nada além do próprio Unity no projeto
 * [Unity2D](https://unity.com/pt) - Motor gráfico
 
 ## Autores
-* Carlo Alencar :persevere: - **
-* Ellen de Oliveira :persevere: - **
-* João Anísio :persevere: - **
-* Luís Eduardo :persevere: - **
-* Marcos Arthur :persevere: - **
+* Carlo Alencar :: - **
+* Ellen de Oliveira :: - **
+* João Anísio :: - **
+* Luís Eduardo :: - **
+* Marcos Arthur 😎 - **
 
 
 ## Licença :cop:
