@@ -12,8 +12,6 @@ public class IconController : MonoBehaviour, IPointerClickHandler, IPointerEnter
     public bool isDeskTopIcon = true;
 
     public Texture2D cursorTexture;
-    private CursorMode cursorMode = CursorMode.ForceSoftware;
-    private Vector2 hotSpot = Vector2.zero;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -43,12 +41,12 @@ public class IconController : MonoBehaviour, IPointerClickHandler, IPointerEnter
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Cursor.SetCursor(gameControllerInstance.getdefaultCursor(), Vector2.zero, cursorMode);
+        Cursor.SetCursor(gameControllerInstance.getdefaultCursor(), Vector2.zero, CursorMode.ForceSoftware);
     }
 
 
