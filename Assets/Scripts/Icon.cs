@@ -5,13 +5,17 @@ using UnityEngine.EventSystems;
 
 public class IconController : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject gameControllerObject;
+    [SerializeField] private string windowToOpen = "Tutorial Game";
+
     private GameController gameControllerInstance;
+    public GameObject gameControllerObject;
     public GameObject iconGameObject;
 
     public bool isDeskTopIcon = true;
 
     public Texture2D cursorTexture;
+
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -25,7 +29,7 @@ public class IconController : MonoBehaviour, IPointerClickHandler, IPointerEnter
             //Use this to tell when the user left-clicks on the Button
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                gameControllerInstance.setopenedApp("Explorer");
+                gameControllerInstance.setopenedApp(windowToOpen);
 
                 GameObject newIcon = Instantiate(iconGameObject, new Vector3(0, 0, 0), Quaternion.identity);
                 IconController iconController = newIcon.GetComponent<IconController>();

@@ -23,10 +23,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(openedApp == "Explorer" && !isGameWindowOpen)
+        if(openedApp != "" && !isGameWindowOpen)
         {
             isGameWindowOpen = true;
-            SceneManager.LoadScene("Explorer", LoadSceneMode.Additive);
+            SceneManager.LoadScene(openedApp, LoadSceneMode.Additive);
         }
     }
 
