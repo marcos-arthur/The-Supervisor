@@ -3,29 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class NewBehaviourScript : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class IconController : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject gameController;
+    public GameObject gameControllerObject;
     private GameController gameControllerInstance;
+    public GameObject iconGameObject;
+
+    public bool isDeskTopIcon = true;
 
     public Texture2D cursorTexture;
-    public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 hotSpot = Vector2.zero;
+    private CursorMode cursorMode = CursorMode.ForceSoftware;
+    private Vector2 hotSpot = Vector2.zero;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (isDeskTopIcon)
         {
-            //Output to console the clicked GameObject's name and the following message. You can replace this with your own actions for when clicking the GameObject.
-            Debug.Log(name + " Game Object Right Clicked!");
-        }
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
 
-        //Use this to tell when the user left-clicks on the Button
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            Debug.Log(name + " Game Object Left Clicked!");
+            }
 
-            gameControllerInstance.setopenedApp("Explorer");
+            //Use this to tell when the user left-clicks on the Button
+            if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                gameControllerInstance.setopenedApp("Explorer");
+
+                GameObject newIcon = Instantiate(iconGameObject, new Vector3(0, 0, 0), Quaternion.identity);
+                IconController iconController = newIcon.GetComponent<IconController>();
+
+                iconController.isDeskTopIcon = false;
+                iconController.cursorTexture = cursorTexture;
+
+                newIcon.name = iconGameObject.name;
+                newIcon.transform.SetParent(GameObject.Find("TaskBar Icons").transform, false);
+            }
         }
     }
 
@@ -36,14 +48,14 @@ public class NewBehaviourScript : MonoBehaviour, IPointerClickHandler, IPointerE
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Cursor.SetCursor(null, Vector2.zero, cursorMode); Debug.Log(name + "Saída");
+        Cursor.SetCursor(gameControllerInstance.getdefaultCursor(), Vector2.zero, cursorMode);
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        gameControllerInstance = gameController.GetComponent<GameController>();
+        gameControllerInstance = gameControllerObject.GetComponent<GameController>();
     }
 
     // Update is called once per frame

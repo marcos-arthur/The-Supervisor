@@ -134,6 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52e4b8a00751f44fb0314c7ca1e9a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: 44befedd14f5413479046f03dd78e917, type: 3}
+  gameControllerObject: {fileID: 0}
+  iconGameObject: {fileID: 0}
+  isDeskTopIcon: 1
+  cursorTexture: {fileID: 2800000, guid: e675c59c9f291df40a89743302df1f95, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}

@@ -10,10 +10,14 @@ public class GameController : MonoBehaviour
 
     private bool isGameWindowOpen = false;
 
+    [SerializeField] private Texture2D defaultCursor;
+
     // Start is called before the first frame update
     void Start()
     {
         openedApp = "";
+
+        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     // Update is called once per frame
@@ -29,5 +33,10 @@ public class GameController : MonoBehaviour
     public void setopenedApp(string opened)
     {
         openedApp = opened;
+    }
+
+    public Texture2D getdefaultCursor()
+    {
+        return defaultCursor;
     }
 }
