@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class NewBehaviourScript : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public GameObject gameController;
+    private GameController gameControllerInstance;
+
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
@@ -21,6 +24,8 @@ public class NewBehaviourScript : MonoBehaviour, IPointerClickHandler, IPointerE
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             Debug.Log(name + " Game Object Left Clicked!");
+
+            gameControllerInstance.setopenedApp("Explorer");
         }
     }
 
@@ -38,7 +43,7 @@ public class NewBehaviourScript : MonoBehaviour, IPointerClickHandler, IPointerE
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameControllerInstance = gameController.GetComponent<GameController>();
     }
 
     // Update is called once per frame
