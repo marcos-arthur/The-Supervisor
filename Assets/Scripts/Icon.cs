@@ -50,7 +50,7 @@ public class IconController : MonoBehaviour, IPointerClickHandler, IPointerEnter
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Cursor.SetCursor(gameControllerInstance.getdefaultCursor(), Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(gameControllerInstance.getDefaultCursor(), Vector2.zero, CursorMode.ForceSoftware);
     }
 
 
