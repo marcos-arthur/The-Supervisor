@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Animator animator;
 
-    Animator animator;
+    private float xMin = -6.16f, xMax = 10.89f;
+    private float yMin = -24.84f, yMax = -8.15f;
 
     [SerializeField] 
     private int speed;
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 animator.SetBool("isWalkingUp", false);
-                animator.SetBool("isWalkingDown", false);
+                animator.SetBool("isWalkingDown", true);
                 animator.SetBool("isWalkingHorizontal", false);
             }
         }
@@ -97,6 +99,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isWalkingHorizontal", false);
         }
 
-        transform.position += movement;
+        float xValidPosition = Mathf.Clamp(transform.position.x + movement.x, xMin, xMax);
+        float yValidPosition = Mathf.Clamp(transform.position.y + movement.y, yMin, yMax);
+
+        transform.position = new Vector3(xValidPosition, yValidPosition, 0f);
+
+        // transform.position += movement;
     }
 }
