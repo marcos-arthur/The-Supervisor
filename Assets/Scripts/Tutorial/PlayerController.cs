@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngineInternal;
 
 public class PlayerController : MonoBehaviour
@@ -110,11 +111,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (collision.gameObject.tag == "Stolen item")
+        {
+            SceneManager.LoadScene("Final Tutorial Game", LoadSceneMode.Additive);
+        }
+
         if (collision.gameObject.tag == "colliders")
         {
             isHittingSomething = true;
-
-            Debug.Log("Teste");
         }
     }
 }
