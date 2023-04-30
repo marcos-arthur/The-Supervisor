@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    private string openedApp;
+    private string openedGame;
 
     private bool isGameWindowOpen = false;
+    private bool isExplorerWindowOpen = false;
+    // private bool isExplorerWindowOpen = false;
 
     [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private Texture2D clickCursor;
 
+    [SerializeField] private GameObject explorerWindow;
+
     // Start is called before the first frame update
     void Start()
     {
-        openedApp = "";
+        openedGame = "";
 
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
@@ -24,16 +28,16 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(openedApp != "" && !isGameWindowOpen)
+        if(openedGame != "" && !isGameWindowOpen)
         {
             isGameWindowOpen = true;
-            SceneManager.LoadScene(openedApp, LoadSceneMode.Additive);
+            SceneManager.LoadScene(openedGame, LoadSceneMode.Additive);
         }
     }
 
     public void setopenedApp(string opened)
     {
-        openedApp = opened;
+        openedGame = opened;
     }
 
     public Texture2D getDefaultCursor()
@@ -44,5 +48,20 @@ public class GameController : MonoBehaviour
     public Texture2D getClickCursor()
     {
         return clickCursor;
+    }
+
+    public void openWindow(string window)
+    {
+        if (window == "Explorer Window" && !isExplorerWindowOpen)
+        {
+            Instantiate(explorerWindow);
+            isExplorerWindowOpen = true;
+        }
+
+        /*if (openedGame == "Explorer Window" && !isExplorerWindowOpen)
+        {
+            Instantiate(explorerWindow);
+            isExplorerWindowOpen = true;
+        }*/
     }
 }

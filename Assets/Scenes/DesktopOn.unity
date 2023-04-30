@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCursor: {fileID: 2800000, guid: b46e37f31c14ff849a53568d5c21077c, type: 3}
   clickCursor: {fileID: 2800000, guid: e675c59c9f291df40a89743302df1f95, type: 3}
+  explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
 --- !u!4 &24717261
 Transform:
   m_ObjectHideFlags: 0
@@ -183,6 +184,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1367738590773707155, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
+      propertyPath: isGame
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
@@ -310,6 +315,10 @@ PrefabInstance:
     - target: {fileID: 1367738590773707155, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
+      propertyPath: windowToOpen
+      value: Explorer Window
       objectReference: {fileID: 0}
     - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: gameControllerObject
@@ -584,37 +593,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &582794146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 582794147}
-  m_Layer: 0
-  m_Name: '-------- UI -------- '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &582794147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582794146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.88837403, y: -4.284695, z: 2.4086664}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616809540
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +785,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
+      propertyPath: isGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: gameControllerObject
       value: 
       objectReference: {fileID: 24717259}
@@ -971,6 +953,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1367738590773707155, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
+      propertyPath: isGame
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
@@ -1170,6 +1156,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1367738590773707155, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
+      propertyPath: isGame
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}

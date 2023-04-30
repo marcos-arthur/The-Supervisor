@@ -10,6 +10,7 @@ public class ObjectIcon : MonoBehaviour
     [SerializeField] private string windowToOpen = "";
     [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private GameObject objectIcon;
+    [SerializeField] private bool isGame;
 
     private GameController gameControllerInstance;
     private SpriteRenderer sr;
@@ -47,7 +48,14 @@ public class ObjectIcon : MonoBehaviour
         {
             isOpen = true;
 
-            gameControllerInstance.setopenedApp(windowToOpen);
+            if (isGame)
+            {
+                gameControllerInstance.setopenedApp(windowToOpen);
+            }
+            else
+            {
+                gameControllerInstance.openWindow(windowToOpen);
+            }
 
             iconTaskbarInstance = Instantiate(objectIcon, new Vector3(0, 0, 0), Quaternion.identity);
 
