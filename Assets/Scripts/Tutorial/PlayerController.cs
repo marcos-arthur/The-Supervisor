@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngineInternal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private int speed;
 
     private bool isLookingLeft = false;
-    private bool isHittingWall = false;
+    private bool isHittingSomething = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
         if (movement.x < 0)
         {
-            if (isHittingWall)
+            if (isHittingSomething)
             {
                 movement.x = 0;
             }
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
         if(movement.y > 0)
         {
-            if (isHittingWall)
+            if (isHittingSomething)
             {
                 movement.y = 0;
             }
@@ -80,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
         if (movement.y < 0)
         {
-            if (isHittingWall)
+            if (isHittingSomething)
             {
                 movement.y = 0;
             }
@@ -105,5 +106,15 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(xValidPosition, yValidPosition, 0f);
 
         // transform.position += movement;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "colliders")
+        {
+            isHittingSomething = true;
+
+            Debug.Log("Teste");
+        }
     }
 }
