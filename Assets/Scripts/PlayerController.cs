@@ -6,12 +6,12 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
-    static int totalPoints = 0,copyrights = 0;   
+    static int totalPoints = 0;   
     FishBehaviour fishBehaviour;
     public FishController fishController;
-    public Text points,time,gameOver,stolenAssets;
+    public Text points,time,gameOver;
     public float catchDuration = 0.5f;
-    private bool isButtonDown = false;
+    private bool isButtonDown = false, copyright  false;
     private float bTimer, timeLeft = 60f;
     public AudioSource fishCatchSource, stopFishing;
     private AudioClip shortFishCatch;
@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameOver.enabled = false;
-        stolenAssets.enabled = false;
         shortFishCatch = AudioClip.Create("ShortClip", (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)), fishCatchSource.clip.channels, fishCatchSource.clip.frequency, false);
         float[] data = new float[(int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length))];
         fishCatchSource.clip.GetData(data, (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)));
@@ -35,7 +34,7 @@ public class PlayerController : MonoBehaviour
             {                
                 fishBehaviour = collision.gameObject.GetComponent<FishBehaviour>();
                 totalPoints += fishBehaviour.getPoints();   
-                if(fishBehaviour.copyright) copyrights++;
+                if(fishBehaviour.copyright) copyright = true;
                 Destroy(collision.gameObject);
                 FishController temp = FindObjectOfType<FishController>();
                 temp.DestroyFish();
@@ -68,8 +67,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {            
-            stolenAssets.text = "Stolen Assets: " + copyrights.ToString();
-            stolenAssets.enabled = true;
             gameOver.enabled = true;
             Destroy(LineRenderer);
             stopFishing.Play();
