@@ -9,13 +9,22 @@ public class PlayerController : MonoBehaviour
     static int totalPoints = 0,copyrights = 0;   
     FishBehaviour fishBehaviour;
     public FishController fishController;
-    public Text points,time;
+    public Text points,time,gameOver,stolenAssets;
+    public float catchDuration = 0.5f;
     private bool isButtonDown = false;
     private float bTimer, timeLeft = 60f;
+    public AudioSource fishCatchSource, stopFishing;
+    private AudioClip shortFishCatch;
+    public GameObject Aim,LineRenderer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOver.enabled = false;
+        stolenAssets.enabled = false;
+        shortFishCatch = AudioClip.Create("ShortClip", (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)), fishCatchSource.clip.channels, fishCatchSource.clip.frequency, false);
+        float[] data = new float[(int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length))];
+        fishCatchSource.clip.GetData(data, (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)));
+        shortFishCatch.SetData(data, 0);
     }
  
     private void OnTriggerStay2D(Collider2D collision)
@@ -23,13 +32,15 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("fish"))
         {
             if (isButtonDown) // 0 para o botão esquerdo do mouse, 1 para o botão direito, 2 para o botão do meio
-            {
+            {                
                 fishBehaviour = collision.gameObject.GetComponent<FishBehaviour>();
                 totalPoints += fishBehaviour.getPoints();   
                 if(fishBehaviour.copyright) copyrights++;
                 Destroy(collision.gameObject);
                 FishController temp = FindObjectOfType<FishController>();
                 temp.DestroyFish();
+                fishCatchSource.clip = shortFishCatch;
+                fishCatchSource.Play();
             }
         }
     }
@@ -54,6 +65,15 @@ public class PlayerController : MonoBehaviour
             {
                 bTimer = 0;
             }
+        }
+        else
+        {            
+            stolenAssets.text = "Stolen Assets: " + copyrights.ToString();
+            stolenAssets.enabled = true;
+            gameOver.enabled = true;
+            Destroy(LineRenderer);
+            stopFishing.Play();
+            Destroy(Aim);                        
         }
     }
     private void FixedUpdate()
