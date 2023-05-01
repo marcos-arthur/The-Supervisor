@@ -27,13 +27,13 @@ public class TaskbarController : MonoBehaviour
 
     public void addIcon()
     {
-        Debug.Log("teste");
+        // Debug.Log("teste");
         Debug.Log(allChildren.Length);
         for (int i = 0; i < allChildren.Length; i++)
         {
             if (itens[i])
             {
-                Debug.Log("teste");
+                // Debug.Log("teste");
             }
         }
     }

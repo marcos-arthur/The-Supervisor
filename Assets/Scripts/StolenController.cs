@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class PLayTutorialGameController : MonoBehaviour
+public class StolenController : MonoBehaviour
 {
+    private bool playerResponse;
+    private bool hasStolenAsset;
 
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.UnloadSceneAsync("Welcome Tutorial Game");
-        GamesScore.openedGameScene = "Tutorial Game";
+        hasStolenAsset = GamesScore.hasStolenAsset;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
+
+
 }
