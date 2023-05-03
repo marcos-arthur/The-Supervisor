@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DesktopOn.unity
+    path: Assets/Scenes/onDesktop.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Tutorial Game/Welcome Tutorial Game.unity
@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial Game/Final Tutorial Game.unity
     guid: fc176518563ec564681933c474ad405a
+  - enabled: 1
+    path: Assets/Scenes/Free Fish/Free Fish.unity
+    guid: 3b54f575d6ff8c8479e197d7aa09653c
+  - enabled: 1
+    path: Assets/Scenes/Free Fish/Free Fish Tutorial.unity
+    guid: 3c2ab7dbb03bbc74f8a8ab8c413c913d
+  - enabled: 1
+    path: Assets/Scenes/Free Fish/Game Over Free Fish 1.unity
+    guid: 28dda5436a58de94ba6bd8d512d2cc4b
   m_configObjects: {}

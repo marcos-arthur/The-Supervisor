@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
         if(GamesScore.openedGameScene != "" && !isGameWindowOpen)
         {
             isGameWindowOpen = true;
-            SceneManager.LoadScene(GamesScore.openedGameScene, LoadSceneMode.Additive);
+            SceneManager.LoadScene(GamesScore.openedGameScene);
         }
 
         if(GamesScore.canOpenCheckWindow && !isCheckWindowOpen)
