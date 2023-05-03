@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 5709515470947791012}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8343438819983058839
 SpriteRenderer:
@@ -149,6 +149,7 @@ MonoBehaviour:
   windowToOpen: 
   cursorTexture: {fileID: 0}
   objectIcon: {fileID: 9172134070584878987, guid: 523c7283fd23aeb47804c08ed12a43cf, type: 3}
+  isGame: 0
 --- !u!1 &2103139343688684444
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +223,7 @@ SpriteRenderer:
   m_SortingLayerID: 735055617
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8c16288ed4431a2479509fd546276979, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -230,6 +231,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
