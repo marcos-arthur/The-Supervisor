@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class StartButton : MonoBehaviour
 {
-    [SerializeField] private GameObject gameControllerObject;
-
     private GameController gameControllerInstance;
     private SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameControllerInstance = gameControllerObject.GetComponent<GameController>();
+        gameControllerInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         sr = GetComponent<SpriteRenderer>();
     }
 

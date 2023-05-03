@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class ObjectIcon : MonoBehaviour
 {
-    [SerializeField] private GameObject gameControllerObject;
     [SerializeField] private bool isDesktopIcon = true;
     [SerializeField] private string windowToOpen = "";
     [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private GameObject objectIcon;
     [SerializeField] private bool isGame;
 
+    private GameObject gameControllerObject;
     private GameController gameControllerInstance;
     private SpriteRenderer sr;
 
@@ -22,6 +22,7 @@ public class ObjectIcon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
         gameControllerInstance = gameControllerObject.GetComponent<GameController>();
         sr = GetComponent<SpriteRenderer>();
     }
