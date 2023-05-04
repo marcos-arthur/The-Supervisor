@@ -10,8 +10,7 @@ public class PLayTutorialGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.UnloadSceneAsync("Welcome Tutorial Game");
-        GamesScore.openedGameScene = "Tutorial Game";
+        // GamesScore.openedGameScene = "Tutorial Game";
     }
 
     // Update is called once per frame

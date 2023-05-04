@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     private Animator animator;
 
-    private float xMin = -6.16f, xMax = 10.89f;
-    private float yMin = -24.84f, yMax = -8.15f;
+    private float xMin = -8.6f, xMax = 8.51f;
+    private float yMin = 4.6f, yMax = 21.5f;
 
     [SerializeField] 
     private int speed;
