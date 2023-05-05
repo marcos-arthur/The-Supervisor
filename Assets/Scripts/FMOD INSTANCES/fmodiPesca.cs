@@ -18,6 +18,10 @@ public class fmodiPesca : MonoBehaviour
         FMOD.Studio.EventInstance instance_Pesca_Point = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Point");
 
         FMOD.Studio.EventInstance instance_Pesca_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Win");
+
+        //instance.start(); inicia o som
+        //instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); para o som
+        //FMODUnity.RuntimeManager.UnloadBank("bank:/Pesca"); para de carregar o banco de sons
     }
 
     // Update is called once per frame

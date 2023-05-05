@@ -12,6 +12,10 @@ public class fmodiTutorial : MonoBehaviour
         FMOD.Studio.EventInstance instance_Tutorial_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Tutorial/BGM");
 
         FMOD.Studio.EventInstance instance_Tutorial_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Tutorial/Win");
+
+        //instance.start(); inicia o som
+        //instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); para o som
+        //FMODUnity.RuntimeManager.UnloadBank("bank:/Tutorial"); para de carregar o banco de sons
     }
 
     // Update is called once per frame

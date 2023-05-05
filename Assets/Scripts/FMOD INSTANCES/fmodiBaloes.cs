@@ -19,6 +19,10 @@ public class fmodiBaloes : MonoBehaviour
 
         FMOD.Studio.EventInstance instance_Baloes_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Baloes/Win");
 
+        //instance.start(); inicia o som
+        //instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); para o som
+        //FMODUnity.RuntimeManager.UnloadBank("bank:/Baloes"); para de carregar o banco de sons
+
     }
 
     // Update is called once per frame

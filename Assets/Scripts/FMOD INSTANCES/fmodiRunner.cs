@@ -18,7 +18,9 @@ public class fmodiRunner : MonoBehaviour
 
         FMOD.Studio.EventInstance instance_Runner_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Runner/Win");
 
-        
+        //instance.start(); inicia o som
+        //instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); para o som
+        //FMODUnity.RuntimeManager.UnloadBank("bank:/Runner"); para de carregar o banco de sons
     }
 
     // Update is called once per frame
