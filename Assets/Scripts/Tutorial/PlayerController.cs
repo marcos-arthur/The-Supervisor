@@ -108,8 +108,6 @@ public class PlayerController : MonoBehaviour
         float xValidPosition = Mathf.Clamp(transform.position.x + movement.x, xMin, xMax);
         float yValidPosition = Mathf.Clamp(transform.position.y + movement.y, yMin, yMax);
 
-        Debug.Log(levelBackground.transform.position - movement);
-
         float xValidPositionBackground = Mathf.Clamp(levelBackground.transform.position.x - movement.x, xMinBackground, xMaxBackground);
         float yValidPositionBackground = Mathf.Clamp(levelBackground.transform.position.y - movement.y, yMinBackground, yMaxBackground);
 
@@ -119,13 +117,16 @@ public class PlayerController : MonoBehaviour
         // transform.position += movement;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.tag == "Stolen item")
         {
             SceneManager.LoadScene("Final Tutorial Game", LoadSceneMode.Additive);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
 
         if (collision.gameObject.tag == "coliders")
         {
