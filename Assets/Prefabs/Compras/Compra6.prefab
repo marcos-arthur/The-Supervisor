@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5436848713059251838}
   - component: {fileID: 4727894476262576659}
   - component: {fileID: 3242281582219696945}
-  - component: {fileID: -7406835294038252212}
+  - component: {fileID: 4282944141836957160}
   m_Layer: 0
-  m_Name: Compra1
+  m_Name: Compra6
   m_TagString: Compra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1108299014, guid: 62c5c1d005439ad4a953f73714773754, type: 3}
+  m_Sprite: {fileID: -426499294, guid: 62c5c1d005439ad4a953f73714773754, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.3
+  m_GravityScale: 1.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -150,7 +150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.2}
+    oldSize: {x: 0.19, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &-7406835294038252212
+--- !u!114 &4282944141836957160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4151442175581553473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 307189031dde87b43bdc26ef85741847, type: 3}
+  m_Script: {fileID: 11500000, guid: efd9616e5a050764b80b05f30a131611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 50
+  points: 10

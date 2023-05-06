@@ -7,7 +7,7 @@ using TMPro;
 public class GameController_Compras : MonoBehaviour
 {
 
-    public static int pontuacao;
+    public static int pontuacao = 0;
 
     public GameObject[] baloes;
     public Vector3 posicaoSpawn;
@@ -46,7 +46,7 @@ public class GameController_Compras : MonoBehaviour
                 FinalizarJogo();
             }
         }
-        // texto.text = "Score: " + pontuacao.ToString();
+        texto.text = "Score: " + pontuacao.ToString();
 
     }
 
@@ -86,7 +86,7 @@ public class GameController_Compras : MonoBehaviour
 
     private void AtualizarTempo()
     {
-        // tempoTxt.text = "Time: " + Mathf.RoundToInt(tempoAtual).ToString() + "s";
+        tempoTxt.text = "Time: " + Mathf.RoundToInt(tempoAtual).ToString() + "s";
     }
 
     private void FinalizarJogo()
