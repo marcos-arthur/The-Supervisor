@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{512eade2-7e84-4bf8-871c-695850fd939a}">
+		<property name="name">
+			<value>PI APP</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d3a1f95d-d727-447a-812f-3e3d476763df}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -13,9 +13,9 @@ public class WelcomeTutorialGameController : MonoBehaviour
     {
         playButton.onClick.AddListener(play);
 
-        GamesScore.openedGameScene = "Welcome Tutorial Game";
-        GamesScore.gameName = "Tutorial game";
-        GamesScore.hasStolenAsset = true;
+        // GamesScore.openedGameScene = "Welcome Tutorial Game";
+        // GamesScore.gameName = "Tutorial game";
+        //  GamesScore.hasStolenAsset = true;
     }
 
     // Update is called once per frame
@@ -25,6 +25,6 @@ public class WelcomeTutorialGameController : MonoBehaviour
 
     private void play()
     {
-        SceneManager.LoadScene("Tutorial Game", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Tutorial Game");
     }
 }

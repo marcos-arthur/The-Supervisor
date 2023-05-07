@@ -7,6 +7,8 @@ TagManager:
   - coliders
   - Stolen item
   - fish
+  - GlobalPointsController
+  - Compra
   layers:
   - Default
   - TransparentFX
@@ -49,6 +51,9 @@ TagManager:
     locked: 0
   - name: Icones
     uniqueID: 735055617
+    locked: 0
+  - name: GameBackground
+    uniqueID: 1597607709
     locked: 0
   - name: Player
     uniqueID: 195359711

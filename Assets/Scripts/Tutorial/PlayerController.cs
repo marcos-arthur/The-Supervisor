@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 using UnityEngineInternal;
 
 public class PlayerController : MonoBehaviour
+
 {
+    [SerializeField] private int speed;
+    [SerializeField] private GameObject levelBackground;
+
     private Animator animator;
 
-    private float xMin = -6.16f, xMax = 10.89f;
-    private float yMin = -24.84f, yMax = -8.15f;
+    private float xMin = -8.6f, xMax = 8.51f;
+    private float yMin = 4.6f, yMax = 21.5f;
 
-    [SerializeField] 
-    private int speed;
+    private float xMinBackground = 401.94f, xMaxBackground = 414.59f;
+    private float yMinBackground = 217.6f, yMaxBackground = 232.01f;
 
     private bool isLookingLeft = false;
-    private bool isHittingSomething = false;
+    private bool isColliding = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         if (movement.x < 0)
         {
-            if (isHittingSomething)
+            if (isColliding)
             {
                 movement.x = 0;
             }
@@ -67,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         if(movement.y > 0)
         {
-            if (isHittingSomething)
+            if (isColliding)
             {
                 movement.y = 0;
             }
@@ -82,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
         if (movement.y < 0)
         {
-            if (isHittingSomething)
+            if (isColliding)
             {
                 movement.y = 0;
             }
@@ -104,22 +108,37 @@ public class PlayerController : MonoBehaviour
         float xValidPosition = Mathf.Clamp(transform.position.x + movement.x, xMin, xMax);
         float yValidPosition = Mathf.Clamp(transform.position.y + movement.y, yMin, yMax);
 
-        transform.position = new Vector3(xValidPosition, yValidPosition, 0f);
+        float xValidPositionBackground = Mathf.Clamp(levelBackground.transform.position.x - movement.x, xMinBackground, xMaxBackground);
+        float yValidPositionBackground = Mathf.Clamp(levelBackground.transform.position.y - movement.y, yMinBackground, yMaxBackground);
+
+        // transform.position = new Vector3(xValidPosition, yValidPosition, 0f);
+        levelBackground.transform.position = new Vector3(xValidPositionBackground, yValidPositionBackground, 0f);
 
         // transform.position += movement;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Stolen item")
+        {
+            SceneManager.LoadScene("Final Tutorial Game", LoadSceneMode.Additive);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Stolen item")
+        if (collision.gameObject.tag == "coliders")
         {
-            SceneManager.LoadScene("Final Tutorial Game", LoadSceneMode.Additive);
+            //isColliding = true;
         }
+    }
 
-        if (collision.gameObject.tag == "colliders")
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "coliders")
         {
-            isHittingSomething = true;
+            isColliding = false;
         }
     }
 }
