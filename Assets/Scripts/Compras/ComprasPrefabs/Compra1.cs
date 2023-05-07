@@ -6,12 +6,16 @@ public class Compra1 : MonoBehaviour
 {
     public int points;
 
+    public FMOD.Studio.EventInstance instance_Compras_Point = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/Point");
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Carrinho")
         {
-            Destroy(gameObject);
             GameController_Compras.pontuacao += points;
+            instance_Compras_Point.start();
+            Destroy(gameObject);
+            
         }
     }
 
