@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{64121e1e-2af7-4f20-be6f-0597d4b91b84}">
+		<property name="assetPath">
+			<value>OS UI/OS UI wrong-answer-error.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.7731746031746032</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c53e1de-f054-44d6-a847-86d27cc33273}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -8,6 +8,7 @@ TagManager:
   - Stolen item
   - fish
   - GlobalPointsController
+  - Compra
   layers:
   - Default
   - TransparentFX
