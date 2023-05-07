@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController_Compras : MonoBehaviour
 {
@@ -23,9 +24,12 @@ public class GameController_Compras : MonoBehaviour
 
     public Text texto;
 
+   // public FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
+
     private void Start()
     {
-        //instance_Baloes_BGM.start();
+        FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
+        instance_Compras_BGM.start();
         pontuacao = 0;
         tempoAtual = tempoDeJogo;
         jogoFinalizado = false;
@@ -43,6 +47,7 @@ public class GameController_Compras : MonoBehaviour
 
             if (tempoAtual <= 0)
             {
+               
                 FinalizarJogo();
             }
         }
@@ -91,8 +96,9 @@ public class GameController_Compras : MonoBehaviour
 
     private void FinalizarJogo()
     {
-        //instance_Baloes_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        //instance_Baloes_Win.start();
+        FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
+        instance_Compras_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        SceneManager.LoadScene("ComprasGameOver");
         jogoFinalizado = true;
         jogoFinalizadoTxt.gameObject.SetActive(true);
     }
