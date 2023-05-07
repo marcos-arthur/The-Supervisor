@@ -98,8 +98,7 @@ public class GameController_Compras : MonoBehaviour
     {
         FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
         instance_Compras_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        // SceneManager.LoadScene("ComprasGameOver");
-        //instance_Baloes_Win.start();
+        SceneManager.LoadScene("ComprasGameOver");
         jogoFinalizado = true;
         jogoFinalizadoTxt.gameObject.SetActive(true);
     }
