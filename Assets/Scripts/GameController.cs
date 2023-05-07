@@ -7,12 +7,14 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    private string openedGame;
+    public static GameController instance = null;
 
     private bool isGameWindowOpen = false;
     private bool isExplorerWindowOpen = false;
     private bool isCheckWindowOpen = false;
     // private bool isExplorerWindowOpen = false;
+
+    [SerializeField] private int globalPoints = 500;
 
     [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private Texture2D clickCursor;
@@ -27,6 +29,16 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if(instance == null)
+        {
+            instance = this;
+        } else if(instance != this)
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(gameObject);
+
         GamesScore.globalPoints = 500;
         GamesScore.openedGameScene = "";
 
