@@ -5,99 +5,95 @@ using UnityEngine;
 
 public class ObjectIcon : MonoBehaviour
 {
-    [SerializeField] private bool isDesktopIcon = true;
-    [SerializeField] private string windowToOpen = "";
     [SerializeField] private Texture2D cursorTexture;
-    [SerializeField] private GameObject objectIcon;
+    [SerializeField] private string windowToOpen = "";
+
+    [SerializeField] private bool isDesktopIcon = true;
     [SerializeField] private bool isGame;
 
-    private GameObject gameControllerObject;
+    private bool isAppOpen = false;
+
     private GameController gameControllerInstance;
+    private GameObject iconTaskbarInstance;
     private SpriteRenderer sr;
 
-    private GameObject iconTaskbarInstance;
-
-    private bool isOpen = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
-        gameControllerInstance = gameControllerObject.GetComponent<GameController>();
+        gameControllerInstance = FindObjectOfType<GameController>();
         sr = GetComponent<SpriteRenderer>();
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void changeAlphaColor(float alphaValue)
+    private void ChangeAlphaColor(float alphaValue)
     {
         Color m_color = sr.color;
         m_color.a = alphaValue;
         sr.color = m_color;
     }
 
+    private void InstanceWindow()
+    {
+        if (isGame) gameControllerInstance.openGame(windowToOpen);
+        else gameControllerInstance.openWindow(windowToOpen);
+    }
+
+    private void InstanceTaskBarIcon()
+    {
+        iconTaskbarInstance = Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+        iconTaskbarInstance.transform.localScale = new Vector3(0.64f, 0.64f);
+
+        Color tmpColor = iconTaskbarInstance.gameObject.GetComponent<SpriteRenderer>().color;
+        tmpColor.a = 0f;
+        iconTaskbarInstance.gameObject.GetComponent<SpriteRenderer>().color = tmpColor;
+
+        ObjectIcon iconController = iconTaskbarInstance.GetComponent<ObjectIcon>();
+
+        iconController.isDesktopIcon = false;
+        iconController.cursorTexture = cursorTexture;
+
+        iconTaskbarInstance.name = gameObject.name;
+        iconTaskbarInstance.transform.SetParent(GameObject.Find("Taskbar").transform, false);
+
+        GameObject taskBar = iconTaskbarInstance.transform.parent.gameObject;
+        int openWindows = (taskBar.GetComponentsInChildren<Transform>().Length - 1) / 2;
+        iconTaskbarInstance.transform.position = new Vector3(iconTaskbarInstance.transform.position.x + (0.75f * openWindows), iconTaskbarInstance.transform.position.y, 0);
+
+        GameObject iconObject = gameObject.GetComponentsInChildren<Transform>()[1].gameObject;
+        GameObject newIconObject = iconTaskbarInstance.GetComponentsInChildren<Transform>()[1].gameObject;
+
+        SpriteRenderer icon = iconObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer newIcon = newIconObject.GetComponent<SpriteRenderer>();
+
+        newIcon.sprite = icon.sprite;
+    }
+
     private void OnMouseDown()
     {
-        changeAlphaColor(1f);
+        ChangeAlphaColor(1f);
 
-        if (isDesktopIcon && !isOpen)
+        if (isDesktopIcon && !isAppOpen)
         {
-            isOpen = true;
-
-            if (isGame)
-            {
-                gameControllerInstance.setopenedApp(windowToOpen);
-            }
-            else
-            {
-                gameControllerInstance.openWindow(windowToOpen);
-            }
-
-            iconTaskbarInstance = Instantiate(objectIcon, new Vector3(0, 0, 0), Quaternion.identity);
-
-            ObjectIcon iconController = iconTaskbarInstance.GetComponent<ObjectIcon>();
-
-            iconController.isDesktopIcon = false;
-            iconController.cursorTexture = cursorTexture;
-            iconController.gameControllerObject = gameControllerObject;
-
-            iconTaskbarInstance.name = objectIcon.name;
-            iconTaskbarInstance.transform.SetParent(GameObject.Find("Taskbar").transform, false);
-
-            GameObject taskBar = iconTaskbarInstance.transform.parent.gameObject;
-            int openWindows = (taskBar.GetComponentsInChildren<Transform>().Length - 1) / 2;
-            iconTaskbarInstance.transform.position = new Vector3(iconTaskbarInstance.transform.position.x + (0.75f * openWindows), iconTaskbarInstance.transform.position.y, 0);
-            // 0.75f
-
-            GameObject iconObject = gameObject.GetComponentsInChildren<Transform>()[1].gameObject;
-            GameObject newIconObject = iconTaskbarInstance.GetComponentsInChildren<Transform>()[1].gameObject;
-
-            SpriteRenderer icon = iconObject.GetComponent<SpriteRenderer>();
-            SpriteRenderer newIcon = newIconObject.GetComponent<SpriteRenderer>();
-
-            newIcon.sprite = icon.sprite;
+            isAppOpen = true;
+            InstanceTaskBarIcon();
+            InstanceWindow();
         }
     }
 
     private void OnMouseUp()
     {
-        changeAlphaColor(0.5f);
+        ChangeAlphaColor(0.5f);
     }
 
     private void OnMouseEnter()
     {
-        changeAlphaColor(0.5f);
+        ChangeAlphaColor(0.5f);
         Cursor.SetCursor(gameControllerInstance.getClickCursor(), Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private void OnMouseExit()
     {
-        changeAlphaColor(0f);
+        ChangeAlphaColor(0f);
         Cursor.SetCursor(gameControllerInstance.getDefaultCursor(), Vector2.zero, CursorMode.ForceSoftware);
     }
 }

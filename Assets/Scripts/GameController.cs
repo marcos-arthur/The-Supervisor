@@ -29,7 +29,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         if(instance == null)
         {
             instance = this;
@@ -48,12 +47,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GamesScore.openedGameScene != "" && !isGameWindowOpen)
-        {
-            isGameWindowOpen = true;
-            SceneManager.LoadScene(GamesScore.openedGameScene);
-        }
 
+        // TODO: Refatorar a maneira como a janela de "possui assets roubados" vai ser instanciada
         if(GamesScore.canOpenCheckWindow && !isCheckWindowOpen)
         {
             checkWindowInstance = Instantiate(checkWindow);
@@ -69,9 +64,31 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void setopenedApp(string opened)
+    public void openGame(string sceneName)
     {
-        GamesScore.openedGameScene = opened;
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void closeGame()
+    {
+        SceneManager.LoadScene("onDesktop");
+
+        noButton.onClick.RemoveAllListeners();
+        yesButton.onClick.RemoveAllListeners();
+        Destroy(checkWindowInstance);
+
+        GamesScore.openedGameScene = "";
+        GamesScore.canOpenCheckWindow = false;
+        isCheckWindowOpen = false;
+    }
+
+    public void openWindow(string window)
+    {
+        if (window == "Explorer Window" && !isExplorerWindowOpen)
+        {
+            Instantiate(explorerWindow);
+            isExplorerWindowOpen = true;
+        }
     }
 
     public Texture2D getDefaultCursor()
@@ -82,21 +99,6 @@ public class GameController : MonoBehaviour
     public Texture2D getClickCursor()
     {
         return clickCursor;
-    }
-
-    public void openWindow(string window)
-    {
-        if (window == "Explorer Window" && !isExplorerWindowOpen)
-        {
-            Instantiate(explorerWindow);
-            isExplorerWindowOpen = true;
-        }
-
-        /*if (openedGame == "Explorer Window" && !isExplorerWindowOpen)
-        {
-            Instantiate(explorerWindow);
-            isExplorerWindowOpen = true;
-        }*/
     }
 
     public void yesResponse()
@@ -127,17 +129,4 @@ public class GameController : MonoBehaviour
         closeGame();
     }
 
-    public void closeGame()
-    {
-        SceneManager.UnloadSceneAsync(GamesScore.openedGameScene);
-        
-        noButton.onClick.RemoveAllListeners();
-        yesButton.onClick.RemoveAllListeners();
-
-        Destroy(checkWindowInstance);
-        
-        GamesScore.openedGameScene = "";
-        GamesScore.canOpenCheckWindow = false;
-        isCheckWindowOpen = false;
-    }
 }
