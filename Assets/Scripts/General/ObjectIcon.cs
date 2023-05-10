@@ -34,8 +34,8 @@ public class ObjectIcon : MonoBehaviour
 
     private void InstanceWindow()
     {
-        if (isGame) gameControllerInstance.openGame(windowToOpen);
-        else gameControllerInstance.openWindow(windowToOpen);
+        if (isGame) gameControllerInstance.OpenGame(windowToOpen);
+        else gameControllerInstance.OpenWindow(windowToOpen);
     }
 
     private void InstanceTaskBarIcon()

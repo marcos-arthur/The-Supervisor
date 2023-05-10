@@ -9,6 +9,8 @@ TagManager:
   - fish
   - GlobalPointsController
   - Compra
+  - CheckWindow
+  - ExplorerWindow
   layers:
   - Default
   - TransparentFX

@@ -10,8 +10,6 @@ public class FinalTutorialGameController : MonoBehaviour
     void Start()
     {
         SceneManager.UnloadSceneAsync("Tutorial Game");
-        GamesScore.openedGameScene = "Final Tutorial Game";
-        GamesScore.canOpenCheckWindow = true;
 
     }
 

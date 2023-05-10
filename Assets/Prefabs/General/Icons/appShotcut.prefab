@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057278584aa975a4d837738bbf8779df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDesktopIcon: 1
-  windowToOpen: 
   cursorTexture: {fileID: 2800000, guid: e675c59c9f291df40a89743302df1f95, type: 3}
+  windowToOpen: ExplorerWindow
+  isDesktopIcon: 1
   isGame: 0
 --- !u!1 &2103139343688684444
 GameObject:
