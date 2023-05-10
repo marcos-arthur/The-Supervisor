@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class GlobalPointsController : MonoBehaviour
 {
+    public static GlobalPointsController instance = null;
+    
     public int globalPoints = 500;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool currentGameHasStolenAssets { get; set; }
+
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void handleReponse(bool hasStolenAssetsReponse)
     {
-        
-    }
+        Debug.Log("hasStolenAssetsReponse " + hasStolenAssetsReponse);
+        Debug.Log("currentGameHasStolenAssets " + currentGameHasStolenAssets);
 
-    
+        if (hasStolenAssetsReponse == currentGameHasStolenAssets)
+        {
+            globalPoints += 500;
+        }
+        else
+        {
+            globalPoints -= 500;
+        }
+    }
 }

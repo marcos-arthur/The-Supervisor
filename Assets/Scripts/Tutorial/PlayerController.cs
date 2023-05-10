@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Stolen item")
         {
-            SceneManager.LoadScene("Final Tutorial Game", LoadSceneMode.Additive);
+            SceneManager.LoadScene("GameOver Tutorial Game");
         }
     }
 
