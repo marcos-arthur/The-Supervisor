@@ -61,7 +61,9 @@ public class GameController_Compras : MonoBehaviour
 
         if (qtdCompras >= 0)
         {
-            Vector3 positionspawner = new Vector3(Random.Range(-6f, 5.2f), 6, 0);
+            GlobalPointsController.instance.currentGameHasStolenAssets = true;
+         
+            Vector3 positionspawner = new Vector3(Random.Range(-6.58f, -0.62f), 20.67f, 0);
             int indiceBalao = Random.Range(0, baloes.Length);
             Instantiate(baloes[indiceBalao], positionspawner, Quaternion.identity);
             qtdCompras++;

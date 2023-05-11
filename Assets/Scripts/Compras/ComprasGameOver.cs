@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class ComprasGameOver : MonoBehaviour
 {
     public Text results;
     // Start is called before the first frame update
@@ -18,6 +18,8 @@ public class GameOver : MonoBehaviour
         instance_Compras_Win.start();
         FMODUnity.RuntimeManager.UnloadBank("bank:/Compras");
         results.text = "Your Score: " + GameController_Compras.pontuacao;
+
+        GameController.instance.OpenWindow("CheckWindow");
     }
 
     // Update is called once per frame
