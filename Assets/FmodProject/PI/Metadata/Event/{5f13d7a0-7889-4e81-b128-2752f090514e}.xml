@@ -96,7 +96,7 @@
 			<value>Yellow Light 1</value>
 		</property>
 		<property name="length">
-			<value>6.5786621315192741</value>
+			<value>5.3000000000000007</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{99f7f710-9528-4e97-8979-a532515cde3a}</destination>

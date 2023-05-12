@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b6b4e5bc-f1b6-46ce-8589-f5ed1740073f}">
+		<relationship name="modulators">
+			<destination>{aaf62936-dfd9-4ef3-95f2-a00f40e5ac89}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{cb35d5be-91c6-4a76-b197-01a935a47f09}</destination>
 		</relationship>
@@ -116,9 +119,19 @@
 			<destination>{b6b4e5bc-f1b6-46ce-8589-f5ed1740073f}</destination>
 		</relationship>
 	</object>
+	<object class="RandomizerModulator" id="{aaf62936-dfd9-4ef3-95f2-a00f40e5ac89}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{cb35d5be-91c6-4a76-b197-01a935a47f09}">
 		<relationship name="effects">
 			<destination>{f1ae7b83-b4e5-436e-b38d-556a6ef895ec}</destination>
+			<destination>{17d156af-13c9-4759-bf21-6ffa7d78758e}</destination>
+			<destination>{df454797-1abf-4125-8657-1fad26ac4611}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2f202ea4-2502-49c3-b682-e3c5e9ab4730}" />
@@ -130,5 +143,18 @@
 	</object>
 	<object class="MixerBusPanner" id="{fcef6bdc-1f6b-4fc0-9791-82cc06ca4042}" />
 	<object class="MixerBusFader" id="{f1ae7b83-b4e5-436e-b38d-556a6ef895ec}" />
+	<object class="ThreeEQEffect" id="{17d156af-13c9-4759-bf21-6ffa7d78758e}">
+		<property name="lowGain">
+			<value>-6</value>
+		</property>
+		<property name="midGain">
+			<value>-10</value>
+		</property>
+	</object>
+	<object class="GainEffect" id="{df454797-1abf-4125-8657-1fad26ac4611}">
+		<property name="gain">
+			<value>-1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{ce937238-0b06-42d5-b472-fee4b58007e0}" />
 </objects>
