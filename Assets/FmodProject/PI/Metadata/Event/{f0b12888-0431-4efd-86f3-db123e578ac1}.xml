@@ -98,13 +98,16 @@
 			<value>Red Light 1</value>
 		</property>
 		<property name="start">
-			<value>1.1400000000000001</value>
+			<value>1.1000000000000001</value>
 		</property>
 		<property name="length">
-			<value>2</value>
+			<value>1.6099999999999999</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{baa2ded0-ea7d-4e03-a19c-9aeb1952bc46}</destination>
+		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{ac8fb530-208b-4c73-be85-1679298de6b1}</destination>
 		</relationship>
 		<relationship name="sounds">
 			<destination>{4123f9db-de79-459e-9b8f-79132be3d6ab}</destination>
@@ -169,6 +172,14 @@
 		</relationship>
 		<relationship name="relatedModule">
 			<destination>{9a2f30c5-e940-409e-9c1d-22636ade5752}</destination>
+		</relationship>
+	</object>
+	<object class="FadeCurve" id="{ac8fb530-208b-4c73-be85-1679298de6b1}">
+		<relationship name="startPoint">
+			<destination>{87233ac6-f6b5-4a94-96b7-44b5421ef37a}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{a17e415b-5be5-4499-9584-8ffa03f87669}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{4123f9db-de79-459e-9b8f-79132be3d6ab}">
@@ -246,7 +257,7 @@
 	<object class="MixerBusFader" id="{3aaf0700-4618-4c12-af5f-4684cbd50f7d}" />
 	<object class="AutomationPoint" id="{ca9fffe7-cde8-413f-97e9-8f5774e2ffb3}">
 		<property name="position">
-			<value>1.1400000000000001</value>
+			<value>1.1000000000000001</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -263,9 +274,28 @@
 			<value>1</value>
 		</property>
 	</object>
+	<object class="AutomationPoint" id="{87233ac6-f6b5-4a94-96b7-44b5421ef37a}">
+		<property name="position">
+			<value>2.25</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>0.25471893</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{a17e415b-5be5-4499-9584-8ffa03f87669}">
+		<property name="position">
+			<value>2.71</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{b9914f77-9272-4450-b74b-06b91a6e2f9e}">
 		<property name="position">
-			<value>1.1400000000000001</value>
+			<value>1.1000000000000001</value>
 		</property>
 		<property name="value">
 			<value>1</value>
