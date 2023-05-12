@@ -27,6 +27,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FMOD.Studio.EventInstance instance_OS_StartingOS = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Starting OS");
+        instance_OS_StartingOS.start();
+
         GamesScore.globalPoints = 500;
         GamesScore.openedGameScene = "";
 
@@ -36,6 +39,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButton(0))
+        {
+            FMOD.Studio.EventInstance instance_OS_Mouse_Click = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Mouse Click");
+            instance_OS_Mouse_Click.start();
+        }
+
         if(GamesScore.openedGameScene != "" && !isGameWindowOpen)
         {
             isGameWindowOpen = true;
@@ -60,6 +69,8 @@ public class GameController : MonoBehaviour
     public void setopenedApp(string opened)
     {
         GamesScore.openedGameScene = opened;
+
+        
     }
 
     public Texture2D getDefaultCursor()
@@ -74,8 +85,12 @@ public class GameController : MonoBehaviour
 
     public void openWindow(string window)
     {
+        
         if (window == "Explorer Window" && !isExplorerWindowOpen)
         {
+            FMOD.Studio.EventInstance instance_OS_Open_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Open Window");
+            instance_OS_Open_Window.start();
+
             Instantiate(explorerWindow);
             isExplorerWindowOpen = true;
         }
@@ -91,10 +106,16 @@ public class GameController : MonoBehaviour
     {
         if (GamesScore.hasStolenAsset)
         {
+            FMOD.Studio.EventInstance instance_PI_APP_Correct = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Correct");
+            instance_PI_APP_Correct.start();
+
             GamesScore.globalPoints += 500;
         }
         else
         {
+            FMOD.Studio.EventInstance instance_PI_APP_Wrong = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Wrong");
+            instance_PI_APP_Wrong.start();
+
             GamesScore.globalPoints -= 500;
         }
 
@@ -105,10 +126,16 @@ public class GameController : MonoBehaviour
     {
         if (!GamesScore.hasStolenAsset)
         {
+            FMOD.Studio.EventInstance instance_PI_APP_Correct = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Correct");
+            instance_PI_APP_Correct.start();
+
             GamesScore.globalPoints += 500;
         }
         else
         {
+            FMOD.Studio.EventInstance instance_PI_APP_Wrong = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Wrong");
+            instance_PI_APP_Wrong.start();
+
             GamesScore.globalPoints -= 500;
         }
 
@@ -117,6 +144,9 @@ public class GameController : MonoBehaviour
 
     public void closeGame()
     {
+        FMOD.Studio.EventInstance instance_OS_Close_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Close Window");
+        instance_OS_Close_Window.start();
+
         SceneManager.UnloadSceneAsync(GamesScore.openedGameScene);
         
         noButton.onClick.RemoveAllListeners();
