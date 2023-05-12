@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{b56aabf9-c83e-405d-8333-2dc07697f344}">
+	<object class="AudioFile" id="{c0cb257f-2783-4a85-ab9b-d41fe1a9ae33}">
 		<property name="assetPath">
-			<value>DRAGON SAYS/Dragon Says Scream6.wav</value>
+			<value>DRAGON SAYS/Dragon Says Scream3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>2.2748752834467121</value>
+			<value>1.7399773242630385</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{8c53e1de-f054-44d6-a847-86d27cc33273}</destination>
