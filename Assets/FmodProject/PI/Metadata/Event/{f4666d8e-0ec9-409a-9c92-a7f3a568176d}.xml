@@ -233,7 +233,7 @@
 			<value>-5</value>
 		</property>
 		<property name="name">
-			<value>Abm2+Music3</value>
+			<value>opcao 2</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{2eb72a16-813c-458b-acfd-28aef0e54da3}</destination>
@@ -255,6 +255,7 @@
 	<object class="MixerBusEffectChain" id="{7c7f5615-7ccc-41ca-8e34-f016d41a672f}">
 		<relationship name="effects">
 			<destination>{75cb614a-3cbd-49d0-a0fa-3945e58674fd}</destination>
+			<destination>{cf487391-30fb-47e8-bbcb-bcbcef4d2e11}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1f73d4ab-b2ec-4bab-888c-a7310e939ecb}" />
@@ -278,6 +279,11 @@
 	<object class="MixerBusPanner" id="{38380c39-aa90-4e43-b647-e36a5f324b3c}" />
 	<object class="MixerBusFader" id="{b836805b-ba61-4f15-93be-906f56b2198c}" />
 	<object class="MixerBusFader" id="{75cb614a-3cbd-49d0-a0fa-3945e58674fd}" />
+	<object class="GainEffect" id="{cf487391-30fb-47e8-bbcb-bcbcef4d2e11}">
+		<property name="gain">
+			<value>-3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1258911d-39d4-4d4b-9779-afb7cff1cd88}" />
 	<object class="MixerBusFader" id="{f48208da-cd62-4214-808b-b84808d39cc9}" />
 	<object class="MixerBusFader" id="{09c964b0-a0e9-46c6-82ec-eb59fa77f8b9}" />
