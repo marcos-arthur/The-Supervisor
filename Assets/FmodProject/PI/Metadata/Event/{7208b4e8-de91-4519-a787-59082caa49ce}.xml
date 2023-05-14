@@ -112,6 +112,9 @@
 		<property name="color">
 			<value>Green</value>
 		</property>
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -136,6 +139,7 @@
 	<object class="MixerBusEffectChain" id="{630e98f7-0880-4353-9278-a83d5a4c60a4}">
 		<relationship name="effects">
 			<destination>{b99e978b-a438-4f4c-a8b4-ac95507c75a4}</destination>
+			<destination>{93b2454e-2de9-498a-abbe-174b0e7c07e7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2ee4a89b-e385-4359-b6bc-8b3be09949d9}" />
@@ -155,6 +159,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{6737768b-8074-4672-98ff-5163ec30a322}" />
 	<object class="MixerBusFader" id="{b99e978b-a438-4f4c-a8b4-ac95507c75a4}" />
+	<object class="GainEffect" id="{93b2454e-2de9-498a-abbe-174b0e7c07e7}">
+		<property name="gain">
+			<value>-12</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{c3a62ca3-9723-47f3-9749-b0c15abe3eee}">
 		<property name="position">
 			<value>1.0500000000000003</value>

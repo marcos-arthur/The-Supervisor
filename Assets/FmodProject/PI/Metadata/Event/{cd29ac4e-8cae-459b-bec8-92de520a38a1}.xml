@@ -109,6 +109,9 @@
 		<property name="color">
 			<value>Yellow</value>
 		</property>
+		<property name="volume">
+			<value>-13</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
