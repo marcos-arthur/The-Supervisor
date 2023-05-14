@@ -2569,9 +2569,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.3451221, y: -0.015687546}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.5784371
 --- !u!212 &1637987500
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2652,6 +2652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Xposition: -4.5
+  targetColor: {r: 1, g: 0.2584905, b: 0.2584905, a: 1}
 --- !u!247 &1637987503
 ConstantForce2D:
   m_ObjectHideFlags: 0
