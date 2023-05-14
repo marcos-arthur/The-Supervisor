@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class RunnerGameController : MonoBehaviour
 {
+    public float[] spawnYs;
     public float totalTime = 60f;
     private float timeLeft;
     public Text timeText;
@@ -42,8 +43,10 @@ public class RunnerGameController : MonoBehaviour
             GameObject obstaculo = obstaculos[randomIndex];
 
             // Calcula a posição e a altura do obstáculo
-            float spawnPosY = Random.Range(minY, maxY);
-            Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY, 0);
+            
+            //float spawnPosY = Random.Range(minY, maxY);
+
+            Vector3 spawnPos = new Vector3(spawnPosX, spawnYs[Random.Range(0,3)], 0);
 
             // Instancia o obstáculo na posição calculada
             Instantiate(obstaculo, spawnPos, Quaternion.identity);

@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -273284271, guid: bd798f8a1bf0ba747a46ae2a4bcfc64c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6, y: 0.4}
   m_EdgeRadius: 0
 --- !u!50 &1122067790131808010
 Rigidbody2D:
@@ -168,5 +168,5 @@ ConstantForce2D:
   m_GameObject: {fileID: 8016504760732583038}
   m_Enabled: 1
   m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: -4, y: 0}
+  m_RelativeForce: {x: -10, y: 0}
   m_Torque: 0
