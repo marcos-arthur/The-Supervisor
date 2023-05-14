@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cc2d9655-b0bc-45e6-b12a-f325a5e5d702}">
+		<property name="assetPath">
+			<value>RUNNER/RUNNER whoosh-dash.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1665532879818594</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c53e1de-f054-44d6-a847-86d27cc33273}</destination>
+		</relationship>
+	</object>
+</objects>
