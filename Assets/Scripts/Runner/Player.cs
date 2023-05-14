@@ -27,6 +27,18 @@ public class Player : MonoBehaviour
             gameObject.transform.position = new Vector3(Xposition, 0, 0);
         }
 
+        if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == -4)
+        {
+            gameObject.transform.position = new Vector3(Xposition, -2, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == -2)
+        {
+            gameObject.transform.position = new Vector3(Xposition, 0, 0);
+        }
+
+
+
+
         if (Input.GetKeyDown(KeyCode.S) && GetComponent<Transform>().position.y == 0)
         {
             gameObject.transform.position = new Vector3(Xposition, -2, 0);
@@ -35,6 +47,16 @@ public class Player : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(Xposition, -4, 0);
         }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y == 0)
+        {
+            gameObject.transform.position = new Vector3(Xposition, -2, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y == -2)
+        {
+            gameObject.transform.position = new Vector3(Xposition, -4, 0);
+        }
+
 
     }
     private System.Collections.IEnumerator ChangeColorCoroutine()
