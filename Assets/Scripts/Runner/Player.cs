@@ -6,24 +6,13 @@ public class Player : MonoBehaviour
 {
     public float Xposition;
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        
-        if (col.gameObject.tag != "Obstacle")
-        {
-            return;
-        }
-        else if (col.gameObject.tag == "Obstacle") 
-        {
-            RunnerGameController.pontos -= 10;
-            //instance_Runner_Fail.start();
-        }
-       
-    }
+    public Color targetColor; // Cor para a qual o objeto deve mudar
+    private SpriteRenderer spriteRenderer; // Referência ao componente Sprite Renderer original
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Obtém a referência do componente Sprite Renderer
     }
 
     // Update is called once per frame
@@ -48,16 +37,35 @@ public class Player : MonoBehaviour
         }
 
     }
-
-    void FixedUpdate()
+    private System.Collections.IEnumerator ChangeColorCoroutine()
     {
-        // if(Input.GetMouseButtonDown(0) && GetComponent<Transform>().position.y <= -2.12 && GetComponent<Transform>().position.y >= -2.14)
-        // {
-        //    GetComponent<Rigidbody2D>().AddForce(Vector2.up * 7, ForceMode2D.Impulse);
-        //instance_Runner_Jum.start();
-        // }
+        Color initialColor = spriteRenderer.color; // Armazena a cor inicial do componente Sprite Renderer
 
-        
+        spriteRenderer.color = targetColor; // Muda a cor do componente Sprite Renderer para a cor alvo
+
+        yield return new WaitForSeconds(0.1f); // Espera por 0,5 segundos
+
+        spriteRenderer.color = initialColor; // Retorna à cor inicial
     }
-    //
+    public void ChangeColor()
+    {
+        StartCoroutine(ChangeColorCoroutine());
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag != "Obstacle")
+        {
+            return;
+        }
+        else if (col.gameObject.tag == "Obstacle")
+        {
+            RunnerGameController.pontos -= 10;
+            Destroy(col.gameObject);
+            ChangeColor();
+            //instance_Runner_Fail.start();
+        }
+
+    }
 }
