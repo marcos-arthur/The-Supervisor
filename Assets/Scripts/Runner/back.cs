@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class back : MonoBehaviour
 {
+    public float back_speed;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("parallaxColider1"))
@@ -21,6 +22,6 @@ public class back : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(new Vector3(-0.025f, 0, 0));
+        gameObject.transform.Translate(new Vector3(-back_speed, 0, 0));
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class front : MonoBehaviour
 {
-
+    public float front_speed;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("parallaxColider1"))
@@ -26,7 +26,7 @@ public class front : MonoBehaviour
     private void Update()
     {
 
-        gameObject.transform.Translate(new Vector3(-0.1f, 0, 0));
+        gameObject.transform.Translate(new Vector3(-front_speed, 0, 0));
 
 
     }

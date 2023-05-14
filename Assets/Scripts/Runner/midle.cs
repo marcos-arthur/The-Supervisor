@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class midle : MonoBehaviour
 {
+    public float midle_speed;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("parallaxColider1"))
@@ -21,6 +22,6 @@ public class midle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(new Vector3(-0.05f, 0, 0));
+        gameObject.transform.Translate(new Vector3(-midle_speed, 0, 0));
     }
 }
