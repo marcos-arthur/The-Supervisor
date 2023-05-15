@@ -90,7 +90,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{5e67876f-a747-4976-a491-1d6b113c2d6e}">
 		<property name="volume">
-			<value>-5.5</value>
+			<value>-1</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{26a2f8be-ca07-49df-945c-e86d53bf18cb}</destination>
@@ -401,7 +401,7 @@
 	</object>
 	<object class="AutomationPoint" id="{1d1b7b7e-2dc6-4905-8624-e50c07f09188}">
 		<property name="position">
-			<value>0.60000000000000009</value>
+			<value>1</value>
 		</property>
 		<property name="value">
 			<value>1</value>
