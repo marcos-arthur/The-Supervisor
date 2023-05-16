@@ -22,7 +22,7 @@ public class SimonSayScript : MonoBehaviour
 
     public int Aux, level = 0, levelRoll = 0, points = 0;
 
-    public bool wrong = false, playerIsPlaying = false, firstPlay = false, currently = false;
+    public bool wrong = false, playerIsPlaying = false, firstPlay = false, currently = false, fadeIn = false, fadeOut = false;
 
 
     public int Count = 0;
@@ -76,6 +76,7 @@ public class SimonSayScript : MonoBehaviour
             if(firstPlay == false)
             {
                 return;
+                
             }
             else{
                 playerIsPlaying = false;
@@ -97,6 +98,10 @@ public class SimonSayScript : MonoBehaviour
             blueButton.interactable = false;
             yellowButton.interactable = false;
             greenButton.interactable = false;
+
+
+
+
         }
         else if(playerIsPlaying == true){
 
@@ -104,6 +109,8 @@ public class SimonSayScript : MonoBehaviour
             blueButton.interactable = true;
             yellowButton.interactable = true;
             greenButton.interactable = true;
+
+
         }
         
         if (upTimeCounter > 0)
@@ -112,7 +119,7 @@ public class SimonSayScript : MonoBehaviour
         }
         else if (chosenColour != null && wrong == false)
         {
-            chosenColour.color = new Color(chosenColour.color.r, chosenColour.color.g, chosenColour.color.b, 0.25f);
+            chosenColour.color = new Color(chosenColour.color.r, chosenColour.color.g, chosenColour.color.b, 0.5f);
             currently = false;
             
 
@@ -190,13 +197,13 @@ public class SimonSayScript : MonoBehaviour
             playButtonAlready.gameObject.SetActive(false);
             playButtonAlready.interactable = false;
 
-            colours[0].GetComponent<Image>().color = new Color(colours[0].GetComponent<Image>().color.r, colours[0].GetComponent<Image>().color.g, colours[0].GetComponent<Image>().color.b, 0.25f);
+            colours[0].GetComponent<Image>().color = new Color(colours[0].GetComponent<Image>().color.r, colours[0].GetComponent<Image>().color.g, colours[0].GetComponent<Image>().color.b, 0.5f);
           
-            colours[1].GetComponent<Image>().color = new Color(colours[1].GetComponent<Image>().color.r, colours[1].GetComponent<Image>().color.g, colours[1].GetComponent<Image>().color.b, 0.25f);
+            colours[1].GetComponent<Image>().color = new Color(colours[1].GetComponent<Image>().color.r, colours[1].GetComponent<Image>().color.g, colours[1].GetComponent<Image>().color.b, 0.5f);
 
-            colours[2].GetComponent<Image>().color = new Color(colours[2].GetComponent<Image>().color.r, colours[2].GetComponent<Image>().color.g, colours[2].GetComponent<Image>().color.b, 0.25f);
+            colours[2].GetComponent<Image>().color = new Color(colours[2].GetComponent<Image>().color.r, colours[2].GetComponent<Image>().color.g, colours[2].GetComponent<Image>().color.b, 0.5f);
 
-            colours[3].GetComponent<Image>().color = new Color(colours[3].GetComponent<Image>().color.r, colours[3].GetComponent<Image>().color.g, colours[3].GetComponent<Image>().color.b, 0.25f);
+            colours[3].GetComponent<Image>().color = new Color(colours[3].GetComponent<Image>().color.r, colours[3].GetComponent<Image>().color.g, colours[3].GetComponent<Image>().color.b, 0.5f);
 
         }
 
@@ -237,6 +244,11 @@ public class SimonSayScript : MonoBehaviour
             playerSelection.Clear();
             Count = 0;
 
+            redButton.interactable = false;
+            blueButton.interactable = false;
+            yellowButton.interactable = false;
+            greenButton.interactable = false;
+
         }
     }
     public void BlueButton()
@@ -265,6 +277,11 @@ public class SimonSayScript : MonoBehaviour
             buttonSelection.Clear();
             playerSelection.Clear();
             Count = 0;
+
+            redButton.interactable = false;
+            blueButton.interactable = false;
+            yellowButton.interactable = false;
+            greenButton.interactable = false;
         }
     }
     public void GreenButton()
@@ -293,6 +310,11 @@ public class SimonSayScript : MonoBehaviour
             buttonSelection.Clear();
             playerSelection.Clear();
             Count = 0;
+
+            redButton.interactable = false;
+            blueButton.interactable = false;
+            yellowButton.interactable = false;
+            greenButton.interactable = false;
         }
 
     }
@@ -323,6 +345,11 @@ public class SimonSayScript : MonoBehaviour
             buttonSelection.Clear();
             playerSelection.Clear();
             Count = 0;
+
+            redButton.interactable = false;
+            blueButton.interactable = false;
+            yellowButton.interactable = false;
+            greenButton.interactable = false;
         }
     }
 }
