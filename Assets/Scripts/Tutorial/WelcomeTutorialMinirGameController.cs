@@ -11,11 +11,8 @@ public class WelcomeTutorialGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GlobalPointsController.instance.currentGameHasStolenAssets = true;
         playButton.onClick.AddListener(play);
-
-        // GamesScore.openedGameScene = "Welcome Tutorial Game";
-        // GamesScore.gameName = "Tutorial game";
-        //  GamesScore.hasStolenAsset = true;
     }
 
     // Update is called once per frame

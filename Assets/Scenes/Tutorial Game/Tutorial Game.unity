@@ -732,6 +732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c541514cdae9c724cbf9321cbce53ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globalPoints: 500
   defaultCursor: {fileID: 2800000, guid: b46e37f31c14ff849a53568d5c21077c, type: 3}
   clickCursor: {fileID: 2800000, guid: e675c59c9f291df40a89743302df1f95, type: 3}
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
@@ -1131,10 +1132,6 @@ PrefabInstance:
     - target: {fileID: 1372851660874063622, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2031660516178496488, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
-      propertyPath: windowToOpen
-      value: Explorer Window
       objectReference: {fileID: 0}
     - target: {fileID: 2885042255441889260, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
       propertyPath: m_Sprite
@@ -2464,6 +2461,10 @@ PrefabInstance:
     - target: {fileID: 7897727473070951078, guid: dc90774484396f84a9dcb80d38d90e04, type: 3}
       propertyPath: m_LocalPosition.y
       value: -199.857
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095111611767015846, guid: dc90774484396f84a9dcb80d38d90e04, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8099958177885014304, guid: dc90774484396f84a9dcb80d38d90e04, type: 3}
       propertyPath: m_LocalPosition.x
