@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Free Fish/Game Over Free Fish 1.unity
     guid: 28dda5436a58de94ba6bd8d512d2cc4b
+  - enabled: 1
+    path: Assets/Scenes/Runner/Runner.unity
+    guid: 5437a74d9a926b844ac7962a04535a29
+  - enabled: 1
+    path: Assets/Scenes/Runner/RunnerStart.unity
+    guid: 8e288db86bbf20d4896d940841e3eed6
+  - enabled: 1
+    path: Assets/Scenes/Runner/RunnerEnd.unity
+    guid: f0e930e25a4800a4d81a8c79ca6a1194
   m_configObjects: {}

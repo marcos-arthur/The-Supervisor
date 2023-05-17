@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RunnerGameController : MonoBehaviour
@@ -34,6 +35,11 @@ public class RunnerGameController : MonoBehaviour
         scoreText.text = "Score: " + pontos.ToString();
         timeLeft -= Time.deltaTime;
         timeText.text = "Time: " + Mathf.Round(timeLeft).ToString();
+
+        if(timeLeft <= 0)
+        {
+            SceneManager.LoadScene("RunnerEnd");
+        }
 
         // Verifica se já passou o tempo de spawn do próximo obstáculo
         if (Time.time > spawnTime + spawnDelay + Random.Range(0f,2f))
