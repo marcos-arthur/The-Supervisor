@@ -295,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191.85, y: 109}
-  m_SizeDelta: {x: 176.0531, y: 35.6914}
+  m_AnchoredPosition: {x: -256.28595, y: 66.62131}
+  m_SizeDelta: {x: 236.0435, y: 169.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216183187
 MonoBehaviour:
@@ -318,7 +318,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the Free Fish game!!
+  m_text: 'Welcome to the Free Fish game!!
+
+
+    Use your mouse movement to control
+    the height of the line and catch the most fishes you can before the timer runs
+    out with the Left Button of your mouse '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7357885c67ce4148ba2a293f83bac29, type: 2}
   m_sharedMaterial: {fileID: 8677813066164173677, guid: f7357885c67ce4148ba2a293f83bac29, type: 2}
@@ -784,8 +789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191.85, y: 160.21721}
-  m_SizeDelta: {x: 268.29, y: 44.9656}
+  m_AnchoredPosition: {x: -256.28595, y: 195.53899}
+  m_SizeDelta: {x: 359.7103, y: 59.8188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &560803360
 MonoBehaviour:
@@ -919,8 +924,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191.85223, y: 48.35057}
-  m_SizeDelta: {x: 268.2955, y: 268.7012}
+  m_AnchoredPosition: {x: -255.60768, y: 46}
+  m_SizeDelta: {x: 358.3454, y: 358.8997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606594686
 MonoBehaviour:
@@ -1561,6 +1566,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8886599180020835742, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
   m_PrefabInstance: {fileID: 1333001915}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1622065016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2657153706512803480, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
+  m_PrefabInstance: {fileID: 1260430335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831968ddec69de042bbd1594cac16a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1639419971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,8 +1771,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -194.1, y: 172.5}
-  m_SizeDelta: {x: 111.6601, y: 27.8019}
+  m_AnchoredPosition: {x: -259.3027, y: 198.17133}
+  m_SizeDelta: {x: 149.7085, y: 36.9855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932565115
 MonoBehaviour:
@@ -1801,7 +1817,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1932565116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1622065016}
+        m_TargetAssemblyTypeName: FreeFishController, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: StartGame
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1932565116
 MonoBehaviour:
   m_ObjectHideFlags: 0
