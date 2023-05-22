@@ -17,15 +17,15 @@ public class AimController : MonoBehaviour
     private bool wait = false;
     private IEnumerator timing(float limit, float calc, Vector2 mousePosition)
     {
-        wait = true;
-        //Debug.Log("limit" + limit);
+        //wait = true;
+        ////Debug.Log("limit" + limit);
 
-        Debug.Log(lineTop.transform.localScale.y);
-        Debug.Log(lineBottom.transform.localScale.y);
+        //Debug.Log(lineTop.transform.localScale.y);
+        //Debug.Log(lineBottom.transform.localScale.y);
 
-        Debug.Log("calc" + calc);
-        Debug.Log(mousePosition);
-        Debug.Log("-----------------------------");
+        //Debug.Log("calc" + calc);
+        //Debug.Log(mousePosition);
+        //Debug.Log("-----------------------------");
 
         yield return new WaitForSeconds(1f);
         
@@ -36,7 +36,7 @@ public class AimController : MonoBehaviour
     void Update()
     {
         float top_limit = 18;
-        float bottom_limit = 14.5f;
+        float bottom_limit = 14.1f;
         // float top_limit = 18;
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
