@@ -102,7 +102,7 @@ public class FreeFishController : MonoBehaviour
         Destroy(Aim);
         pointsController.addPoints(totalPoints);
         pointsController.currentGameHasStolenAssets = copyright;
-        SceneManager.LoadScene("Game Over Free Fish 1");
+        SceneManager.LoadScene("Game Over Free Fish");
     }
 
     public void StartGame()
