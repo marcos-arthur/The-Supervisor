@@ -121,7 +121,7 @@ public class SimonSayScript : MonoBehaviour
         {
 
 
-            chosenColour.color = new Color(chosenColour.color.r, chosenColour.color.g, chosenColour.color.b, 0.60f);
+            chosenColour.color = new Color(chosenColour.color.r, chosenColour.color.g, chosenColour.color.b, 0.50f);
             currently = false;
             
 
@@ -203,13 +203,13 @@ public class SimonSayScript : MonoBehaviour
 
 
 
-            colours[0].GetComponent<Image>().color = new Color(colours[0].GetComponent<Image>().color.r, colours[0].GetComponent<Image>().color.g, colours[0].GetComponent<Image>().color.b, 0.60f);
+            colours[0].GetComponent<Image>().color = new Color(colours[0].GetComponent<Image>().color.r, colours[0].GetComponent<Image>().color.g, colours[0].GetComponent<Image>().color.b, 0.50f);
           
-            colours[1].GetComponent<Image>().color = new Color(colours[1].GetComponent<Image>().color.r, colours[1].GetComponent<Image>().color.g, colours[1].GetComponent<Image>().color.b, 0.60f);
+            colours[1].GetComponent<Image>().color = new Color(colours[1].GetComponent<Image>().color.r, colours[1].GetComponent<Image>().color.g, colours[1].GetComponent<Image>().color.b, 0.50f);
 
-            colours[2].GetComponent<Image>().color = new Color(colours[2].GetComponent<Image>().color.r, colours[2].GetComponent<Image>().color.g, colours[2].GetComponent<Image>().color.b, 0.60f);
+            colours[2].GetComponent<Image>().color = new Color(colours[2].GetComponent<Image>().color.r, colours[2].GetComponent<Image>().color.g, colours[2].GetComponent<Image>().color.b, 0.50f);
 
-            colours[3].GetComponent<Image>().color = new Color(colours[3].GetComponent<Image>().color.r, colours[3].GetComponent<Image>().color.g, colours[3].GetComponent<Image>().color.b, 0.60f);
+            colours[3].GetComponent<Image>().color = new Color(colours[3].GetComponent<Image>().color.r, colours[3].GetComponent<Image>().color.g, colours[3].GetComponent<Image>().color.b, 0.50f);
 
 
 

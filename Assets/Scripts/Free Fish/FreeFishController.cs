@@ -4,43 +4,45 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
-using FMODUnity;
+//using FMODUnity;
+using TMPro;
 
 public class FreeFishController : MonoBehaviour
 {
-    public static FreeFishController Instance { get; private set; }
+    public static FreeFishController Instance = null; //{ get; private set; }
 
     static int totalPoints = 0;
     FishBehaviour fishBehaviour;
-    public FishController fishController;
-    public Text points, time;
-    public float catchDuration = 0.5f;    
+    public FishController fishController;    
+    public float catchDuration = 0.5f, timeLeft = 5f;    
     public AudioSource fishCatchSource, stopFishing;    
     public GameObject Aim, LineRenderer;
 
-    private StudioEventEmitter eventEmitter;
+    //private StudioEventEmitter eventEmitter;
     private AudioClip shortFishCatch;
     private GlobalPointsController pointsController;
-    private bool copyright = false, isButtonDown = false;
-    private float bTimer, timeLeft = 60f;
+    private bool copyright = false, isButtonDown = false,gameOn = false;
+    private float bTimer;
+    private Text points, timer;
+    private GameObject aux;
     // Start is called before the first frame update
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
+        {
+           Instance = this;
+        }
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
-        else
-        {
-            Instance = this;
-        }
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += LoadGame;
     }
     void Start()
     {
-        invokeSounds();
-        
-        pointsController = GetComponent<GlobalPointsController>();
+        pointsController = GlobalPointsController.instance;
+        //invokeSounds();        
         //shortFishCatch = AudioClip.Create("ShortClip", (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)), fishCatchSource.clip.channels, fishCatchSource.clip.frequency, false);
         //float[] data = new float[(int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length))];
         //fishCatchSource.clip.GetData(data, (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)));
@@ -50,27 +52,31 @@ public class FreeFishController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeLeft > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            time.text = "Time: " + string.Format("{0:N0}", timeLeft) + "s";
-            isButtonDown = Input.GetMouseButton(0);
-            if (Input.GetMouseButton(0))
+        if (gameOn) 
+        { 
+            if (timeLeft > 0)
             {
-                bTimer += Time.deltaTime;
-                if (bTimer > 0.3)
+                timeLeft -= Time.deltaTime;
+                if(timer != null)
+                timer.text = "Time: " + string.Format("{0:N0}", timeLeft) + "s";
+                isButtonDown = Input.GetMouseButton(0);
+                if (Input.GetMouseButton(0))
                 {
-                    isButtonDown = false;
+                    bTimer += Time.deltaTime;
+                    if (bTimer > 0.3)
+                    {
+                        isButtonDown = false;
+                    }
+                }
+                else
+                {
+                    bTimer = 0;
                 }
             }
             else
             {
-                bTimer = 0;
+                EndGame();
             }
-        }
-        else
-        {
-            EndGame();
         }
     }
 
@@ -95,22 +101,37 @@ public class FreeFishController : MonoBehaviour
 
         }
     }
-    void EndGame()
+    void LoadGame(Scene scene,LoadSceneMode mode)
     {
+        if(scene.name.Equals("Free Fish") || scene.name.Equals("Game Over Free Fish"))
+        {
+            aux = GameObject.FindGameObjectWithTag("Points");
+            points = aux.GetComponent<Text>();
+            aux = GameObject.FindGameObjectWithTag("Timer");
+            timer = aux.GetComponent<Text>();
+        }
+    }
+
+    void EndGame()
+    {        
         Destroy(LineRenderer);
-        stopFishing.Play();
-        Destroy(Aim);
-        pointsController.addPoints(totalPoints);
-        pointsController.currentGameHasStolenAssets = copyright;
+        // stopFishing.Play();
+        Destroy(Aim);        
+        //pointsController.addPoints(totalPoints);
+        //pointsController.currentGameHasStolenAssets = copyright;
+        gameOn = false;
         SceneManager.LoadScene("Game Over Free Fish");
     }
 
+
     public void StartGame()
     {
+        gameOn = true;
         SceneManager.LoadScene("Free Fish");
+        
     }
 
-    void invokeSounds()
+    /*void invokeSounds()
     {
         FMODUnity.RuntimeManager.LoadBank("bank:/Pesca");
         FMOD.Studio.EventInstance instance_Pesca_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/BGM");
@@ -118,7 +139,7 @@ public class FreeFishController : MonoBehaviour
         FMOD.Studio.EventInstance instance_Pesca_Water_Out = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Water Out");
         FMOD.Studio.EventInstance instance_Pesca_Point = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Point");
         FMOD.Studio.EventInstance instance_Pesca_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Win");
-    }
+    }*/
 }
 
 

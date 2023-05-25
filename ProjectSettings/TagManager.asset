@@ -12,6 +12,8 @@ TagManager:
   - CheckWindow
   - ExplorerWindow
   - MinigameController
+  - Timer
+  - Points
   layers:
   - Default
   - TransparentFX
