@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{83fcf865-52ac-467f-88e3-af9e65e9081b}">
+		<property name="assetPath">
+			<value>DRAGON SAYS/Dragon Says Smash4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.2154421768707482</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c53e1de-f054-44d6-a847-86d27cc33273}</destination>
+		</relationship>
+	</object>
+</objects>

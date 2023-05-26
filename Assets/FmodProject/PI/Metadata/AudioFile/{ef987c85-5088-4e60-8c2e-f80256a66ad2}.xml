@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ef987c85-5088-4e60-8c2e-f80256a66ad2}">
 		<property name="assetPath">
-			<value>short-success-sound-glockenspiel-treasure-video-game.wav</value>
+			<value>WIN/short-success-sound-glockenspiel-treasure-video-game.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

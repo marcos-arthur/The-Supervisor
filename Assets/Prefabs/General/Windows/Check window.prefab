@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4775712132998103764}
   - component: {fileID: 3988973563461929709}
   - component: {fileID: 7993121498850975965}
-  - component: {fileID: 38051606484890919}
+  - component: {fileID: 8198987369505477594}
   m_Layer: 5
-  m_Name: NoButton
+  m_Name: YesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &38051606484890919
+--- !u!114 &8198987369505477594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,9 +132,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 398483225064126285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07691cf369f4644d92b6c5c703313d9, type: 3}
+  m_Script: {fileID: 11500000, guid: e5dde86a6a0d2a1488af976ba5b8ac85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yesResponse: 1
 --- !u!1 &1585489782916771166
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +417,7 @@ GameObject:
   - component: {fileID: 7413233256739616429}
   m_Layer: 0
   m_Name: Check window
-  m_TagString: Untagged
+  m_TagString: CheckWindow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,7 +437,7 @@ Transform:
   - {fileID: 6517632602419961406}
   - {fileID: 3016434201605283364}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2812348287798933486
 GameObject:
@@ -450,9 +451,9 @@ GameObject:
   - component: {fileID: 603353801964261705}
   - component: {fileID: 7423318192208635239}
   - component: {fileID: 1392508311176477421}
-  - component: {fileID: 8511442746356081380}
+  - component: {fileID: 831494573534426637}
   m_Layer: 5
-  m_Name: YesButton
+  m_Name: NoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +562,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8511442746356081380
+--- !u!114 &831494573534426637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -570,9 +571,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2812348287798933486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07691cf369f4644d92b6c5c703313d9, type: 3}
+  m_Script: {fileID: 11500000, guid: e5dde86a6a0d2a1488af976ba5b8ac85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yesResponse: 0
 --- !u!1 &5351885745381438086
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,8 +780,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 195359711
-  m_SortingLayer: 3
+  m_SortingLayerID: -757180039
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d8d862a6e0900d640b148f1093c6bf6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -851,6 +853,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0

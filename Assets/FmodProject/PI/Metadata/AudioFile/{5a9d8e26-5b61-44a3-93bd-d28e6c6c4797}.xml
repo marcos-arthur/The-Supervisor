@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5a9d8e26-5b61-44a3-93bd-d28e6c6c4797}">
+		<property name="assetPath">
+			<value>DRAGON SAYS/Dragon Says growing_plant.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.728344671201814</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c53e1de-f054-44d6-a847-86d27cc33273}</destination>
+		</relationship>
+	</object>
+</objects>
