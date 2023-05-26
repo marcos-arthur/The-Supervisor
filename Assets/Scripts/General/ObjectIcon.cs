@@ -66,6 +66,8 @@ public class ObjectIcon : MonoBehaviour
         SpriteRenderer newIcon = newIconObject.GetComponent<SpriteRenderer>();
 
         newIcon.sprite = icon.sprite;
+
+        GameController.instance.taskBarIcons.Add(iconTaskbarInstance);
     }
 
     private void OnMouseDown()

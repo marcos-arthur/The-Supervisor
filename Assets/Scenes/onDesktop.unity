@@ -159,6 +159,7 @@ MonoBehaviour:
   checkWindowInstance: {fileID: 0}
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
+  taskBarIcons: []
 --- !u!4 &24717261
 Transform:
   m_ObjectHideFlags: 0
