@@ -14,14 +14,15 @@ public class FreeFishController : MonoBehaviour
     static int totalPoints = 0;
     FishBehaviour fishBehaviour;
     public FishController fishController;    
-    public float catchDuration = 0.5f, timeLeft = 5f;    
+    public float catchDuration = 0.5f, timeLeft = 60f;    
     public AudioSource fishCatchSource, stopFishing;    
     public GameObject Aim, LineRenderer;
+    public bool setLine { get; private set; }
 
     //private StudioEventEmitter eventEmitter;
     private AudioClip shortFishCatch;
     private GlobalPointsController pointsController;
-    private bool copyright = false, isButtonDown = false,gameOn = false;
+    private bool copyright = false, isButtonDown = false,gameOn = false,setPoints = false;
     private float bTimer;
     private Text points, timer;
     private GameObject aux;
@@ -38,9 +39,11 @@ public class FreeFishController : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += LoadGame;
+        
     }
     void Start()
     {
+        setLine = true;        
         pointsController = GlobalPointsController.instance;
         //invokeSounds();        
         //shortFishCatch = AudioClip.Create("ShortClip", (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)), fishCatchSource.clip.channels, fishCatchSource.clip.frequency, false);
@@ -82,7 +85,7 @@ public class FreeFishController : MonoBehaviour
 
     void FixedUpdate()
     {
-        points.text = "Score: " + totalPoints.ToString();
+        if(setPoints)points.text = "Score: " + totalPoints.ToString();
     }
 
     public void CatchFish(GameObject fish)
@@ -117,9 +120,10 @@ public class FreeFishController : MonoBehaviour
         Destroy(LineRenderer);
         // stopFishing.Play();
         Destroy(Aim);        
-        //pointsController.addPoints(totalPoints);
-        //pointsController.currentGameHasStolenAssets = copyright;
+        pointsController.addPoints(totalPoints);
+        pointsController.currentGameHasStolenAssets = copyright;
         gameOn = false;
+        setLine = false;
         SceneManager.LoadScene("Game Over Free Fish");
     }
 
@@ -127,6 +131,7 @@ public class FreeFishController : MonoBehaviour
     public void StartGame()
     {
         gameOn = true;
+        setPoints = true;
         SceneManager.LoadScene("Free Fish");
         
     }
