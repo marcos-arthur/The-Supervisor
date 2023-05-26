@@ -9,11 +9,6 @@ TagManager:
   - fish
   - GlobalPointsController
   - Compra
-  - parallaxColider1
-  - groundCollider
-  - PlayerColision
-  - Obstacle
-  - Runner
   layers:
   - Default
   - TransparentFX
