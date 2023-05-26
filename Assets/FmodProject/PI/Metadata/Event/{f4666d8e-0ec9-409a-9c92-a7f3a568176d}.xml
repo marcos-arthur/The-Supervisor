@@ -136,7 +136,7 @@
 			<value>Blue</value>
 		</property>
 		<property name="volume">
-			<value>-27.5</value>
+			<value>-35</value>
 		</property>
 		<property name="name">
 			<value>Ambiente</value>
@@ -270,7 +270,7 @@
 			<value>Blue</value>
 		</property>
 		<property name="volume">
-			<value>-15.5</value>
+			<value>-19.5</value>
 		</property>
 		<property name="name">
 			<value>opcao 2</value>
@@ -471,7 +471,7 @@
 	<object class="MixerBusFader" id="{75cb614a-3cbd-49d0-a0fa-3945e58674fd}" />
 	<object class="GainEffect" id="{cf487391-30fb-47e8-bbcb-bcbcef4d2e11}">
 		<property name="gain">
-			<value>-3</value>
+			<value>-4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{bfa37aeb-ae41-480a-bb9d-97a084d4c9db}">

@@ -160,14 +160,18 @@ public class SimonSayScript : MonoBehaviour
             if (points < 150)
             {
                 endText.text = "You are responsible for the extinction of our race, congratulations!";
+                //RUIM
             }
             if(points >= 150)
             {
                 endText.text = "You did an average job, but The Dragons are now calm, but you can do better! ";
+                //MARROMENO
+
             }
             if(points >= 250)
             {
                 endText.text = "Congratulations! You have saved us and done an astonishing job. The superiors will be pleased with your mighty resilience. You can now rest safely, knowing that you did your best!";
+                //WIN
             }
            
 
@@ -240,6 +244,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10 + 1 * level);
+            //POINTS
             return;
         }
         else
@@ -248,6 +253,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
             level = 0;
@@ -274,6 +280,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10 + 1 * level);
+            //POINTS
             return;
         }
         else
@@ -282,6 +289,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
             level = 0;
@@ -307,6 +315,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10+1*level);
+            //POINTS
             return;
         }
         else
@@ -315,6 +324,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
             level = 0;
@@ -341,6 +351,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10 + 1 * level);
+            //POINTS
             return;
         }
         else
@@ -349,6 +360,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //Fail
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
 
