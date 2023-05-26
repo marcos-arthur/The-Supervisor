@@ -63,3 +63,9 @@ TagManager:
   - name: Player
     uniqueID: 195359711
     locked: 0
+  - name: GameOverCover
+    uniqueID: 3244506519
+    locked: 0
+  - name: BackgroundWindow
+    uniqueID: 3537787257
+    locked: 0

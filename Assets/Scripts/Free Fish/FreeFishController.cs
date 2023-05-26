@@ -113,6 +113,10 @@ public class FreeFishController : MonoBehaviour
             aux = GameObject.FindGameObjectWithTag("Timer");
             timer = aux.GetComponent<Text>();
         }
+        if (scene.name.Equals("Game Over Free Fish"))
+        {
+            GameController.instance.OpenWindow("CheckWindow");
+        }
     }
 
     void EndGame()
