@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{19f52c83-8025-41de-b448-f38ce1aebd2d}">
 		<property name="assetPath">
-			<value>game-bonus.wav</value>
+			<value>WIN/game-bonus.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

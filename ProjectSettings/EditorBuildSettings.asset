@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/onDesktop.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/SimonSays/DragonSays.unity
+    guid: 2bd45dd7e222e3d41ae3b5c2caecf49f
+  - enabled: 1
     path: Assets/Scenes/Tutorial Game/Welcome Tutorial Game.unity
     guid: 4ff4bc093e3d97147b3397628f63f63a
   - enabled: 1
     path: Assets/Scenes/Tutorial Game/Tutorial Game.unity
     guid: f2dffbab70b7af040b4f8be65da36ff5
   - enabled: 1
-    path: Assets/Scenes/Tutorial Game/Final Tutorial Game.unity
-    guid: fc176518563ec564681933c474ad405a
+    path: Assets/Scenes/Tutorial Game/GameOver Tutorial Game.unity
+    guid: e5c1fb8d152f3654e98b5b5b6038f4a7
   - enabled: 1
     path: Assets/Scenes/Free Fish/Free Fish.unity
     guid: 3b54f575d6ff8c8479e197d7aa09653c
@@ -26,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Free Fish/Game Over Free Fish 1.unity
     guid: 28dda5436a58de94ba6bd8d512d2cc4b
+  - enabled: 1
+    path: Assets/Scenes/Compras/ComprasStart.unity
+    guid: 5d3a7105d67c19d459f229385f0200fe
   - enabled: 1
     path: Assets/Scenes/Compras/Compras.unity
     guid: 23b899c1c8f4f714ea12d6178e61dcb2

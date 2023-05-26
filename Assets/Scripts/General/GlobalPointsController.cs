@@ -4,19 +4,48 @@ using UnityEngine;
 
 public class GlobalPointsController : MonoBehaviour
 {
-    public int globalPoints = 500;
+    public static GlobalPointsController instance = null;
 
-    // Start is called before the first frame update
-    void Start()
+    public int globalPoints = 500, tempPoints;
+
+    public bool currentGameHasStolenAssets { get; set; }
+
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void handleReponse(bool hasStolenAssetsReponse)
     {
-        
-    }
+        Debug.Log("hasStolenAssetsReponse " + hasStolenAssetsReponse);
+        Debug.Log("currentGameHasStolenAssets " + currentGameHasStolenAssets);
 
+        if (hasStolenAssetsReponse == currentGameHasStolenAssets)
+        {
+            FMOD.Studio.EventInstance instance_PI_APP_Correct = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Correct");
+            instance_PI_APP_Correct.start();
+
+            globalPoints += 500;
+        }
+        else
+        {
+            FMOD.Studio.EventInstance instance_PI_APP_Wrong = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Wrong");
+            instance_PI_APP_Wrong.start();
+
+            globalPoints -= 500;
+        }
+    }
+    public void addPoints(int points) { 
+        globalPoints += points;
+        tempPoints = points;    
+    }
     
 }
