@@ -111,6 +111,7 @@ public class GameController : MonoBehaviour
     {
         GlobalPointsController.instance.handleReponse(hasStolenAsset);
         CloseGame();
+        Destroy(GameObject.FindWithTag("MinigameController"));
     }
 
 }

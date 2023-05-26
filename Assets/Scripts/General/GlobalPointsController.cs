@@ -5,8 +5,8 @@ using UnityEngine;
 public class GlobalPointsController : MonoBehaviour
 {
     public static GlobalPointsController instance = null;
-    
-    public int globalPoints = 500;
+
+    public int globalPoints = 500, tempPoints;
 
     public bool currentGameHasStolenAssets { get; set; }
 
@@ -43,4 +43,9 @@ public class GlobalPointsController : MonoBehaviour
             globalPoints -= 500;
         }
     }
+    public void addPoints(int points) { 
+        globalPoints += points;
+        tempPoints = points;    
+    }
+    
 }

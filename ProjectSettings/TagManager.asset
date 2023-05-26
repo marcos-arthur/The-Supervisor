@@ -11,6 +11,9 @@ TagManager:
   - Compra
   - CheckWindow
   - ExplorerWindow
+  - MinigameController
+  - Timer
+  - Points
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - Icons
   - Background
   - Stolen Item
-  - 
+  - Limitter
   - 
   - 
   - 
