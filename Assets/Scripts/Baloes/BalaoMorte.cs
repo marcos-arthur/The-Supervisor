@@ -5,13 +5,13 @@ using UnityEngine;
 public class BalaoMorte : MonoBehaviour
 {
 
-    public int valor = 0;
+    public int valor = 100;
 
     private void OnMouseDown()
     {
         if (gameObject)
         {
-            BaloesGameController.pontuacao = valor;
+            BaloesGameController.pontuacao -= valor;
             //gameController.AtualizarPontuacao(valor);
             //instance_Baloes_Fail.start();
             Debug.Log(BaloesGameController.pontuacao);

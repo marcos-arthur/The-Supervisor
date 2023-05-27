@@ -1306,7 +1306,7 @@ MonoBehaviour:
   posicaoSpawn: {x: 0, y: -10, z: 0}
   qtdBaloes: 0
   delaySpawn: 0.3
-  tempoDeJogo: 10
+  tempoDeJogo: 60
   pontuacaoTxt: {fileID: 0}
   tempoTxt: {fileID: 1315771251}
   jogoFinalizadoTxt: {fileID: 0}
