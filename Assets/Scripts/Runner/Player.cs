@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
         else if (col.gameObject.tag == "Obstacle")
         {
-            RunnerGameController.pontos -= 10;
+            RunnerGameController.pontos -= 50;
             Destroy(col.gameObject);
             ChangeColor();
             //instance_Runner_Fail.start();

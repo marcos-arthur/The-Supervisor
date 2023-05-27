@@ -12,7 +12,7 @@ public class RunnerGameController : MonoBehaviour
     private float timeLeft;
     public Text timeText;
     public Text scoreText;
-    public static int pontos = 300;
+    public static int pontos = 0;
     public GameObject[] obstaculos; // Array de obstáculos disponíveis
     public float spawnDelay; // Delay entre o spawn de um obstáculo e outro
     public float minY; // Altura mínima do obstáculo
