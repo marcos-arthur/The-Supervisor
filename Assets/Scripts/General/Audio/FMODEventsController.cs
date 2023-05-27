@@ -16,6 +16,12 @@ public class FMODEventsController : MonoBehaviour
 
     [field: Header("Close window")]
     [field: SerializeField] public EventReference closeWindowSound { get; private set; }
+    
+    [field: Header("Correct Answer")]
+    [field: SerializeField] public EventReference correctAnswerSound { get; private set; }
+
+    [field: Header("Correct Answer")]
+    [field: SerializeField] public EventReference wrongAnswerSound { get; private set; }
 
     private void Awake()
     {

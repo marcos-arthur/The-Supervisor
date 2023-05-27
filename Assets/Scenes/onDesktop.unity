@@ -573,6 +573,20 @@ MonoBehaviour:
       Data3: 64901822
       Data4: 1721869138
     Path: event:/OS/Close Window
+  <correctAnswerSound>k__BackingField:
+    Guid:
+      Data1: 85105346
+      Data2: 1194584683
+      Data3: -56712521
+      Data4: -402229135
+    Path: event:/PI  APP/Correct
+  <wrongAnswerSound>k__BackingField:
+    Guid:
+      Data1: -1493450957
+      Data2: 1179008868
+      Data3: -1614941302
+      Data4: -12868835
+    Path: event:/PI  APP/Wrong
 --- !u!1 &1781587163
 GameObject:
   m_ObjectHideFlags: 0

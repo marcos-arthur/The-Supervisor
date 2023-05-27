@@ -23,7 +23,6 @@ public class GameController : MonoBehaviour
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
 
-
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -105,5 +104,4 @@ public class GameController : MonoBehaviour
         GlobalPointsController.instance.handleReponse(hasStolenAsset);
         CloseGame();
     }
-
 }
