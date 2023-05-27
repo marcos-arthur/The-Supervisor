@@ -110,7 +110,7 @@
 			<value>Yellow Light 1</value>
 		</property>
 		<property name="volume">
-			<value>-5</value>
+			<value>-14</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -130,7 +130,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>4.5</value>
+			<value>2.5</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{59ee698d-4cc4-4cb2-bc60-4e9c50290ac9}">
@@ -159,7 +159,7 @@
 			<value>gain</value>
 		</property>
 		<property name="amount">
-			<value>5</value>
+			<value>3</value>
 		</property>
 	</object>
 </objects>
