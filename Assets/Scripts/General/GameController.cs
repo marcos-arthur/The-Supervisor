@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject checkWindow;
     [SerializeField] private GameObject checkWindowInstance;
 
+    [SerializeField] public bool readIntroText = false;
+
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
 
