@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Free Fish/Game Over Free Fish.unity
     guid: 28dda5436a58de94ba6bd8d512d2cc4b
   - enabled: 1
-    path: Assets/Scenes/Runner/Runner.unity
+    path: Assets/Scenes/Runner/RunnerAntigo.unity
     guid: 5437a74d9a926b844ac7962a04535a29
   - enabled: 1
     path: Assets/Scenes/Runner/RunnerStart.unity

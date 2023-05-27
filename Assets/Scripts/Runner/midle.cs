@@ -9,7 +9,7 @@ public class midle : MonoBehaviour
     {
         if (collision.gameObject.tag == ("parallaxColider1"))
         {
-            gameObject.transform.position = new Vector3(16, 3, 0);
+            gameObject.transform.position = new Vector3(4.029819f, 18.24741f, 0);
 
         }
     }
