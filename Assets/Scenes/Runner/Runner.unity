@@ -2682,7 +2682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e329f7bd6d78975429f969c78629b82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Xposition: -4.5
+  Xposition: -6.35
   targetColor: {r: 1, g: 0.2584905, b: 0.2584905, a: 1}
 --- !u!4 &1383401132
 Transform:
