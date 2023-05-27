@@ -37,9 +37,24 @@ public class SimonSayScript : MonoBehaviour
     public float upTime, interval = 2.0f, timer = 60.0f;
 
     public float upTimeCounter;
+
+    public FMOD.Studio.EventInstance instance_Dragon_Says_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/BGM");
     // Start is called before the first frame update
     void Start()
     {
+        FMODUnity.RuntimeManager.LoadBank("bank:/Dragon Says");
+        
+        FMOD.Studio.EventInstance instance_Dragon_Says_Fire = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Fire");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Ground = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Ground");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Ice = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Ice");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Thunder = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Thunder");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Correct = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Correct");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Miss = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Miss");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Fail = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Fail");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Marromeno = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Marromeno");
+        FMOD.Studio.EventInstance instance_Dragon_Says_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/Win");
+
+
         playButton.onClick.AddListener(StartGame);
 
         yellowButton.onClick.AddListener(YellowButton);
@@ -151,6 +166,7 @@ public class SimonSayScript : MonoBehaviour
         }
         else
         {
+            //STOP BGM
             playerIsPlaying = false;
             panel.SetActive(true);
             playButtonAlready.gameObject.SetActive(false);
@@ -195,6 +211,8 @@ public class SimonSayScript : MonoBehaviour
     public void StartGame()
 
     {
+            instance_Dragon_Says_BGM.start();
+
             if(firstPlay == false){
 
             panel.SetActive(false);
@@ -236,7 +254,7 @@ public class SimonSayScript : MonoBehaviour
 
     public void RedButton()
     {
-
+        //red
         playerSelection.Add(0);
         Count = Count + 1;
 
@@ -273,6 +291,7 @@ public class SimonSayScript : MonoBehaviour
     }
     public void BlueButton()
     {
+        //blu
         playerSelection.Add(1);
         Count = Count + 1;
 
@@ -308,6 +327,7 @@ public class SimonSayScript : MonoBehaviour
     }
     public void GreenButton()
     {
+        //green
         playerSelection.Add(3);
         Count = Count + 1;
 
@@ -344,6 +364,7 @@ public class SimonSayScript : MonoBehaviour
     }
     public void YellowButton()
     {
+        //yellow
         playerSelection.Add(2);
         Count = Count + 1;
 
@@ -360,7 +381,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
-            //Fail
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
 
