@@ -890,6 +890,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3232061238082874471, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: windowToOpen
+      value: BaloesStart
+      objectReference: {fileID: 0}
     - target: {fileID: 4502999011479023388, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_RootOrder
       value: 9

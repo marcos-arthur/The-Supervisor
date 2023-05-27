@@ -51,11 +51,9 @@ public class BaloesGameController : MonoBehaviour
 
     private void SpawnarBaloes()
     {
-   
-
         if (qtdBaloes >= 0)
         {
-            Vector3 positionspawner = new Vector3(Random.Range(-6f,5.2f), -10,0);
+            Vector3 positionspawner = new Vector3(Random.Range(-6.58f, -0.79f), 5.51f);
             int indiceBalao = Random.Range(0, baloes.Length);
             Instantiate(baloes[indiceBalao], positionspawner, Quaternion.identity);
             qtdBaloes++;
