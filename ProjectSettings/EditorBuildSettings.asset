@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Baloes/Baloes.unity
     guid: 773ccb21ab19b4949b96ad2eff22042e
+  - enabled: 1
+    path: Assets/Scenes/Baloes/BaloesEnd.unity
+    guid: af245399866a96a44be08bd7aef1a713
   m_configObjects: {}

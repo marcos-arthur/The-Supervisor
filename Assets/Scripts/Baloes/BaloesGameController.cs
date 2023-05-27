@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BaloesGameController : MonoBehaviour
 {
@@ -90,7 +91,10 @@ public class BaloesGameController : MonoBehaviour
     {
         //instance_Baloes_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         //instance_Baloes_Win.start();
+        SceneManager.LoadScene("BaloesEnd");
         jogoFinalizado = true;
         jogoFinalizadoTxt.gameObject.SetActive(true);
+        
+
     }
 }
