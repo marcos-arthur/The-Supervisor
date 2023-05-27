@@ -68,6 +68,8 @@ public class GameController : MonoBehaviour
         noButton.onClick.RemoveAllListeners();
         yesButton.onClick.RemoveAllListeners();
         Destroy(checkWindowInstance);
+
+        Destroy(GameObject.Find("FreeFishController"));
     }
 
     public void OpenWindow(string window)
