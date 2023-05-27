@@ -10,15 +10,19 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance { get; private set; }
 
+    [field: Header("Mouse Icons")]
     [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private Texture2D clickCursor;
 
+    [field: Header("Windows references")]
     [SerializeField] private GameObject explorerWindow;
     [SerializeField] private GameObject checkWindow;
     [SerializeField] private GameObject checkWindowInstance;
 
+    [field: Header("Check window buttons references")]
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
+
 
     private void Awake()
     {
@@ -36,9 +40,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FMOD.Studio.EventInstance instance_OS_StartingOS = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Starting OS");
-        instance_OS_StartingOS.start();
-
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
@@ -47,26 +48,22 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            FMOD.Studio.EventInstance instance_OS_Mouse_Click = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Mouse Click");
-            instance_OS_Mouse_Click.start();
+            AudioController.instance.PlayOneShot(FMODEventsController.instance.mouseClickSound, transform.position);
         }
     }
 
     public void OpenGame(string sceneName)
     {
-        FMOD.Studio.EventInstance instance_OS_Open_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Open Window");
-        instance_OS_Open_Window.start();
-
+        AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
         SceneManager.LoadScene(sceneName);
     }
 
     public void CloseGame()
     {
 
-        FMOD.Studio.EventInstance instance_OS_Close_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Close Window");
-        instance_OS_Close_Window.start();
-
+        AudioController.instance.PlayOneShot(FMODEventsController.instance.closeWindowSound, transform.position);
         SceneManager.LoadScene("onDesktop");
+
         GlobalPointsController.instance.currentGameHasStolenAssets = false;
 
         noButton.onClick.RemoveAllListeners();
@@ -78,16 +75,12 @@ public class GameController : MonoBehaviour
     {
         if (window == "ExplorerWindow" && GameObject.FindGameObjectWithTag(window) == null)
         {
-            FMOD.Studio.EventInstance instance_OS_Open_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Open Window");
-            instance_OS_Open_Window.start();
-
+            AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
             Instantiate(explorerWindow);
         } 
         else if(window == "CheckWindow" && GameObject.FindGameObjectWithTag(window) == null)
         {
-            FMOD.Studio.EventInstance instance_OS_Open_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Open Window");
-            instance_OS_Open_Window.start();
-
+            AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
             checkWindowInstance = Instantiate(checkWindow);
         }
     }
@@ -111,7 +104,6 @@ public class GameController : MonoBehaviour
     {
         GlobalPointsController.instance.handleReponse(hasStolenAsset);
         CloseGame();
-        Destroy(GameObject.FindWithTag("MinigameController"));
     }
 
 }
