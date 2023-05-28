@@ -92,8 +92,8 @@ public class BaloesGameController : MonoBehaviour
         //instance_Baloes_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         //instance_Baloes_Win.start();
         SceneManager.LoadScene("BaloesEnd");
-        jogoFinalizado = true;
-        jogoFinalizadoTxt.gameObject.SetActive(true);
+       // jogoFinalizado = true;
+       // jogoFinalizadoTxt.gameObject.SetActive(true);
         
 
     }
