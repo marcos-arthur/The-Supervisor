@@ -18,43 +18,43 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && GetComponent<Transform>().position.y == 14.46f)
+        if (Input.GetKeyDown(KeyCode.W) && GetComponent<Transform>().position.y == 14.5f)
         {
-            gameObject.transform.position = new Vector3(Xposition, 15.46f, 0);
+            gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);
         }
-        else if (Input.GetKeyDown(KeyCode.W) && GetComponent<Transform>().position.y == 15.46f)
+        else if (Input.GetKeyDown(KeyCode.W) && GetComponent<Transform>().position.y == 15.5f)
         {
-            gameObject.transform.position = new Vector3(Xposition, 16.46f, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == 14.46f)
-        {
-            gameObject.transform.position = new Vector3(Xposition, 15.46f, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == 15.46f)
-        {
-            gameObject.transform.position = new Vector3(Xposition, 16.46f, 0);
+            gameObject.transform.position = new Vector3(Xposition, 16.7f, 0);
         }
 
-
-
-
-        if (Input.GetKeyDown(KeyCode.S) && GetComponent<Transform>().position.y == 16.46f)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == 14.5f)
         {
-            gameObject.transform.position = new Vector3(Xposition, 15.46f, 0);
+            gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);  
         }
-        else if (Input.GetKeyDown(KeyCode.S) && GetComponent<Transform>().position.y == 15.46f)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == 15.5f)
         {
-            gameObject.transform.position = new Vector3(Xposition, 14.46f, 0);
+            gameObject.transform.position = new Vector3(Xposition, 16.7f, 0); 
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y == 16.46f)
+
+
+
+        if (Input.GetKeyDown(KeyCode.S) && GetComponent<Transform>().position.y > 16f)
         {
-            gameObject.transform.position = new Vector3(Xposition, 15.46f, 0);
+            gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y == 15.46f)
+        else if (Input.GetKeyDown(KeyCode.S) && GetComponent<Transform>().position.y == 15.5f)
         {
-            gameObject.transform.position = new Vector3(Xposition, 14.46f, 0);
+            gameObject.transform.position = new Vector3(Xposition, 14.5f, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y >= 16f)
+        {
+            gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y == 15.5f)
+        {
+            gameObject.transform.position = new Vector3(Xposition, 14.5f, 0);      
         }
 
 
