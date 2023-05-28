@@ -717,6 +717,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3232061238082874471, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: windowToOpen
+      value: BaloesStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187124535303264167, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: windowToOpen
+      value: RunnerStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428734751852142013, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.29
+      objectReference: {fileID: 0}
     - target: {fileID: 4502999011479023388, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -763,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5015843375827358684, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Name
-      value: sound
+      value: Sound
       objectReference: {fileID: 0}
     - target: {fileID: 6115504651691456944, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Name
@@ -785,6 +797,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ca007f3fa471f874f8c52a4e4768025b, type: 3}
+    - target: {fileID: 8247168178181871164, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_Name
+      value: Shop
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1895,16 +1911,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FinishedGameApps: []
+  readIntroText: 0
   defaultCursor: {fileID: 2800000, guid: b46e37f31c14ff849a53568d5c21077c, type: 3}
   clickCursor: {fileID: 2800000, guid: e675c59c9f291df40a89743302df1f95, type: 3}
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
   checkWindow: {fileID: 2545023012494624904, guid: d7ad6b3f3e2af6c48b7efb0cb2bcf83b, type: 3}
   checkWindowInstance: {fileID: 0}
   explorerOpen: 0
-  readIntroText: 0
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
   GameIconReference: {fileID: 0}
+  <minigameControllerReference>k__BackingField: {fileID: 0}
 --- !u!4 &1167717159
 Transform:
   m_ObjectHideFlags: 0
