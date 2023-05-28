@@ -17,16 +17,6 @@ public class AimController : MonoBehaviour
     private bool wait = false;
     private IEnumerator timing(float limit, float calc, Vector2 mousePosition)
     {
-        //wait = true;
-        ////Debug.Log("limit" + limit);
-
-        //Debug.Log(lineTop.transform.localScale.y);
-        //Debug.Log(lineBottom.transform.localScale.y);
-
-        //Debug.Log("calc" + calc);
-        //Debug.Log(mousePosition);
-        //Debug.Log("-----------------------------");
-
         yield return new WaitForSeconds(1f);
         
         wait = false;

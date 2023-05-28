@@ -77,7 +77,6 @@ public class GameController_Compras : MonoBehaviour
         }
         else
             pontuacao += valor;
-        Debug.Log(pontuacao);
         AtualizarPontuacaoTXT();
     }
 
