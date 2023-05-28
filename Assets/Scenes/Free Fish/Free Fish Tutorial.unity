@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 24717261}
   - component: {fileID: 24717260}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: FreeFishGameController
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +409,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310134692}
-  - component: {fileID: 310134691}
   m_Layer: 0
   m_Name: Taskbar
   m_TagString: Untagged
@@ -417,18 +416,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &310134691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310134690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcfe9db5c915b1e4db901d295f801849, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &310134692
 Transform:
   m_ObjectHideFlags: 0
@@ -442,7 +429,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &321115173
 PrefabInstance:
@@ -612,7 +599,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491620106
 GameObject:
@@ -643,7 +630,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -736,7 +723,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -1049,7 +1036,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &616809543
 MonoBehaviour:
@@ -1138,6 +1125,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &770949539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770949541}
+  - component: {fileID: 770949540}
+  m_Layer: 0
+  m_Name: FreeFishFMODEventsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &770949540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770949539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69343915e61ffd442b888cd76be9301b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ambienceSound>k__BackingField:
+    Guid:
+      Data1: 1493897296
+      Data2: 1268454068
+      Data3: 1885461669
+      Data4: -927463358
+    Path: event:/Pesca/Ambience
+  <backgroundSong>k__BackingField:
+    Guid:
+      Data1: -581536538
+      Data2: 1074157213
+      Data3: 1694291092
+      Data4: -1182635858
+    Path: event:/Pesca/BGM
+  <catchFishSound>k__BackingField:
+    Guid:
+      Data1: 903299146
+      Data2: 1304601912
+      Data3: -70780536
+      Data4: -284462190
+    Path: event:/Pesca/Point
+  <winFreeFishSound>k__BackingField:
+    Guid:
+      Data1: 1035272256
+      Data2: 1160171162
+      Data3: 479407290
+      Data4: 422096826
+    Path: event:/Pesca/Win
+--- !u!4 &770949541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770949539}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.888374, y: -2.400012, z: 12.412403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1478342863693243729}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &771316523
 PrefabInstance:
@@ -1258,50 +1317,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1034245692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1034245694}
-  - component: {fileID: 1034245693}
-  m_Layer: 0
-  m_Name: FmodInstances
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1034245693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034245692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f73c8686955abe943858d5f988d76525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1034245694
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034245692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3815737, y: 16.514872, z: 0.45925915}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1140156124
@@ -1339,7 +1354,7 @@ RectTransform:
   - {fileID: 771316524}
   - {fileID: 1333001916}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1444,50 +1459,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8886599180020835742, guid: d8180ecfeb6362846b6b02eb17b9210b, type: 3}
   m_PrefabInstance: {fileID: 1333001915}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1639419971
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1639419973}
-  - component: {fileID: 1639419972}
-  m_Layer: 0
-  m_Name: MiniGameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1639419972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639419971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 505526094a1a4a24d9407d5f971b9a73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1639419973
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639419971}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 417.79074, y: 272.45142, z: -1.5641512}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1846317315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1570,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1932565113
 GameObject:
@@ -2148,7 +2119,8 @@ Transform:
   m_LocalPosition: {x: -4, y: 13.700012, z: -10.0037365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 770949541}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2496,12 +2468,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishController: {fileID: 0}
-  catchDuration: 0.5
-  timeLeft: 5
-  fishCatchSource: {fileID: 4656945195731997851}
-  stopFishing: {fileID: 3218778452989202416}
   Aim: {fileID: 1796927003572581719}
   LineRenderer: {fileID: 8505070629681530718}
+  catchDuration: 0.5
+  timeLeft: 5
 --- !u!114 &2748915423420402275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,6 +2498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478342863693243729}
   - component: {fileID: 2657153705558558055}
+  - component: {fileID: 2753644999710090874}
   m_Layer: 0
   m_Name: FreeFishController
   m_TagString: MinigameController
@@ -2535,6 +2506,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2753644999710090874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753644999710090873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 1
+  UnloadEvent: 2
+  Banks:
+  - Pesca
+  CollisionTag: 
+  PreloadSamples: 0
 --- !u!1 &2798350389778003765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,7 +2790,7 @@ Transform:
   - {fileID: 8346960120159805426}
   - {fileID: 879250448286806323}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3998162317333375254
 Transform:

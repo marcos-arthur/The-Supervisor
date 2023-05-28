@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
-//using FMODUnity;
 using TMPro;
 
 public class FreeFishController : MonoBehaviour
 {
-    public static FreeFishController Instance = null; //{ get; private set; }
+    public static FreeFishController Instance {get; private set;}
+    private GlobalPointsController pointsController;
 
-    static int totalPoints = 0;
-    FishBehaviour fishBehaviour;
-    public FishController fishController;    
-    public float catchDuration = 0.5f, timeLeft = 60f;    
-    public AudioSource fishCatchSource, stopFishing;    
+    [field: Header("Referências")]
+    public FishController fishController;
     public GameObject Aim, LineRenderer;
+
+    [field: Header("Valores")]
+    public float catchDuration = 0.5f;
+    public float timeLeft = 60f;
+
+    FishBehaviour fishBehaviour;
     public bool setLine { get; private set; }
 
-    //private StudioEventEmitter eventEmitter;
-    private AudioClip shortFishCatch;
-    private GlobalPointsController pointsController;
-    private bool copyright = false, isButtonDown = false,gameOn = false,setPoints = false;
+    static int totalPoints = 0;
+    private bool copyright = false, isButtonDown = false, gameOn = false, setPoints = false;
     private float bTimer;
     private Text points, timer;
     private GameObject aux;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -38,18 +39,15 @@ public class FreeFishController : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+
+        GameController.instance.minigameControllerReference = gameObject;
         SceneManager.sceneLoaded += LoadGame;
-        
     }
+
     void Start()
     {
-        setLine = true;        
+        setLine = true;
         pointsController = GlobalPointsController.instance;
-        //invokeSounds();        
-        //shortFishCatch = AudioClip.Create("ShortClip", (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)), fishCatchSource.clip.channels, fishCatchSource.clip.frequency, false);
-        //float[] data = new float[(int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length))];
-        //fishCatchSource.clip.GetData(data, (int)(fishCatchSource.clip.samples * (catchDuration / fishCatchSource.clip.length)));
-        //shortFishCatch.SetData(data, 0);
     }
 
     // Update is called once per frame
@@ -90,20 +88,21 @@ public class FreeFishController : MonoBehaviour
 
     public void CatchFish(GameObject fish)
     {
-
-        if (isButtonDown) // 0 para o botão esquerdo do mouse, 1 para o botão direito, 2 para o botão do meio
+        // 0 para o botão esquerdo do mouse, 1 para o botão direito, 2 para o botão do meio
+        if (isButtonDown) 
         {
             fishBehaviour = fish.GetComponent<FishBehaviour>();
             totalPoints += fishBehaviour.getPoints();
             if (fishBehaviour.copyright) copyright = true;
+            
             Destroy(fish);
             FishController temp = FindObjectOfType<FishController>();
             temp.DestroyFish();
-            //eventEmitter.EventReference
 
-
+            AudioController.instance.PlayOneShot(FreeFishFMODEventsController.instance.catchFishSound, transform.position);
         }
     }
+
     void LoadGame(Scene scene,LoadSceneMode mode)
     {
         if(scene.name.Equals("Free Fish") || scene.name.Equals("Game Over Free Fish"))
@@ -120,35 +119,24 @@ public class FreeFishController : MonoBehaviour
     }
 
     void EndGame()
-    {        
+    {
         Destroy(LineRenderer);
-        // stopFishing.Play();
-        Destroy(Aim);        
+        Destroy(Aim);
+
         pointsController.addPoints(totalPoints);
         pointsController.currentGameHasStolenAssets = copyright;
+        
         gameOn = false;
         setLine = false;
+
+        AudioController.instance.PlayOneShot(FreeFishFMODEventsController.instance.winFreeFishSound, transform.position);
         SceneManager.LoadScene("Game Over Free Fish");
     }
-
 
     public void StartGame()
     {
         gameOn = true;
         setPoints = true;
         SceneManager.LoadScene("Free Fish");
-        
     }
-
-    /*void invokeSounds()
-    {
-        FMODUnity.RuntimeManager.LoadBank("bank:/Pesca");
-        FMOD.Studio.EventInstance instance_Pesca_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/BGM");
-        FMOD.Studio.EventInstance instance_Pesca_Water_Enter = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Water Enter");
-        FMOD.Studio.EventInstance instance_Pesca_Water_Out = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Water Out");
-        FMOD.Studio.EventInstance instance_Pesca_Point = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Point");
-        FMOD.Studio.EventInstance instance_Pesca_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Pesca/Win");
-    }*/
 }
-
-

@@ -25,9 +25,6 @@ public class GlobalPointsController : MonoBehaviour
 
     public void handleReponse(bool hasStolenAssetsReponse)
     {
-        Debug.Log("hasStolenAssetsReponse " + hasStolenAssetsReponse);
-        Debug.Log("currentGameHasStolenAssets " + currentGameHasStolenAssets);
-
         if (hasStolenAssetsReponse == currentGameHasStolenAssets)
         {
             AudioController.instance.PlayOneShot(FMODEventsController.instance.correctAnswerSound, transform.position);

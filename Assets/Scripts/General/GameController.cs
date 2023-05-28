@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
 
+    public GameObject minigameControllerReference { get; set; }
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -40,6 +42,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.ForceSoftware);
+        AudioController.instance.PlayOneShot(FMODEventsController.instance.startupSound, transform.position);
     }
 
     // Update is called once per frame
@@ -59,7 +62,6 @@ public class GameController : MonoBehaviour
 
     public void CloseGame()
     {
-
         AudioController.instance.PlayOneShot(FMODEventsController.instance.closeWindowSound, transform.position);
         SceneManager.LoadScene("onDesktop");
 
@@ -68,6 +70,11 @@ public class GameController : MonoBehaviour
         noButton.onClick.RemoveAllListeners();
         yesButton.onClick.RemoveAllListeners();
         Destroy(checkWindowInstance);
+
+        if (minigameControllerReference != null) {
+            Destroy(minigameControllerReference);
+            minigameControllerReference = null;
+        }
     }
 
     public void OpenWindow(string window)
