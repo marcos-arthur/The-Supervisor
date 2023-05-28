@@ -17,7 +17,6 @@ public class CheckButton : MonoBehaviour
         }
         else
         {
-            Debug.Log(gameObject.name);
             GameController.instance.noButton = GetComponent<Button>();
             GameController.instance.noButton.onClick.AddListener(delegate { GameController.instance.ButtonReponse(false); });
         }

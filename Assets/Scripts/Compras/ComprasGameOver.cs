@@ -12,11 +12,9 @@ public class ComprasGameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
-        FMOD.Studio.EventInstance instance_Compras_Win = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/Win");
-        //instance_Compras_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        instance_Compras_Win.start();
-        FMODUnity.RuntimeManager.UnloadBank("bank:/Compras");
+        if(GameController_Compras.pontuacao > 0) AudioController.instance.PlayOneShot(ComprasFMODEventsController.instance.winSound, transform.position);
+        else AudioController.instance.PlayOneShot(ComprasFMODEventsController.instance.missSound, transform.position);
+
         results.text = "Your Score: " + GameController_Compras.pontuacao;
 
         GameController.instance.OpenWindow("CheckWindow");

@@ -7,6 +7,7 @@ public class GameOverTutorialController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TutorialAudioController.Instance.setAudiosToGameOverScene();
         GameController.instance.OpenWindow("CheckWindow");
     }
 
@@ -14,5 +15,11 @@ public class GameOverTutorialController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("MinigameAudioController"));
+        Destroy(gameObject);
     }
 }

@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Stolen item")
         {
+            AudioController.instance.PlayOneShot(TutorialFMODEventsController.Instance.winSound, transform.position);
             SceneManager.LoadScene("GameOver Tutorial Game");
         }
     }

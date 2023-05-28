@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ObjectIcon : MonoBehaviour
 {
+    [SerializeField] public bool gamedenied = false;
+
     [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private string windowToOpen = "";
 
@@ -21,6 +23,11 @@ public class ObjectIcon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameController.instance.FinishedGameApps.Contains(gameObject.name))
+        {
+            gamedenied = true;
+        }
+
         gameControllerInstance = FindObjectOfType<GameController>();
         sr = GetComponent<SpriteRenderer>();
     }
@@ -79,25 +86,21 @@ public class ObjectIcon : MonoBehaviour
     {
         ChangeAlphaColor(1f);
 
-        if (isDesktopIcon && !isAppOpen)
+        if(gamedenied==false)
         {
             if(windowToOpen == "ExplorerWindow" && GameController.instance.explorerOpen == false )
             {
-               
                 InstanceTaskBarIcon();
                 InstanceWindow();
                 GameController.instance.explorerOpen = true;
-
             }
             else
             {
+                GameController.instance.FinishedGameApps.Add(gameObject.name);
                 InstanceTaskBarIcon();
                 InstanceWindow();
                 isAppOpen = true;
-
             }
-            
- 
         }
     }
 

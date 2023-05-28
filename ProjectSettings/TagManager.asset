@@ -15,6 +15,7 @@ TagManager:
   - Timer
   - Points
   - folder
+  - MinigameAudioController
   layers:
   - Default
   - TransparentFX
