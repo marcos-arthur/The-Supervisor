@@ -2310,6 +2310,7 @@ MonoBehaviour:
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
   checkWindow: {fileID: 2545023012494624904, guid: d7ad6b3f3e2af6c48b7efb0cb2bcf83b, type: 3}
   checkWindowInstance: {fileID: 0}
+  readIntroText: 0
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
 --- !u!4 &1185916602
@@ -2978,11 +2979,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4925764896084048998, guid: 3c7225a0a959eef4eb8dd5d8a6f052f6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 8.799957
+      value: 135.99998
       objectReference: {fileID: 0}
     - target: {fileID: 4925764896084048998, guid: 3c7225a0a959eef4eb8dd5d8a6f052f6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 164.8673
+      value: 0.00001013279
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570644102441777270, guid: 3c7225a0a959eef4eb8dd5d8a6f052f6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 186.20003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570644102441777270, guid: 3c7225a0a959eef4eb8dd5d8a6f052f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.13271582
       objectReference: {fileID: 0}
     - target: {fileID: 6063737729323408779, guid: 3c7225a0a959eef4eb8dd5d8a6f052f6, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3078,11 +3087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8720533729736207912, guid: 3c7225a0a959eef4eb8dd5d8a6f052f6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 33.799957
+      value: 161
       objectReference: {fileID: 0}
     - target: {fileID: 8720533729736207912, guid: 3c7225a0a959eef4eb8dd5d8a6f052f6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 164.8673
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

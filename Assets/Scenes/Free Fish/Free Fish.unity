@@ -157,6 +157,7 @@ MonoBehaviour:
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
   checkWindow: {fileID: 2545023012494624904, guid: d7ad6b3f3e2af6c48b7efb0cb2bcf83b, type: 3}
   checkWindowInstance: {fileID: 0}
+  readIntroText: 0
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
 --- !u!4 &24717261
@@ -992,6 +993,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1532497557020859218, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 120.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532497557020859218, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.19998145
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040610225893334850, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 69.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040610225893334850, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382384523975740684, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382384523975740684, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 3854364647650040369, guid: 1158afee644d6f84988f4323efe6bd0f, type: 3}
       propertyPath: m_RootOrder
       value: 11

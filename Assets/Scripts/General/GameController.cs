@@ -78,6 +78,7 @@ public class GameController : MonoBehaviour
 
     public void OpenWindow(string window)
     {
+        Debug.Log("VATATATASWTSDGFSDF");
         if (window == "ExplorerWindow" && GameObject.FindGameObjectWithTag(window) == null)
         {
             FMOD.Studio.EventInstance instance_OS_Open_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Open Window");
