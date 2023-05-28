@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObjectIcon : MonoBehaviour
 {
-    public static bool gamedenied = false;
+    [SerializeField] public bool gamedenied = false;
 
     [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private string windowToOpen = "";
