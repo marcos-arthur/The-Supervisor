@@ -55,21 +55,13 @@ public class GameController : MonoBehaviour
             AudioController.instance.PlayOneShot(FMODEventsController.instance.mouseClickSound, transform.position);
         }
     }
-    public void AcessDenyGame(string sceneName)
-    {
-        //sceneName.gamedenied = true;
-    }
     public void OpenGame(string sceneName)
     {
-       // if(jogo nao denied acess)
-       // {
             AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
-            SceneManager.LoadScene(sceneName);
-       // }
+            SceneManager.LoadScene(sceneName);   
     }
     public void CloseGame()
     {
-
         AudioController.instance.PlayOneShot(FMODEventsController.instance.closeWindowSound, transform.position);
         SceneManager.LoadScene("onDesktop");
 
@@ -78,8 +70,6 @@ public class GameController : MonoBehaviour
         noButton.onClick.RemoveAllListeners();
         yesButton.onClick.RemoveAllListeners();
         Destroy(checkWindowInstance);
-
-       // denyAcessGame(NOME_DO_APP);
     }
 
     public void OpenWindow(string window)
