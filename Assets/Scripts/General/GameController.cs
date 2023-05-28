@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
@@ -16,6 +17,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject explorerWindow;
     [SerializeField] private GameObject checkWindow;
     [SerializeField] private GameObject checkWindowInstance;
+    [SerializeField] public bool explorerOpen;
+
 
     [SerializeField] public bool readIntroText = false;
 
@@ -56,6 +59,7 @@ public class GameController : MonoBehaviour
 
     public void OpenGame(string sceneName)
     {
+        explorerOpen = false;
         FMOD.Studio.EventInstance instance_OS_Open_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Open Window");
         instance_OS_Open_Window.start();
 
@@ -65,6 +69,7 @@ public class GameController : MonoBehaviour
     public void CloseGame()
     {
 
+        explorerOpen = false;
         FMOD.Studio.EventInstance instance_OS_Close_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Close Window");
         instance_OS_Close_Window.start();
 
@@ -78,9 +83,11 @@ public class GameController : MonoBehaviour
 
     public void OpenWindow(string window)
     {
+ 
         Debug.Log("VATATATASWTSDGFSDF");
-        if (window == "ExplorerWindow" && GameObject.FindGameObjectWithTag(window) == null)
+        if (window == "ExplorerWindow" && GameObject.FindGameObjectWithTag(window) == null && explorerOpen == false)
         {
+           
             FMOD.Studio.EventInstance instance_OS_Open_Window = FMODUnity.RuntimeManager.CreateInstance("event:/OS/Open Window");
             instance_OS_Open_Window.start();
 

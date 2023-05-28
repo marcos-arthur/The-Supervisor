@@ -404,6 +404,7 @@ MonoBehaviour:
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
   checkWindow: {fileID: 2545023012494624904, guid: d7ad6b3f3e2af6c48b7efb0cb2bcf83b, type: 3}
   checkWindowInstance: {fileID: 0}
+  explorerOpen: 0
   readIntroText: 0
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
@@ -3003,6 +3004,10 @@ PrefabInstance:
     - target: {fileID: 6490923384576799691, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: windowToOpen
       value: DragonSays
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608774243447483104, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_TagString
+      value: folder
       objectReference: {fileID: 0}
     - target: {fileID: 7938780378853244879, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Sprite
