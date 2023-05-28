@@ -2407,7 +2407,7 @@ MonoBehaviour:
   Aim: {fileID: 1796927003572581719}
   LineRenderer: {fileID: 8505070629681530718}
   catchDuration: 0.5
-  timeLeft: 5
+  timeLeft: 60
 --- !u!114 &2748915423420402275
 MonoBehaviour:
   m_ObjectHideFlags: 0
