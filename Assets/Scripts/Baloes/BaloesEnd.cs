@@ -12,6 +12,7 @@ public class BaloesEnd : MonoBehaviour
     void Start()
     {
         endMenssage.text = "Congratulations!   Your score: " + BaloesGameController.pontuacao;
+        GameController.instance.OpenWindow("CheckWindow");
     }
 
     // Update is called once per frame
