@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.ForceSoftware);
+        AudioController.instance.PlayOneShot(FMODEventsController.instance.startupSound, transform.position);
     }
 
     // Update is called once per frame

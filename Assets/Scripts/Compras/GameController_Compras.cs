@@ -7,32 +7,29 @@ using UnityEngine.SceneManagement;
 
 public class GameController_Compras : MonoBehaviour
 {
-
     public static int pontuacao = 0;
 
+    [field: Header("Values")]
     public GameObject[] baloes;
     public Vector3 posicaoSpawn;
     public int qtdCompras;
     public float delaySpawn;
     public float tempoDeJogo;
+
+    [field: Header("Textfield references")]
     public Text pontuacaoTxt;
     public Text tempoTxt;
-    public Text jogoFinalizadoTxt;
-    //private int pontuacao;
+    public Text texto;
+
     private float tempoAtual;
     private bool jogoFinalizado;
 
-    public Text texto;
-
-   // public FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
-
     private void Start()
     {
-        FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
-        instance_Compras_BGM.start();
         pontuacao = 0;
         tempoAtual = tempoDeJogo;
         jogoFinalizado = false;
+        
         AtualizarPontuacaoTXT();
         AtualizarTempo();
         InvokeRepeating("SpawnarBaloes", delaySpawn, delaySpawn);
@@ -57,8 +54,6 @@ public class GameController_Compras : MonoBehaviour
 
     private void SpawnarBaloes()
     {
-
-
         if (qtdCompras >= 0)
         {
             GlobalPointsController.instance.currentGameHasStolenAssets = true;
@@ -98,10 +93,7 @@ public class GameController_Compras : MonoBehaviour
 
     private void FinalizarJogo()
     {
-        FMOD.Studio.EventInstance instance_Compras_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Compras/BGM");
-        instance_Compras_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        SceneManager.LoadScene("ComprasGameOver");
         jogoFinalizado = true;
-        jogoFinalizadoTxt.gameObject.SetActive(true);
+        SceneManager.LoadScene("ComprasGameOver");
     }
 }

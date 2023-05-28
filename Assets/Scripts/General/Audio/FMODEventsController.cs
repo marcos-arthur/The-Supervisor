@@ -7,6 +7,8 @@ public class FMODEventsController : MonoBehaviour
 {
     public static FMODEventsController instance { get; private set; }
 
+    [field: Header("OS Startup")]
+    [field: SerializeField] public EventReference startupSound { get; private set; }
 
     [field: Header("Mouse click")]
     [field: SerializeField] public EventReference mouseClickSound { get; private set; }

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 24717261}
   - component: {fileID: 24717260}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: FreeFishGameController
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
