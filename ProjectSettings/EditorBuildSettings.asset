@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Runner/RunnerEnd.unity
     guid: 143da50f637d79142bc09f466c3799ae
   - enabled: 1
+    path: Assets/Scenes/Compras/ComprasStart.unity
+    guid: 5d3a7105d67c19d459f229385f0200fe
+  - enabled: 1
     path: Assets/Scenes/Compras/Compras.unity
     guid: 23b899c1c8f4f714ea12d6178e61dcb2
   - enabled: 1
