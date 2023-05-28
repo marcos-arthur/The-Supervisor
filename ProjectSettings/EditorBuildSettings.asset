@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Runner/Runner.unity
     guid: eff52bb21f0d410468ebc72883a82396
   - enabled: 1
-    path: Assets/Scenes/Runner/RunnerEnd.unity
+    path: Assets/Scenes/Runner/RunnerEndAntigo.unity
     guid: f0e930e25a4800a4d81a8c79ca6a1194
   - enabled: 1
     path: Assets/Scenes/Compras/Compras.unity
