@@ -11,17 +11,12 @@ public class TutorialFishingGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playButton.onClick.AddListener(play);
+        playButton.onClick.AddListener(FreeFishController.Instance.StartGame);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private void play()
-    {
-        SceneManager.LoadScene("Free Fish");
     }
 }

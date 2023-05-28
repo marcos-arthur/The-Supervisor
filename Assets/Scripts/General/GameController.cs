@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     public List<string> FinishedGameApps = new List<string>();
     public static GameController instance { get; private set; }
 
+    [field: Header("Values")]
+    [SerializeField] public bool readIntroText = false;
+
     [field: Header("Mouse Icons")]
     [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private Texture2D clickCursor;
@@ -23,9 +26,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject checkWindowInstance;
     [SerializeField] public bool explorerOpen;
 
-
-    [SerializeField] public bool readIntroText = false;
-
     [field: Header("Check window buttons references")]
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
     [field: Header("Game Apps")]
     [SerializeField] public GameObject GameIconReference;
 
-    public GameObject minigameControllerReference { get; set; }
+    [field: SerializeField] public GameObject minigameControllerReference { get; set; }
 
     private void Awake()
     {
@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
         AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
         SceneManager.LoadScene(sceneName);   
     }
+
     public void CloseGame()
     {
         explorerOpen = false;

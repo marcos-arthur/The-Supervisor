@@ -7,7 +7,7 @@ using TMPro;
 
 public class FreeFishController : MonoBehaviour
 {
-    public static FreeFishController Instance {get; private set;}
+    public static FreeFishController Instance = null;
     private GlobalPointsController pointsController;
 
     [field: Header("Referências")]
@@ -40,14 +40,15 @@ public class FreeFishController : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        GameController.instance.minigameControllerReference = gameObject;
         SceneManager.sceneLoaded += LoadGame;
     }
 
     void Start()
     {
         setLine = true;
+
         pointsController = GlobalPointsController.instance;
+        GameController.instance.minigameControllerReference = gameObject;
     }
 
     // Update is called once per frame
