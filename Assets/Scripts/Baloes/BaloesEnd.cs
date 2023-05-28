@@ -11,7 +11,18 @@ public class BaloesEnd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        endMenssage.text = "Congratulations!   Your score: " + BaloesGameController.pontuacao;
+        int finalScore = BaloesGameController.pontuacao;
+        if (finalScore <= 0)
+        {
+            endMenssage.text = "OOHH! What a shame :(   Your score: " + BaloesGameController.pontuacao;
+            BaloesAudioController.Instance.PlayFailSound();
+        }
+        else
+        {
+            endMenssage.text = "Congratulations!   Your score: " + BaloesGameController.pontuacao;
+            BaloesAudioController.Instance.PlayWinSound();
+        }
+        
         GameController.instance.OpenWindow("CheckWindow");
     }
 
