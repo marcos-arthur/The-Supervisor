@@ -47,32 +47,39 @@ public class ObjectIcon : MonoBehaviour
 
     private void InstanceTaskBarIcon()
     {
-        iconTaskbarInstance = Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
-        iconTaskbarInstance.transform.localScale = new Vector3(0.64f, 0.64f);
+        if (GameController.instance.explorerOpen == true && (windowToOpen == "ExplorerWindow"))
+        {
 
-        Color tmpColor = iconTaskbarInstance.gameObject.GetComponent<SpriteRenderer>().color;
-        tmpColor.a = 0f;
-        iconTaskbarInstance.gameObject.GetComponent<SpriteRenderer>().color = tmpColor;
+        }
+        else
+        {
+            iconTaskbarInstance = Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+            iconTaskbarInstance.transform.localScale = new Vector3(0.64f, 0.64f);
 
-        ObjectIcon iconController = iconTaskbarInstance.GetComponent<ObjectIcon>();
+            Color tmpColor = iconTaskbarInstance.gameObject.GetComponent<SpriteRenderer>().color;
+            tmpColor.a = 0f;
+            iconTaskbarInstance.gameObject.GetComponent<SpriteRenderer>().color = tmpColor;
 
-        iconController.isDesktopIcon = false;
-        iconController.cursorTexture = cursorTexture;
+            ObjectIcon iconController = iconTaskbarInstance.GetComponent<ObjectIcon>();
 
-        iconTaskbarInstance.name = gameObject.name;
-        iconTaskbarInstance.transform.SetParent(GameObject.Find("Taskbar").transform, false);
+            iconController.isDesktopIcon = false;
+            iconController.cursorTexture = cursorTexture;
 
-        GameObject taskBar = iconTaskbarInstance.transform.parent.gameObject;
-        int openWindows = (taskBar.GetComponentsInChildren<Transform>().Length - 1) / 2;
-        iconTaskbarInstance.transform.position = new Vector3(iconTaskbarInstance.transform.position.x + (0.75f * openWindows), iconTaskbarInstance.transform.position.y, 0);
+            iconTaskbarInstance.name = gameObject.name;
+            iconTaskbarInstance.transform.SetParent(GameObject.Find("Taskbar").transform, false);
 
-        GameObject iconObject = gameObject.GetComponentsInChildren<Transform>()[1].gameObject;
-        GameObject newIconObject = iconTaskbarInstance.GetComponentsInChildren<Transform>()[1].gameObject;
+            GameObject taskBar = iconTaskbarInstance.transform.parent.gameObject;
+            int openWindows = (taskBar.GetComponentsInChildren<Transform>().Length - 1) / 2;
+            iconTaskbarInstance.transform.position = new Vector3(iconTaskbarInstance.transform.position.x + (0.75f * openWindows), iconTaskbarInstance.transform.position.y, 0);
 
-        SpriteRenderer icon = iconObject.GetComponent<SpriteRenderer>();
-        SpriteRenderer newIcon = newIconObject.GetComponent<SpriteRenderer>();
+            GameObject iconObject = gameObject.GetComponentsInChildren<Transform>()[1].gameObject;
+            GameObject newIconObject = iconTaskbarInstance.GetComponentsInChildren<Transform>()[1].gameObject;
 
-        newIcon.sprite = icon.sprite;
+            SpriteRenderer icon = iconObject.GetComponent<SpriteRenderer>();
+            SpriteRenderer newIcon = newIconObject.GetComponent<SpriteRenderer>();
+
+            newIcon.sprite = icon.sprite;
+        }
     }
 
     private void OnMouseDown()
@@ -81,15 +88,20 @@ public class ObjectIcon : MonoBehaviour
 
         if(gamedenied==false)
         {
-            if (isDesktopIcon && !isAppOpen)
+            if(windowToOpen == "ExplorerWindow" && GameController.instance.explorerOpen == false )
             {
-                isAppOpen = true;
+                InstanceTaskBarIcon();
+                InstanceWindow();
+                GameController.instance.explorerOpen = true;
+            }
+            else
+            {
                 GameController.instance.FinishedGameApps.Add(gameObject.name);
                 InstanceTaskBarIcon();
                 InstanceWindow();
+                isAppOpen = true;
             }
         }
-        
     }
 
     private void OnMouseUp()
