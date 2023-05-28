@@ -205,8 +205,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6265558495266992056}
   m_HandleRect: {fileID: 7893490991449417401}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.36429963
+  m_Value: 0.9999998
+  m_Size: 0.3642996
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -831,7 +831,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeButton: {fileID: 5474925662378343633}
   authorize: 0
-  window: {fileID: 4798119098913399442}
 --- !u!1 &5997673542646914486
 GameObject:
   m_ObjectHideFlags: 0
