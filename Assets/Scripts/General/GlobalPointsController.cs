@@ -30,16 +30,12 @@ public class GlobalPointsController : MonoBehaviour
 
         if (hasStolenAssetsReponse == currentGameHasStolenAssets)
         {
-            FMOD.Studio.EventInstance instance_PI_APP_Correct = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Correct");
-            instance_PI_APP_Correct.start();
-
+            AudioController.instance.PlayOneShot(FMODEventsController.instance.correctAnswerSound, transform.position);
             globalPoints += 500;
         }
         else
         {
-            FMOD.Studio.EventInstance instance_PI_APP_Wrong = FMODUnity.RuntimeManager.CreateInstance("event:/PI  APP/Wrong");
-            instance_PI_APP_Wrong.start();
-
+            AudioController.instance.PlayOneShot(FMODEventsController.instance.wrongAnswerSound, transform.position);
             globalPoints -= 500;
         }
     }

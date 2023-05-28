@@ -37,9 +37,12 @@ public class SimonSayScript : MonoBehaviour
     public float upTime, interval = 2.0f, timer = 60.0f;
 
     public float upTimeCounter;
+
+    
     // Start is called before the first frame update
     void Start()
     {
+
         playButton.onClick.AddListener(StartGame);
 
         yellowButton.onClick.AddListener(YellowButton);
@@ -64,6 +67,9 @@ public class SimonSayScript : MonoBehaviour
 
         endScore.SetActive(false);
 
+       
+        FMOD.Studio.EventInstance instance_Dragon_Says_BGM = FMODUnity.RuntimeManager.CreateInstance("event:/Dragon Says/BGM");
+        instance_Dragon_Says_BGM.start();
 
     }
 
@@ -151,6 +157,7 @@ public class SimonSayScript : MonoBehaviour
         }
         else
         {
+            //STOP BGM
             playerIsPlaying = false;
             panel.SetActive(true);
             playButtonAlready.gameObject.SetActive(false);
@@ -160,14 +167,18 @@ public class SimonSayScript : MonoBehaviour
             if (points < 150)
             {
                 endText.text = "You are responsible for the extinction of our race, congratulations!";
+                //RUIM
             }
             if(points >= 150)
             {
                 endText.text = "You did an average job, but The Dragons are now calm, but you can do better! ";
+                //MARROMENO
+
             }
             if(points >= 250)
             {
                 endText.text = "Congratulations! You have saved us and done an astonishing job. The superiors will be pleased with your mighty resilience. You can now rest safely, knowing that you did your best!";
+                //WIN
             }
            
 
@@ -191,6 +202,8 @@ public class SimonSayScript : MonoBehaviour
     public void StartGame()
 
     {
+           
+
             if(firstPlay == false){
 
             panel.SetActive(false);
@@ -232,7 +245,7 @@ public class SimonSayScript : MonoBehaviour
 
     public void RedButton()
     {
-
+        //red
         playerSelection.Add(0);
         Count = Count + 1;
 
@@ -240,6 +253,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10 + 1 * level);
+            //POINTS
             return;
         }
         else
@@ -248,6 +262,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
             level = 0;
@@ -267,6 +282,7 @@ public class SimonSayScript : MonoBehaviour
     }
     public void BlueButton()
     {
+        //blu
         playerSelection.Add(1);
         Count = Count + 1;
 
@@ -274,6 +290,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10 + 1 * level);
+            //POINTS
             return;
         }
         else
@@ -282,6 +299,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
             level = 0;
@@ -300,6 +318,7 @@ public class SimonSayScript : MonoBehaviour
     }
     public void GreenButton()
     {
+        //green
         playerSelection.Add(3);
         Count = Count + 1;
 
@@ -307,6 +326,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10+1*level);
+            //POINTS
             return;
         }
         else
@@ -315,6 +335,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
             level = 0;
@@ -334,6 +355,7 @@ public class SimonSayScript : MonoBehaviour
     }
     public void YellowButton()
     {
+        //yellow
         playerSelection.Add(2);
         Count = Count + 1;
 
@@ -341,6 +363,7 @@ public class SimonSayScript : MonoBehaviour
         {
             print("inside");
             points = points + (10 + 1 * level);
+            //POINTS
             return;
         }
         else
@@ -349,6 +372,7 @@ public class SimonSayScript : MonoBehaviour
             Aux = buttonSelection[Count - 1];
             mistaken = colours[Aux].GetComponent<Image>();
             wrong = true;
+            //FAIL
             mistaken.color = new Color(mistaken.color.r, mistaken.color.g, mistaken.color.b, 0f);
             upTimeCounter = upTime;
 
