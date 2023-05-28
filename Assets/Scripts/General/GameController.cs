@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
 
+    public GameObject minigameControllerReference { get; set; }
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -59,7 +61,6 @@ public class GameController : MonoBehaviour
 
     public void CloseGame()
     {
-
         AudioController.instance.PlayOneShot(FMODEventsController.instance.closeWindowSound, transform.position);
         SceneManager.LoadScene("onDesktop");
 
@@ -69,7 +70,10 @@ public class GameController : MonoBehaviour
         yesButton.onClick.RemoveAllListeners();
         Destroy(checkWindowInstance);
 
-        Destroy(GameObject.Find("FreeFishController"));
+        if (minigameControllerReference != null) {
+            Destroy(minigameControllerReference);
+            minigameControllerReference = null;
+        }
     }
 
     public void OpenWindow(string window)

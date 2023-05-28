@@ -15,6 +15,12 @@ public class FreeFishFMODEventsController : MonoBehaviour
     [field: Header("Background")]
     [field: SerializeField] public EventReference backgroundSong { get; private set; }
 
+    [field: Header("Catch Fish")]
+    [field: SerializeField] public EventReference catchFishSound { get; private set; }
+
+    [field: Header("Win")]
+    [field: SerializeField] public EventReference winFreeFishSound { get; private set; }
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -25,7 +31,6 @@ public class FreeFishFMODEventsController : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(gameObject);
 
         eventInstances = new List<EventInstance>();
     }
