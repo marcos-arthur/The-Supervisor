@@ -1852,6 +1852,27 @@ MonoBehaviour:
       Data3: -1614941302
       Data4: -12868835
     Path: event:/PI  APP/Wrong
+  <DragonFire>k__BackingField:
+    Guid:
+      Data1: -738663184
+      Data2: 1261610325
+      Data3: -1790053230
+      Data4: -991517979
+    Path: event:/PI  APP/DragonFire
+  <UnusedLaser>k__BackingField:
+    Guid:
+      Data1: -2108682741
+      Data2: 1120474142
+      Data3: 1746990727
+      Data4: 1270331657
+    Path: event:/PI  APP/UnusedAudioLaser
+  <UnusedCoin>k__BackingField:
+    Guid:
+      Data1: -300752732
+      Data2: 1319057826
+      Data3: 643995557
+      Data4: 206152886
+    Path: event:/PI  APP/UnusedAudioCoin
 --- !u!1 &732212873
 GameObject:
   m_ObjectHideFlags: 0

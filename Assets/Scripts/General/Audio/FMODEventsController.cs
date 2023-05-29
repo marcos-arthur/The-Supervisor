@@ -25,6 +25,11 @@ public class FMODEventsController : MonoBehaviour
     [field: Header("Correct Answer")]
     [field: SerializeField] public EventReference wrongAnswerSound { get; private set; }
 
+    [field: Header("Folder Sounds")]
+    [field: SerializeField] public EventReference DragonFire { get; private set; }
+    [field: SerializeField] public EventReference UnusedLaser { get; private set; }
+    [field: SerializeField] public EventReference UnusedCoin { get; private set; }
+
     private void Awake()
     {
         if (instance != null && instance != this)
