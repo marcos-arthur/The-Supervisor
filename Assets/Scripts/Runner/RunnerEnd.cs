@@ -9,6 +9,8 @@ public class GameEnd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RunnerAudioController.Instance.StopPlaySceneAudios();
+
         int finalScore = RunnerGameController.pontos;
         if (finalScore <= 0)
         {

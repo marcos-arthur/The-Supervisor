@@ -25,21 +25,22 @@ public class RunnerAudioController : MonoBehaviour
         GameController.instance.minigameControllerReference = gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-
+        AudioController.instance.CleanUp();
     }
 
     public void StartPlaySceneAudios()
     {
-        AudioController.instance.PlayOneShot(RunnerFMODEventsController.Instance.ambienceSound, transform.position);
+        // AudioController.instance.PlayOneShot(RunnerFMODEventsController.Instance.ambienceSound, transform.position);
+        AudioController.instance.InitializeAmbience(RunnerFMODEventsController.Instance.ambienceSound);
     }
 
-    public void PlayPointSound()
+    public void StopPlaySceneAudios()
     {
-        // AudioController.instance.PlayOneShot(RunnerFMODEventsController.Instance.pointSound, transform.position);
+        AudioController.instance.CleanUp();
     }
+
     public void PlayDashSound()
     {
         AudioController.instance.PlayOneShot(RunnerFMODEventsController.Instance.dashSound, transform.position);
