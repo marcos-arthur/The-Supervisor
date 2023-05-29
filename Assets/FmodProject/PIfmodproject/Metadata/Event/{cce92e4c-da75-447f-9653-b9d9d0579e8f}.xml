@@ -112,6 +112,9 @@
 		<property name="color">
 			<value>Red</value>
 		</property>
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -150,7 +153,7 @@
 	<object class="MixerBusFader" id="{eafd13be-c8c6-4cfb-80a2-84b718e35d69}" />
 	<object class="GainEffect" id="{029562cf-36b4-4b1e-a418-eaa43496f869}">
 		<property name="gain">
-			<value>-7.5</value>
+			<value>-10</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{d693b7e0-f033-44ba-bb3b-5c920e865a21}" />
