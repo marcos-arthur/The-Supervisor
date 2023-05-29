@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class FinalRuim : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI mensagemFinal;
-    [SerializeField] public Text ScoreFinal;
+    [SerializeField] public TextMeshProUGUI ScoreFinal;
     public Button exitbutton;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class FinalRuim : MonoBehaviour
         
         exitbutton.onClick.AddListener(ExitGame);
         
-        mensagemFinal.text = "Sorry! ..(mensagem)";
+        mensagemFinal.text = "Sorry! you dont performed very well in this job and a lot of stolen assets are still undetected.\r\n\r\nYou are fired, but fell free to try again later!";
         ScoreFinal.text = "Your score: " + GlobalPointsController.instance.globalPoints;
     }
 
