@@ -133,5 +133,16 @@ public class GameController : MonoBehaviour
         GlobalPointsController.instance.handleReponse(hasStolenAsset);
         wasClickedinX = false;
         CloseGame();
+        if (FinishedGameApps.Count == 6)
+        {
+            if(GlobalPointsController.instance.globalPoints > 0)
+            {
+                SceneManager.LoadScene("GameFinalEndBom");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameFinalEndRuim");
+            }
+        }
     }
 }

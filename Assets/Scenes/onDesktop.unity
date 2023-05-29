@@ -1853,6 +1853,20 @@ MonoBehaviour:
       Data3: -1614941302
       Data4: -12868835
     Path: event:/PI  APP/Wrong
+  <GameEndWin>k__BackingField:
+    Guid:
+      Data1: 1595135904
+      Data2: 1317107849
+      Data3: 1378298033
+      Data4: 1313968368
+    Path: event:/PI  APP/WIN
+  <GameEndLose>k__BackingField:
+    Guid:
+      Data1: 1829280433
+      Data2: 1266171635
+      Data3: 1235970731
+      Data4: -613906485
+    Path: event:/PI  APP/Lose
 --- !u!1 &732212873
 GameObject:
   m_ObjectHideFlags: 0

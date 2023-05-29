@@ -22,8 +22,12 @@ public class FMODEventsController : MonoBehaviour
     [field: Header("Correct Answer")]
     [field: SerializeField] public EventReference correctAnswerSound { get; private set; }
 
-    [field: Header("Correct Answer")]
+    [field: Header("Wrong Answer")]
     [field: SerializeField] public EventReference wrongAnswerSound { get; private set; }
+
+    [field: Header("GameEnds")]
+    [field: SerializeField] public EventReference GameEndWin { get; private set; }
+    [field: SerializeField] public EventReference GameEndLose { get; private set; }
 
     private void Awake()
     {
