@@ -47,7 +47,7 @@ public class AudioController : MonoBehaviour
         return eventInstance;
     }
 
-    private void CleanUp()
+    public void CleanUp()
     {
         foreach (EventInstance eventInstance in eventInstances)
         {
