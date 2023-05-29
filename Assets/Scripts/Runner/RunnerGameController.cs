@@ -24,7 +24,8 @@ public class RunnerGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //instance_Runner_BGM.start();
+        RunnerAudioController.Instance.StartPlaySceneAudios();
+
         timeLeft = totalTime;
         spawnTime = Time.time;
     }
@@ -47,11 +48,9 @@ public class RunnerGameController : MonoBehaviour
             // Seleciona um obstáculo aleatório do array
             int randomIndex = Random.Range(0, obstaculos.Length);
             GameObject obstaculo = obstaculos[randomIndex];
+            GlobalPointsController.instance.currentGameHasStolenAssets = true;
 
             // Calcula a posição e a altura do obstáculo
-            
-            //float spawnPosY = Random.Range(minY, maxY);
-
             Vector3 spawnPos = new Vector3(spawnPosX, spawnYs[Random.Range(0,3)], 0);
 
             // Instancia o obstáculo na posição calculada
@@ -59,12 +58,6 @@ public class RunnerGameController : MonoBehaviour
 
             // Atualiza o tempo do último spawn de obstáculo
             spawnTime = Time.time;
-        }
-        if(totalTime <= 0)
-        {
-            Debug.Log("tempo over");
-            //instance_Runner_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            //instance_Runner_Win.start();
         }
     }
 }

@@ -5,18 +5,16 @@ using UnityEngine;
 public class BalaoMorte : MonoBehaviour
 {
 
-    public int valor = 100;
+    public int valor = -100;
 
     private void OnMouseDown()
     {
         if (gameObject)
         {
-            BaloesGameController.pontuacao -= valor;
-            //gameController.AtualizarPontuacao(valor);
-            //instance_Baloes_Fail.start();
-            Debug.Log(BaloesGameController.pontuacao);
-            Destroy(gameObject);
+            BaloesAudioController.Instance.PlayFailSound();
+            BaloesGameController.pontuacao += valor;
 
+            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update

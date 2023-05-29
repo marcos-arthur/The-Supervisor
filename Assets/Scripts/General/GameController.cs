@@ -102,8 +102,6 @@ public class GameController : MonoBehaviour
 
     public void OpenWindow(string window)
     {
- 
-        Debug.Log("VATATATASWTSDGFSDF");
         if (window == "ExplorerWindow" && GameObject.FindGameObjectWithTag(window) == null && explorerOpen == false)
         {
             AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);

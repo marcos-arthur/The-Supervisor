@@ -20,46 +20,50 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && GetComponent<Transform>().position.y == 14.5f)
         {
+            RunnerAudioController.Instance.PlayDashSound();
             gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);
         }
         else if (Input.GetKeyDown(KeyCode.W) && GetComponent<Transform>().position.y == 15.5f)
         {
+            RunnerAudioController.Instance.PlayDashSound();
             gameObject.transform.position = new Vector3(Xposition, 16.7f, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == 14.5f)
         {
+            RunnerAudioController.Instance.PlayDashSound();
             gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);  
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && GetComponent<Transform>().position.y == 15.5f)
         {
+            RunnerAudioController.Instance.PlayDashSound();
             gameObject.transform.position = new Vector3(Xposition, 16.7f, 0); 
         }
 
-
-
-
         if (Input.GetKeyDown(KeyCode.S) && GetComponent<Transform>().position.y > 16f)
         {
+            RunnerAudioController.Instance.PlayDashSound();
             gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);
         }
         else if (Input.GetKeyDown(KeyCode.S) && GetComponent<Transform>().position.y == 15.5f)
         {
+            RunnerAudioController.Instance.PlayDashSound();
             gameObject.transform.position = new Vector3(Xposition, 14.5f, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y >= 16f)
         {
+            RunnerAudioController.Instance.PlayDashSound();
             gameObject.transform.position = new Vector3(Xposition, 15.5f, 0);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && GetComponent<Transform>().position.y == 15.5f)
         {
-            gameObject.transform.position = new Vector3(Xposition, 14.5f, 0);      
+            RunnerAudioController.Instance.PlayDashSound();
+            gameObject.transform.position = new Vector3(Xposition, 14.5f, 0);
         }
-
-
     }
-    private System.Collections.IEnumerator ChangeColorCoroutine()
+
+    private IEnumerator ChangeColorCoroutine()
     {
         Color initialColor = spriteRenderer.color; // Armazena a cor inicial do componente Sprite Renderer
 
@@ -76,18 +80,14 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.gameObject.tag == "Obstacle")
+        {
+            RunnerAudioController.Instance.PlayFailSound();
 
-        if (col.gameObject.tag != "Obstacle")
-        {
-            return;
-        }
-        else if (col.gameObject.tag == "Obstacle")
-        {
             RunnerGameController.pontos -= 50;
-            Destroy(col.gameObject);
             ChangeColor();
-            //instance_Runner_Fail.start();
-        }
 
+            Destroy(col.gameObject);
+        }
     }
 }

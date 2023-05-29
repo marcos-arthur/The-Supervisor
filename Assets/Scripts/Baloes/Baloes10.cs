@@ -19,20 +19,16 @@ public class Baloes10 : MonoBehaviour
     {
         if (gameObject)
         {
+            BaloesAudioController.Instance.PlayPointSound();
             BaloesGameController.pontuacao += valor;
-          
 
             novoSprite = Resources.Load<Sprite>("POPbalao");
             spriteRenderer.sprite = novoSprite;
+
             forcaConstante.force = new Vector2(0f, 0f);
-            //instance_Baloes_Points1.start();
             StartCoroutine(metodo_destruir());
-            
-          
         }
     }
-
-
 
     // Start is called before the first frame update
     void Start()
