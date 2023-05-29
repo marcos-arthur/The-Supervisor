@@ -28,6 +28,11 @@ public class FMODEventsController : MonoBehaviour
     [field: Header("GameEnds")]
     [field: SerializeField] public EventReference GameEndWin { get; private set; }
     [field: SerializeField] public EventReference GameEndLose { get; private set; }
+    
+    [field: Header("Folder Sounds")]
+    [field: SerializeField] public EventReference DragonFire { get; private set; }
+    [field: SerializeField] public EventReference UnusedLaser { get; private set; }
+    [field: SerializeField] public EventReference UnusedCoin { get; private set; }
 
     private void Awake()
     {
