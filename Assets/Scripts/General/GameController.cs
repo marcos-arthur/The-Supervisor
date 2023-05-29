@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
 
         if (wasClickedinX == true)
         {
-
+            FinishedGameApps.RemoveAt(FinishedGameApps.Count - 1);
         }
         else
         {
@@ -92,7 +92,6 @@ public class GameController : MonoBehaviour
             Destroy(checkWindowInstance);
             wasClickedinX = false;
         }
-
 
         if (minigameControllerReference != null) {
             Destroy(minigameControllerReference);
@@ -132,6 +131,7 @@ public class GameController : MonoBehaviour
     public void ButtonReponse(bool hasStolenAsset)
     {
         GlobalPointsController.instance.handleReponse(hasStolenAsset);
+        wasClickedinX = false;
         CloseGame();
     }
 }
