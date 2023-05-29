@@ -9,12 +9,16 @@ public class GameEnd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        results.text = "Congratulations!            Your score: " + RunnerGameController.pontos.ToString();
-    }
+        int finalScore = RunnerGameController.pontos;
+        if (finalScore <= 0)
+        {
+            results.text = "OOHHH, Nice try!            Your score: " + finalScore;
+        }
+        else
+        {
+            results.text = "Congratulations!            Your score: " + finalScore;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameController.instance.OpenWindow("CheckWindow");
     }
 }
