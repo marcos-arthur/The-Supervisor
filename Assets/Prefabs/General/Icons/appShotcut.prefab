@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 5709515470947791012}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8343438819983058839
 SpriteRenderer:
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057278584aa975a4d837738bbf8779df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamedenied: 0
   cursorTexture: {fileID: 2800000, guid: e675c59c9f291df40a89743302df1f95, type: 3}
   windowToOpen: ExplorerWindow
   isDesktopIcon: 1

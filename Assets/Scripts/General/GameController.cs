@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject checkWindow;
     [SerializeField] private GameObject checkWindowInstance;
     [SerializeField] public bool explorerOpen;
-
+    [SerializeField] public bool wasClickedinX;
     [field: Header("Check window buttons references")]
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
@@ -81,9 +81,18 @@ public class GameController : MonoBehaviour
 
         GlobalPointsController.instance.currentGameHasStolenAssets = false;
 
-        noButton.onClick.RemoveAllListeners();
-        yesButton.onClick.RemoveAllListeners();
-        Destroy(checkWindowInstance);
+        if (wasClickedinX == true)
+        {
+
+        }
+        else
+        {
+            noButton.onClick.RemoveAllListeners();
+            yesButton.onClick.RemoveAllListeners();
+            Destroy(checkWindowInstance);
+            wasClickedinX = false;
+        }
+
 
         if (minigameControllerReference != null) {
             Destroy(minigameControllerReference);

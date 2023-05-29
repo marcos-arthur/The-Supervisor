@@ -9,7 +9,13 @@ public class WindowClose : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        closeButton.onClick.AddListener(GameController.instance.CloseGame);
+       closeButton.onClick.AddListener(clickedX);
+    }
+
+    void clickedX()
+    {
+        GameController.instance.wasClickedinX = true;
+        GameController.instance.CloseGame();
     }
 
     // Update is called once per frame
