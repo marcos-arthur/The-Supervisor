@@ -9,27 +9,32 @@ public class BaloesGameController : MonoBehaviour
 {
     public static int pontuacao;
 
+    [field: Header("Main References")]
     public GameObject[] baloes;
     public Vector3 posicaoSpawn;
-    public int qtdBaloes;
-    public float delaySpawn;
-    public float tempoDeJogo;
+
+    [field: Header("Textbox References")]
     public Text pontuacaoTxt;
     public Text tempoTxt;
     public Text jogoFinalizadoTxt;
-    //private int pontuacao;
+    public Text texto;
+
+    [field: Header("Game values")]
+    public int qtdBaloes;
+    public float delaySpawn;
+    public float tempoDeJogo;
+    
     private float tempoAtual;
     private bool jogoFinalizado;
 
-    public Text texto;
-
     private void Start()
     {
-        //instance_Baloes_BGM.start();
+        BaloesAudioController.Instance.StartPlaySceneAudios();
+
         pontuacao = 0;
         tempoAtual = tempoDeJogo;
         jogoFinalizado = false;
-        AtualizarPontuacaoTXT();
+
         AtualizarTempo();
         InvokeRepeating("SpawnarBaloes", delaySpawn, delaySpawn);
     }
@@ -47,7 +52,6 @@ public class BaloesGameController : MonoBehaviour
             }
         }
         texto.text = "Score: " + pontuacao.ToString();
-
     }
 
     private void SpawnarBaloes()
@@ -64,23 +68,6 @@ public class BaloesGameController : MonoBehaviour
             CancelInvoke("SpawnarBaloes");
         }
     }
-    
-    public void AtualizarPontuacao(int valor)
-    {
-        if(valor == 0)
-        {
-            pontuacao = 0;
-        }
-        else
-            pontuacao += valor;
-        Debug.Log(pontuacao);
-        AtualizarPontuacaoTXT();
-    }
-
-    private void AtualizarPontuacaoTXT()
-    {
-       //pontuacaoTxt.text = "Pontuação: " + pontuacao.ToString();
-    }
 
     private void AtualizarTempo()
     {
@@ -89,12 +76,7 @@ public class BaloesGameController : MonoBehaviour
 
     private void FinalizarJogo()
     {
-        //instance_Baloes_BGM.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        //instance_Baloes_Win.start();
+        jogoFinalizado = true;
         SceneManager.LoadScene("BaloesEnd");
-       // jogoFinalizado = true;
-       // jogoFinalizadoTxt.gameObject.SetActive(true);
-        
-
     }
 }

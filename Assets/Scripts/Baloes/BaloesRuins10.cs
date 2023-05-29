@@ -13,13 +13,10 @@ public class BaloesRuins10 : MonoBehaviour
     {
         if (gameObject)
         {
+            BaloesAudioController.Instance.PlayFailSound();
             BaloesGameController.pontuacao += valor;
-            //gameController.AtualizarPontuacao(valor);
-            Debug.Log(BaloesGameController.pontuacao);
-            //instance_Baloes_Fail.start();
+
             Destroy(gameObject);
-
-
         }
     }
     // Start is called before the first frame update

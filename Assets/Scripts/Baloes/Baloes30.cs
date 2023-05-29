@@ -9,12 +9,10 @@ public class Baloes30 : MonoBehaviour
     {
         if (gameObject)
         {
+            BaloesAudioController.Instance.PlayPointSound();
             BaloesGameController.pontuacao += valor;
-            //gameController.AtualizarPontuacao(valor);
-            Debug.Log(BaloesGameController.pontuacao);
-            //instance_Baloes_Points2.start();
+
             Destroy(gameObject);
-            
         }
     }
     // Start is called before the first frame update
