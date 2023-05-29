@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +9,39 @@ public class TutorialAudioController : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
         DontDestroyOnLoad(gameObject);
-        Instance = this;
     }
 
-    public void setAudiosToPlayScene()
+    void Start()
     {
-        TutorialFMODEventsController.Instance.AllowFadeInBackground = true;
+        GameController.instance.minigameControllerReference = gameObject;
     }
 
-    public void setAudiosToGameOverScene()
+    private void OnDestroy()
     {
-        TutorialFMODEventsController.Instance.AllowMuteBackgroundWithFadeOut = true;
+        AudioController.instance.CleanUp();
+    }
+
+    public void StartPlaySceneAudios()
+    {
+        AudioController.instance.InitializeAmbience(TutorialFMODEventsController.Instance.backgroundSong);
+    }
+
+    public void StopPlaySceneAudios()
+    {
+        AudioController.instance.CleanUp();
+    }
+
+    public void PlaySound(EventReference sound)
+    {
+        AudioController.instance.PlayOneShot(sound, transform.position);
     }
 }

@@ -10,7 +10,7 @@ public class PLayTutorialGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TutorialAudioController.Instance.setAudiosToPlayScene();
+        TutorialAudioController.Instance.StartPlaySceneAudios();
     }
 
     // Update is called once per frame

@@ -26,16 +26,15 @@ public class BaloesAudioController : MonoBehaviour
     {
         GameController.instance.minigameControllerReference = gameObject;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-
+        AudioController.instance.CleanUp();
     }
 
     public void StartPlaySceneAudios()
     {
-        AudioController.instance.PlayOneShot(BaloesFMODEventsController.Instance.ambienceSound, transform.position);
+        //AudioController.instance.PlayOneShot(BaloesFMODEventsController.Instance.ambienceSound, transform.position);
+        AudioController.instance.InitializeAmbience(BaloesFMODEventsController.Instance.ambienceSound);
     }
 
     public void PlayPointSound()

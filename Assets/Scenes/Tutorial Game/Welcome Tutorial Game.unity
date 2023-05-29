@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 39079511}
-  - component: {fileID: 39079512}
   - component: {fileID: 39079513}
+  - component: {fileID: 39079512}
   m_Layer: 0
   m_Name: TutorialAudioController
   m_TagString: MinigameAudioController
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadEvent: 1
-  UnloadEvent: 2
+  UnloadEvent: 0
   Banks:
   - Tutorial
   CollisionTag: 
@@ -1124,7 +1124,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418869798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1144,8 +1144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57031e882f5fe748b0a88be43be1fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lowerVolume: 0.5
-  currentVolume: 0.5
   <backgroundSong>k__BackingField:
     Guid:
       Data1: 1444292973
@@ -1160,6 +1158,7 @@ MonoBehaviour:
       Data3: 121282445
       Data4: 1371285194
     Path: event:/Tutorial/Win
+  AllowFadeInBackground: 0
 --- !u!1 &1578731907
 GameObject:
   m_ObjectHideFlags: 0

@@ -1524,7 +1524,7 @@ GameObject:
   - component: {fileID: 1718639659}
   m_Layer: 0
   m_Name: BaloesAudioController
-  m_TagString: Untagged
+  m_TagString: MinigameAudioController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1570,7 +1570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadEvent: 1
-  UnloadEvent: 2
+  UnloadEvent: 0
   Banks:
   - Baloes
   CollisionTag: 
