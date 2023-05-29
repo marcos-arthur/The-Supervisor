@@ -14,6 +14,7 @@ public class WindowClose : MonoBehaviour
 
     void clickedX()
     {
+        print("A1");
         GameController.instance.wasClickedinX = true;
         GameController.instance.CloseGame();
     }
