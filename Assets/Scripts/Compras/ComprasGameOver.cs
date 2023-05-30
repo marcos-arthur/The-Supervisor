@@ -17,7 +17,7 @@ public class ComprasGameOver : MonoBehaviour
 
         results.text = "Your Score: " + GameController_Compras.pontuacao;
 
-        GameController.instance.OpenWindow("CheckWindow");
+        GameController.instance.OpenCheckWindow();
     }
 
     // Update is called once per frame

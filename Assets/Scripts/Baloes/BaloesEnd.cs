@@ -23,7 +23,7 @@ public class BaloesEnd : MonoBehaviour
             BaloesAudioController.Instance.PlayWinSound();
         }
         
-        GameController.instance.OpenWindow("CheckWindow");
+        GameController.instance.OpenCheckWindow();
     }
 
     // Update is called once per frame

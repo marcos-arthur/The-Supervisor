@@ -386,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Game
       objectReference: {fileID: 0}
+    - target: {fileID: 4805513845296037160, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5015843375827358684, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Name
       value: Sound
@@ -410,6 +414,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ca007f3fa471f874f8c52a4e4768025b, type: 3}
+    - target: {fileID: 8131329095798432845, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8247168178181871164, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Name
       value: Shop
@@ -422,7 +430,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4930641252763356923, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4805513845296037160, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 909417569}
   m_SourcePrefab: {fileID: 100100000, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
 --- !u!1 &584197542 stripped
 GameObject:
@@ -529,6 +540,67 @@ MonoBehaviour:
       Data3: 1235970731
       Data4: -613906485
     Path: event:/PI  APP/Lose
+--- !u!1 &882759211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882759213}
+  - component: {fileID: 882759212}
+  m_Layer: 0
+  m_Name: Taskbar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &882759212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882759211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297ba705ae49ede4f9dbc5fe1c0e752a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &882759213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882759211}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.25, y: 11.744696, z: -1.4948082}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &909417567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4805513845296037160, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+  m_PrefabInstance: {fileID: 584197540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &909417569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909417567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297ba705ae49ede4f9dbc5fe1c0e752a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1167717157
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,17 +632,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FinishedGameApps: []
   readIntroText: 0
+  explorerOpen: 0
+  wasClickedinX: 0
   defaultCursor: {fileID: 2800000, guid: b46e37f31c14ff849a53568d5c21077c, type: 3}
   clickCursor: {fileID: 2800000, guid: e675c59c9f291df40a89743302df1f95, type: 3}
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
   checkWindow: {fileID: 2545023012494624904, guid: d7ad6b3f3e2af6c48b7efb0cb2bcf83b, type: 3}
   checkWindowInstance: {fileID: 0}
-  explorerOpen: 0
-  wasClickedinX: 0
+  <minigameControllerReference>k__BackingField: {fileID: 0}
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
   GameIconReference: {fileID: 0}
-  <minigameControllerReference>k__BackingField: {fileID: 0}
+  taskbarItemList:
+  - {fileID: 9172134070584878987, guid: 2e6d78834c3fd1a48b8e989b6a47092d, type: 3}
+  - {fileID: 9172134070584878987, guid: 6aac0769c147f3b4da33c8632cb2ce1d, type: 3}
+  - {fileID: 9172134070584878987, guid: 3effd01f02a614148800b2e8286516ee, type: 3}
+  - {fileID: 9172134070584878987, guid: 9525a156877c7504e8cf1746ae5d1aef, type: 3}
+  - {fileID: 9172134070584878987, guid: 92e0a36bf0a49a940958caafadef6dfd, type: 3}
+  - {fileID: 9172134070584878987, guid: bac5b43566af57440949f1675eb60e14, type: 3}
+  - {fileID: 9172134070584878987, guid: 2e6d78834c3fd1a48b8e989b6a47092d, type: 3}
 --- !u!4 &1167717159
 Transform:
   m_ObjectHideFlags: 0
