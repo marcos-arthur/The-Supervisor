@@ -5,7 +5,6 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Unity.Burst.Intrinsics;
 using UnityEditor;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
