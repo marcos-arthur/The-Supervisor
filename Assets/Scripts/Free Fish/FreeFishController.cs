@@ -115,7 +115,7 @@ public class FreeFishController : MonoBehaviour
         }
         if (scene.name.Equals("Game Over Free Fish"))
         {
-            GameController.instance.OpenWindow("CheckWindow");
+            GameController.instance.OpenCheckWindow();
         }
     }
 

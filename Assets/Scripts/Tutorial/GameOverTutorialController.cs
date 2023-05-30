@@ -8,7 +8,7 @@ public class GameOverTutorialController : MonoBehaviour
     void Start()
     {
         TutorialAudioController.Instance.StopPlaySceneAudios();
-        GameController.instance.OpenWindow("CheckWindow");
+        GameController.instance.OpenCheckWindow();
     }
 
     // Update is called once per frame

@@ -164,7 +164,7 @@ public class SimonSayScript : MonoBehaviour
                     DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.totalWinSound);
                 }
 
-                GameController.instance.OpenWindow("CheckWindow");
+                GameController.instance.OpenCheckWindow();
             }
         }
 

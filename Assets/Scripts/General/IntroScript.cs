@@ -25,7 +25,6 @@ public class IntroScript : MonoBehaviour
         }
     }
 
-
     void closeScreen()
     {
         GameController.instance.readIntroText = true;

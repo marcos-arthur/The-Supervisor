@@ -42,16 +42,20 @@ public class ObjectIcon : MonoBehaviour
     private void InstanceWindow()
     {
         if (isGame) gameControllerInstance.OpenGame(windowToOpen);
-        else gameControllerInstance.OpenWindow(windowToOpen);
+        else gameControllerInstance.OpenExplorerWindow();
     }
 
     private void InstanceTaskBarIcon()
     {
-        if (GameController.instance.explorerOpen == true && (windowToOpen == "ExplorerWindow"))
+        /*if (GameController.instance.explorerOpen == true && (windowToOpen == "ExplorerWindow"))
         {
 
         }
         else
+        {
+        }*/
+
+        if (!GameController.instance.oppenedApps.Contains(gameObject.name))
         {
             iconTaskbarInstance = Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
             iconTaskbarInstance.transform.localScale = new Vector3(0.64f, 0.64f);
@@ -79,7 +83,11 @@ public class ObjectIcon : MonoBehaviour
             SpriteRenderer newIcon = newIconObject.GetComponent<SpriteRenderer>();
 
             newIcon.sprite = icon.sprite;
+
+            print("iconName: " + iconTaskbarInstance.name);
+            GameController.instance.oppenedApps.Add(iconTaskbarInstance.name);
         }
+
     }
 
     private void OnMouseDown()
@@ -88,7 +96,8 @@ public class ObjectIcon : MonoBehaviour
 
         if(gamedenied==false)
         {
-            if(windowToOpen == "ExplorerWindow" && GameController.instance.explorerOpen == false )
+            //if(windowToOpen == "ExplorerWindow" && GameController.instance.explorerOpen == false )
+            if (windowToOpen == "ExplorerWindow")
             {
                 InstanceTaskBarIcon();
                 InstanceWindow();
