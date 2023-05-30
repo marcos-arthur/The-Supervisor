@@ -323,7 +323,7 @@ MonoBehaviour:
   - 16.46
   - 15.46
   - 14.46
-  totalTime: 60
+  totalTime: 5
   timeText: {fileID: 1012187601}
   scoreText: {fileID: 1233539746}
   obstaculos:

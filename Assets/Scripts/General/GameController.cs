@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject explorerWindow;
     [SerializeField] private GameObject checkWindow;
     [SerializeField] private GameObject checkWindowInstance;
+    [SerializeField] private GameObject newCheckWindow;
+
     [field: SerializeField] public GameObject minigameControllerReference { get; set; }
 
 
@@ -166,9 +168,17 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            noButton.onClick.RemoveAllListeners();
-            yesButton.onClick.RemoveAllListeners();
-            Destroy(checkWindowInstance);
+            if (checkWindowInstance)
+            {
+                noButton.onClick.RemoveAllListeners();
+                yesButton.onClick.RemoveAllListeners();
+                Destroy(checkWindowInstance);
+            }
+            if (CheckWindow.instance)
+            {
+                Destroy(CheckWindow.instance);
+                Destroy(SelectionWindow.Instance);
+            }
             wasClickedinX = false;
         }
 
@@ -184,6 +194,51 @@ public class GameController : MonoBehaviour
         {
             AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
             checkWindowInstance = Instantiate(checkWindow);
+        }
+    }
+
+    public void OpenCheckWindow(string game)
+    {
+        
+        if (GameObject.FindGameObjectWithTag("CheckWindow") == null)
+        {
+
+            AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
+            Instantiate(newCheckWindow);
+
+            if (game == "Runner")
+            {
+                List<string> list = new List<string>
+                {
+                    "Runner_1",
+                    "Runner_2",
+                    "Runner_3",
+                    "Runner_4",
+                    "Runner_5"
+                };
+
+                CheckWindow.instance.addStolenItems(list);
+            }
+        }
+    }
+
+    public void newButtonReponse()
+    {
+        CheckWindow.instance.checkItems(SelectionWindow.Instance.selectedItems);
+        wasClickedinX = false;
+
+        CloseGame();
+
+        if (FinishedGameApps.Count == 6)
+        {
+            if (GlobalPointsController.instance.globalPoints > 0)
+            {
+                SceneManager.LoadScene("GameFinalEndBom");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameFinalEndRuim");
+            }
         }
     }
 

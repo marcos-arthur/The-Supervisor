@@ -21,6 +21,7 @@ public class GameEnd : MonoBehaviour
             results.text = "Congratulations!            Your score: " + finalScore;
         }
 
-        GameController.instance.OpenCheckWindow();
+        // GameController.instance.OpenCheckWindow();
+        GameController.instance.OpenCheckWindow("Runner");
     }
 }

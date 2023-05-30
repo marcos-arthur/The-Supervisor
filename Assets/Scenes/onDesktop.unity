@@ -462,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4502999011479023388, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4502999011479023388, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -634,11 +634,19 @@ MonoBehaviour:
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
   checkWindow: {fileID: 2545023012494624904, guid: d7ad6b3f3e2af6c48b7efb0cb2bcf83b, type: 3}
   checkWindowInstance: {fileID: 0}
+  newCheckWindow: {fileID: 2545023012494624904, guid: ccdaf741f0e237044b3ac13a73f9bd39, type: 3}
   <minigameControllerReference>k__BackingField: {fileID: 0}
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
   GameIconReference: {fileID: 0}
-  taskbarItemList: []
+  taskbarItemList:
+  - {fileID: 9172134070584878987, guid: 2e6d78834c3fd1a48b8e989b6a47092d, type: 3}
+  - {fileID: 9172134070584878987, guid: 6aac0769c147f3b4da33c8632cb2ce1d, type: 3}
+  - {fileID: 9172134070584878987, guid: 3effd01f02a614148800b2e8286516ee, type: 3}
+  - {fileID: 9172134070584878987, guid: 9525a156877c7504e8cf1746ae5d1aef, type: 3}
+  - {fileID: 9172134070584878987, guid: 92e0a36bf0a49a940958caafadef6dfd, type: 3}
+  - {fileID: 9172134070584878987, guid: bac5b43566af57440949f1675eb60e14, type: 3}
+  - {fileID: 9172134070584878987, guid: 2e6d78834c3fd1a48b8e989b6a47092d, type: 3}
 --- !u!4 &1417067326
 Transform:
   m_ObjectHideFlags: 0
@@ -893,5 +901,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
