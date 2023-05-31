@@ -11,6 +11,13 @@ public class SelectionWindow : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        print("Acordou");
+    }
+
+    private void OnDestroy()
+    {
+        print("Destruiu");
     }
 
     public void addItem(GameObject go)

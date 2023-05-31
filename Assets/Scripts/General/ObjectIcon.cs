@@ -84,7 +84,6 @@ public class ObjectIcon : MonoBehaviour
 
             newIcon.sprite = icon.sprite;
 
-            print("iconName: " + iconTaskbarInstance.name);
             GameController.instance.oppenedApps.Add(iconTaskbarInstance.name);
         }
 

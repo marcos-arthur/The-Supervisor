@@ -123,19 +123,12 @@ public class GameController : MonoBehaviour
 
     private IEnumerator CleanExplorerFromTaskbar()
     {
-        // teste = GameObject.Find("Taskbar");
         Transform[] objects = GameObject.Find("Taskbar").GetComponentsInChildren<Transform>();
-        // objects = objects.Skip(1).ToArray();
-
-        // bool isFolderOpen = false;
-        // oppenedApps.Clear(); CLEAR FOLDER FROM HERE
 
         List<GameObject> toDelete = new List<GameObject>();
 
-        // GameObject[] objects = GameObject.Find("Taskbar").GetComponentsInChildren<GameObject>();
         for (int i = 0; i < objects.Length; i++)
         {
-            print("A1");
             if (objects[i].name == "Folder")
             {
                 Destroy(objects[i].gameObject);
