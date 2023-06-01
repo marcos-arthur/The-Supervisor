@@ -138,7 +138,7 @@ public class FreeFishController : MonoBehaviour
         Destroy(LineRenderer);
         Destroy(Aim);
 
-        pointsController.addPoints(totalPoints);
+        /*pointsController.addPoints(totalPoints);*/
         pointsController.currentGameHasStolenAssets = copyright;
         
         gameOn = false;
