@@ -113,6 +113,9 @@
 			<destination>{4123f9db-de79-459e-9b8f-79132be3d6ab}</destination>
 			<destination>{05dad948-c04d-4071-8494-ed8bcd5de95d}</destination>
 		</relationship>
+		<relationship name="playPercentages">
+			<destination>{b17bcbd7-ecf2-4b7a-9546-2ad3f45aec85}</destination>
+		</relationship>
 	</object>
 	<object class="MultiSound" id="{1ed972cf-bd01-421f-9509-8a391332ca4a}">
 		<property name="color">
@@ -184,6 +187,14 @@
 	<object class="SingleSound" id="{05dad948-c04d-4071-8494-ed8bcd5de95d}">
 		<relationship name="audioFile">
 			<destination>{42cf9d11-a9b6-41ad-bdc7-96eb547471e8}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{b17bcbd7-ecf2-4b7a-9546-2ad3f45aec85}">
+		<property name="percentage">
+			<value>100</value>
+		</property>
+		<relationship name="sound">
+			<destination>{4123f9db-de79-459e-9b8f-79132be3d6ab}</destination>
 		</relationship>
 	</object>
 	<object class="FadeCurve" id="{93fb3af6-26f3-4c07-b2f7-c7dbf30ca1e6}">

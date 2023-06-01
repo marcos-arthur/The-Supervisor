@@ -42,6 +42,8 @@ public class SimonSayScript : MonoBehaviour
     [field: Header("Stolen Assets Lists")]
     [SerializeField] public List<GameObject> dragonSaysStolenAssetsList;
 
+    [SerializeField] public Button CloseGameButton;
+
 
     // Start is called before the first frame update
     void Start()
@@ -167,7 +169,7 @@ public class SimonSayScript : MonoBehaviour
                     DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.totalWinSound);
                 }
 
-                // GameController.instance.OpenCheckWindow();
+                CloseGameButton.gameObject.SetActive(true);
             }
         }
 

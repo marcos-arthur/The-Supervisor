@@ -1200,10 +1200,11 @@ MonoBehaviour:
   playButtonAlready: {fileID: 1099118094}
   upTime: 1
   interval: 2
-  timer: 5
+  timer: 15
   upTimeCounter: 0
   dragonSaysStolenAssetsList:
   - {fileID: 8171281340957067909, guid: 75633e0301835f44683bbf0118d2a1c9, type: 3}
+  CloseGameButton: {fileID: 1034101420}
 --- !u!1001 &934868004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1330,12 +1331,12 @@ GameObject:
   - component: {fileID: 1034101421}
   - component: {fileID: 1034101420}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CloseGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1034101419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1764,7 +1765,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 922376595}
         m_TargetAssemblyTypeName: SimonSayScript, Assembly-CSharp
-        m_MethodName: CloseGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
