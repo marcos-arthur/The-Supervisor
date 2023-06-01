@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     [SerializeField] public bool readIntroText = false;
     [SerializeField] public bool explorerOpen;
     [SerializeField] public bool wasClickedinX;
+    [SerializeField] public bool isTutorial = false;
 
     [field: Header("Mouse Icons")]
     [SerializeField] private Texture2D defaultCursor;
@@ -203,6 +204,14 @@ public class GameController : MonoBehaviour
     {
         if (SelectionWindow.Instance.selectedItems.Count == SelectionWindow.Instance.SelectLimit)
         {
+            if (isTutorial && SelectionWindow.Instance.selectedItems[0].name != "Tutorial")
+            {
+                SelectionWindow.Instance.ShowAngryText();
+                return;
+            }
+
+            if (isTutorial) isTutorial = false;
+
             AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
             Instantiate(ScoreWindowPrefab);
             ScoreWindow.instance.CheckItems(SelectionWindow.Instance.selectedItems, SelectionWindow.Instance.StolenItems);

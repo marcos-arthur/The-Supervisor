@@ -17,6 +17,7 @@ public class SelectionWindow : MonoBehaviour
 
     [Header("Text references")]
     [field: SerializeField] private TMP_Text selectedText;
+    [field: SerializeField] private TMP_Text angryText;
 
     public int SelectLimit { get; private set; }
 
@@ -62,5 +63,10 @@ public class SelectionWindow : MonoBehaviour
         selectedText.text = selectedItems.Count + " / " + SelectLimit;
 
         return returnValue;
+    }
+
+    public void ShowAngryText()
+    {
+        angryText.gameObject.SetActive(true);
     }
 }

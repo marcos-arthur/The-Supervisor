@@ -12,7 +12,7 @@ public class GameOverTutorialController : MonoBehaviour
     {
         TutorialAudioController.Instance.StopPlaySceneAudios();
 
-
+        GameController.instance.isTutorial = true;
         // GameController.instance.OpenCheckWindow();
     }
 
