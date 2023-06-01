@@ -38,7 +38,7 @@ public class GlobalPointsController : MonoBehaviour
     }
     public void addPoints(int points) { 
         globalPoints += points;
-        tempPoints = points;    
+        tempPoints = points;
     }
     
 }

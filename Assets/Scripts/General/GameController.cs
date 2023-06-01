@@ -15,8 +15,6 @@ public class GameController : MonoBehaviour
     public List<string> FinishedGameApps = new List<string>();
     public static GameController instance { get; private set; }
 
-    [SerializeField] public Transform teste;
-
     [field: Header("Values")]
     [SerializeField] public bool readIntroText = false;
     [SerializeField] public bool explorerOpen;
@@ -30,20 +28,26 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject explorerWindow;
     [SerializeField] private GameObject checkWindow;
     [SerializeField] private GameObject checkWindowInstance;
-    [SerializeField] private GameObject newCheckWindow;
+    [SerializeField] private GameObject ScoreWindow;
+    [SerializeField] private GameObject selectionWindow;
 
+    [field: Header("Minigame references")]
     [field: SerializeField] public GameObject minigameControllerReference { get; set; }
-
 
     [field: Header("Check window buttons references")]
     [SerializeField] public Button noButton = null;
     [SerializeField] public Button yesButton = null;
 
-    [field: Header("Game Apps")]
-    [SerializeField] public GameObject GameIconReference;
-
     [field: Header("Taskbar Items List")]
     [SerializeField] public List<GameObject> taskbarItemList;
+
+    [field: Header("Stolen Assets Lists")]
+    [SerializeField] public List<GameObject> tutorialStolenAssetsList;
+    [SerializeField] public List<GameObject> freeFishStolenAssetsList;
+    [SerializeField] public List<GameObject> popItStolenAssetsList;
+    [SerializeField] public List<GameObject> honeyPleaseStolenAssetsList;
+    [SerializeField] public List<GameObject> dragonSaysStolenAssetsList;
+
     public List<string> oppenedApps {  get; private set; }
 
     private void Awake()
@@ -87,22 +91,17 @@ public class GameController : MonoBehaviour
 
     private IEnumerator CleanGamesFromTaskbar()
     {
-        // teste = GameObject.Find("Taskbar");
         Transform[] objects = GameObject.Find("Taskbar").GetComponentsInChildren<Transform>();
-        // objects = objects.Skip(1).ToArray();
 
         bool isFolderOpen = false;
         oppenedApps.Clear();
 
         List<GameObject> toDelete = new List<GameObject>();
 
-        // GameObject[] objects = GameObject.Find("Taskbar").GetComponentsInChildren<GameObject>();
         for(int i = 1; i < objects.Length; i += 2)
         {
             if (objects[i].name != "Folder")
             {
-                //Destroy(objects[i].gameObject);
-
                 toDelete.Add(objects[i].gameObject);
             }
             else
@@ -190,50 +189,70 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void OpenCheckWindow(string game)
+    public void OpenSelectionWindow(List<GameObject> m_stolenItems)
     {
-        
-        if (GameObject.FindGameObjectWithTag("CheckWindow") == null)
+        if(selectionWindow !=  null)
         {
-
-            AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
-            Instantiate(newCheckWindow);
-
-            if (game == "Runner")
-            {
-                List<string> list = new List<string>
-                {
-                    "Runner_1",
-                    "Runner_2",
-                    "Runner_3",
-                    "Runner_4",
-                    "Runner_5"
-                };
-
-                CheckWindow.instance.addStolenItems(list);
-            }
+            print("Abriu");
+            Instantiate(selectionWindow);
+            SelectionWindow.Instance.SetValues(m_stolenItems);
+        }
+        else
+        {
+            print("SELECTION WINDOW MUST BE SETTED");
         }
     }
 
+    public bool OpenScoreWindow()
+    {
+        List<GameObject> stolenAssetsList = SelectionWindow.Instance.StolenItems;
+        print(GameObject.FindGameObjectWithTag("CheckWindow"));
+        print(stolenAssetsList != null);
+
+        if (stolenAssetsList.Count == SelectionWindow.Instance.SelectLimit)
+        {
+            AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
+            Instantiate(ScoreWindow);
+            CheckWindow.instance.CheckItems(SelectionWindow.Instance.selectedItems, SelectionWindow.Instance.StolenItems);
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    
     public void newButtonReponse()
     {
-        CheckWindow.instance.checkItems(SelectionWindow.Instance.selectedItems);
-        wasClickedinX = false;
-
-        CloseGame();
-
-        if (FinishedGameApps.Count == 6)
+        /*if (OpenScoreWindow())
         {
-            if (GlobalPointsController.instance.globalPoints > 0)
+            CheckWindow.instance.CheckItems(SelectionWindow.Instance.selectedItems);
+            wasClickedinX = false;
+
+            CloseGame();
+
+            if (FinishedGameApps.Count == 6)
             {
-                SceneManager.LoadScene("GameFinalEndBom");
-            }
-            else
-            {
-                SceneManager.LoadScene("GameFinalEndRuim");
+                if (GlobalPointsController.instance.globalPoints > 0)
+                {
+                    SceneManager.LoadScene("GameFinalEndBom");
+                }
+                else
+                {
+                    SceneManager.LoadScene("GameFinalEndRuim");
+                }
             }
         }
+        else
+        {
+            Debug.Log("WAS NOT POSSIBLE TO OPEN THE SCORE WINDOW");
+        }*/
+        
     }
+
+
 
     public void OpenExplorerWindow()
     {

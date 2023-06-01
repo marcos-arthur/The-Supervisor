@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class GameEnd : MonoBehaviour
 {
-    public Text results;    
+    public Text results;
+
+    [field: SerializeField] public List<GameObject> forestDodgeStolenAssetsList { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,6 @@ public class GameEnd : MonoBehaviour
         }
 
         // GameController.instance.OpenCheckWindow();
-        GameController.instance.OpenCheckWindow("Runner");
+        GameController.instance.OpenSelectionWindow(forestDodgeStolenAssetsList);
     }
 }

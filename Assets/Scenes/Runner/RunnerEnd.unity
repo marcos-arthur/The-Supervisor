@@ -320,6 +320,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   results: {fileID: 1233539746}
+  <forestDodgeStolenAssetsList>k__BackingField:
+  - {fileID: 5549460397339036161, guid: 6a6288fc0702255438290d86e3de7d42, type: 3}
+  - {fileID: 4873487639114093133, guid: 8d1a821e9f19b6044a557de280f429c5, type: 3}
+  - {fileID: 1748623932589992274, guid: 6f15e3936a24d904197a2de13fb78e69, type: 3}
+  - {fileID: 5655611304124365679, guid: 5d3baf782fbf5eb498f7a6b8239d4c27, type: 3}
+  - {fileID: 8423291353336556446, guid: a7d8cd49829a71e4fb2e4857a5807954, type: 3}
 --- !u!1 &362261593
 GameObject:
   m_ObjectHideFlags: 0

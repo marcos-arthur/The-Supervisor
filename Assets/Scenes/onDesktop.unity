@@ -625,7 +625,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FinishedGameApps: []
-  teste: {fileID: 0}
   readIntroText: 0
   explorerOpen: 0
   wasClickedinX: 0
@@ -634,11 +633,11 @@ MonoBehaviour:
   explorerWindow: {fileID: 4798119098913399442, guid: 03e905e19ea861b4c9aec68bb989c290, type: 3}
   checkWindow: {fileID: 2545023012494624904, guid: d7ad6b3f3e2af6c48b7efb0cb2bcf83b, type: 3}
   checkWindowInstance: {fileID: 0}
-  newCheckWindow: {fileID: 2545023012494624904, guid: ccdaf741f0e237044b3ac13a73f9bd39, type: 3}
+  ScoreWindow: {fileID: 5840361472630478002, guid: 5938e9fbe5b45ae428188c0fcdad1507, type: 3}
+  selectionWindow: {fileID: 2545023012494624904, guid: ccdaf741f0e237044b3ac13a73f9bd39, type: 3}
   <minigameControllerReference>k__BackingField: {fileID: 0}
   noButton: {fileID: 0}
   yesButton: {fileID: 0}
-  GameIconReference: {fileID: 0}
   taskbarItemList:
   - {fileID: 9172134070584878987, guid: 2e6d78834c3fd1a48b8e989b6a47092d, type: 3}
   - {fileID: 9172134070584878987, guid: 6aac0769c147f3b4da33c8632cb2ce1d, type: 3}
@@ -647,6 +646,19 @@ MonoBehaviour:
   - {fileID: 9172134070584878987, guid: 92e0a36bf0a49a940958caafadef6dfd, type: 3}
   - {fileID: 9172134070584878987, guid: bac5b43566af57440949f1675eb60e14, type: 3}
   - {fileID: 9172134070584878987, guid: 2e6d78834c3fd1a48b8e989b6a47092d, type: 3}
+  tutorialStolenAssetsList:
+  - {fileID: 7903642248174808781, guid: 57d8a10f4a3167146916fef0008d1c24, type: 3}
+  freeFishStolenAssetsList:
+  - {fileID: 1713422877216163151, guid: 8d1d310b991e64743a9e1932be4a17f6, type: 3}
+  - {fileID: 3913023323912355415, guid: e6b48788e14574545a3bfa4f1c23f967, type: 3}
+  popItStolenAssetsList:
+  - {fileID: 1552565499892100744, guid: 1c60e06521af23547b15304dd2930842, type: 3}
+  - {fileID: 3226726416188814883, guid: c892806ccf64789469d2c8e4ea073306, type: 3}
+  honeyPleaseStolenAssetsList:
+  - {fileID: 2972168235004197240, guid: b6d73426c536cbd4996f02ff857d1383, type: 3}
+  - {fileID: 7884342625368885685, guid: 518f66d695c3dce45b59a36030f6ecbe, type: 3}
+  dragonSaysStolenAssetsList:
+  - {fileID: 8171281340957067909, guid: 75633e0301835f44683bbf0118d2a1c9, type: 3}
 --- !u!4 &1417067326
 Transform:
   m_ObjectHideFlags: 0
