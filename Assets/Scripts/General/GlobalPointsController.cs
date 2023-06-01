@@ -6,7 +6,7 @@ public class GlobalPointsController : MonoBehaviour
 {
     public static GlobalPointsController instance = null;
 
-    public int globalPoints = 500, tempPoints;
+    public int globalPoints = 0, tempPoints;
 
     public bool currentGameHasStolenAssets { get; set; }
 

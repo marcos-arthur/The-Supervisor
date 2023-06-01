@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using TMPro;
 using Unity.Burst.Intrinsics;
 using UnityEditor;
 using UnityEngine;
@@ -36,6 +37,9 @@ public class GameController : MonoBehaviour
 
     [field: Header("Minigame references")]
     [field: SerializeField] public GameObject minigameControllerReference { get; set; }
+
+    [field: Header("Score Text Reference")]
+    [SerializeField] private TMP_Text ScoreText;
 
     [field: Header("Check window buttons references")]
     [SerializeField] public Button noButton = null;
@@ -75,6 +79,9 @@ public class GameController : MonoBehaviour
         {
             AudioController.instance.PlayOneShot(FMODEventsController.instance.mouseClickSound, transform.position);
         }
+
+        ScoreText.text = "Score: " + GlobalPointsController.instance.globalPoints;
+        print(FinishedGameApps.Count);
     }
     public void OpenGame(string sceneName)
     {
@@ -224,9 +231,10 @@ public class GameController : MonoBehaviour
     {
         Destroy(ScoreWindow.instance.gameObject);
 
-        if (FinishedGameApps.Count == 6)
+        if (GameController.instance.FinishedGameApps.Count == 6)
         {
-            if (GlobalPointsController.instance.globalPoints > 1800)
+            GameController.instance.ScoreText.gameObject.SetActive(false);
+            if (GlobalPointsController.instance.globalPoints >= 1800)
             {
                 SceneManager.LoadScene("GameFinalEndBom");
             }

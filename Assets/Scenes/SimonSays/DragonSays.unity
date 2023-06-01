@@ -1200,7 +1200,7 @@ MonoBehaviour:
   playButtonAlready: {fileID: 1099118094}
   upTime: 1
   interval: 2
-  timer: 15
+  timer: 5
   upTimeCounter: 0
   dragonSaysStolenAssetsList:
   - {fileID: 8171281340957067909, guid: 75633e0301835f44683bbf0118d2a1c9, type: 3}
