@@ -16,6 +16,13 @@ TagManager:
   - Points
   - folder
   - MinigameAudioController
+  - Obstacle
+  - Balao_verde
+  - preto
+  - branco
+  - vermelho
+  - Balao_amarelo
+  - IntroCanvas
   layers:
   - Default
   - TransparentFX

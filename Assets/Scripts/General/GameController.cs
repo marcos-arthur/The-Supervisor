@@ -233,4 +233,8 @@ public class GameController : MonoBehaviour
             }
         }
     }
+    public void CloseIntro()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("IntroCanvas"));
+    }
 }
