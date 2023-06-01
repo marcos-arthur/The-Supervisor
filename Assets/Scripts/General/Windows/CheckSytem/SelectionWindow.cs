@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,22 +15,28 @@ public class SelectionWindow : MonoBehaviour
     [Header("Game Object references")]
     [field: SerializeField] private Button confirmButton;
 
+    [Header("Text references")]
+    [field: SerializeField] private TMP_Text selectedText;
+
     public int SelectLimit { get; private set; }
 
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(this);
     }
 
     private void Start()
     {
-        confirmButton.onClick.AddListener(delegate { GameController.instance.OpenScoreWindow(); });
+        confirmButton.onClick.AddListener(GameController.instance.OpenScoreWindow);
     }
 
     public void SetValues(List<GameObject> m_stolenItems)
     {
         StolenItems = m_stolenItems;
         SelectLimit = m_stolenItems.Count;
+
+        selectedText.text = "0 / " + SelectLimit;
     }
 
     /*
@@ -37,22 +44,23 @@ public class SelectionWindow : MonoBehaviour
      */
     public bool AddItem(GameObject go)
     {
-        print(selectedItems.Count);
-        print(SelectLimit);
+        bool returnValue = false;
 
         bool isSelected = selectedItems.Remove(go);
         if (!isSelected) { 
             if (selectedItems.Count >= SelectLimit) {
                 // do something
-                return false;
+                returnValue = false;
             }
             else
             {
-                selectedItems.Add(go); 
-                return true;
+                selectedItems.Add(go);
+                returnValue = true;
             }
         }
 
-        return false;
+        selectedText.text = selectedItems.Count + " / " + SelectLimit;
+
+        return returnValue;
     }
 }

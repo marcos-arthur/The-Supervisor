@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 
-public class CheckWindow : MonoBehaviour
+public class ScoreWindow : MonoBehaviour
 {
-    public static CheckWindow instance;
+    public static ScoreWindow instance;
 
-    private readonly List<GameObject> CorrectStolenItem = new();
-    private readonly List<GameObject> WrongStolenItem = new();
-    private List<GameObject> missedStolenItem;
+    private readonly List<GameObject> CorrectStolenItems = new();
+    private readonly List<GameObject> WrongStolenItems = new();
+    private List<GameObject> missedStolenItems;
 
     [Header("Rows References")]
     [field: SerializeField] private HorizontalLayoutGroup correctStolenAssetsRow;
@@ -41,9 +42,9 @@ public class CheckWindow : MonoBehaviour
 
     private void UpdateView()
     {
-        foreach(GameObject item in CorrectStolenItem) Instantiate(item, correctStolenAssetsRow.transform);
-        foreach (GameObject item in WrongStolenItem) Instantiate(item, notStolenAssetsRow.transform);
-        foreach (GameObject item in missedStolenItem) Instantiate(item, MissedStolenAssetsRow.transform);
+        foreach(GameObject item in CorrectStolenItems) Instantiate(item, correctStolenAssetsRow.transform);
+        foreach (GameObject item in WrongStolenItems) Instantiate(item, notStolenAssetsRow.transform);
+        foreach (GameObject item in missedStolenItems) Instantiate(item, MissedStolenAssetsRow.transform);
 
         partialScoreTxt.text = individualPoints + "x " + count + " = " + partialScore;
         totalScore.text = GlobalPointsController.instance.globalPoints + " points";
@@ -53,7 +54,7 @@ public class CheckWindow : MonoBehaviour
     {
         individualPoints = 500 / selectedItems.Count;
 
-        missedStolenItem = new();
+        missedStolenItems = new();
         
         List<string> stolenItemsNames = new();
         List<string> missedStolenItemsNames = new();
@@ -70,7 +71,10 @@ public class CheckWindow : MonoBehaviour
             bItem.image.color = originalColor;
 
             stolenItemsNames.Add(item.name);
-            missedStolenItem.Add(item);
+
+            item.GetComponent<RectTransform>().position = selectedItems[0].GetComponent<RectTransform>().position;
+            item.GetComponent<RectTransform>().sizeDelta = selectedItems[0].GetComponent<RectTransform>().sizeDelta;
+            missedStolenItems.Add(item);
             missedStolenItemsNames.Add(item.name);
         }
 
@@ -79,23 +83,30 @@ public class CheckWindow : MonoBehaviour
             if (stolenItemsNames.Contains(selectedItem.name))
             {
                 partialScore += individualPoints;
-                CorrectStolenItem.Add(selectedItem);
+                CorrectStolenItems.Add(selectedItem);
                 count++;
-
-                int index = 0;
-                if (missedStolenItemsNames.Contains(selectedItem.name))
-                {
-                    missedStolenItem.RemoveAt(index);
-                    index++;
-                }
             }
             else
             {
-                WrongStolenItem.Add(selectedItem);
+                WrongStolenItems.Add(selectedItem);
             }
         }
 
-        if(partialScore >= selectedItems.Count / 6)
+        foreach(GameObject CorrectStolenItem in CorrectStolenItems)
+        {
+            if (missedStolenItemsNames.Contains(CorrectStolenItem.name))
+            {
+                foreach(GameObject missedItem in missedStolenItems) {
+                    if (missedItem.name.Equals(CorrectStolenItem.name))
+                    {
+                        missedStolenItems.Remove(missedItem);
+                        break;
+                    }
+                }
+            }
+        }
+
+        if(partialScore >= selectedItems.Count * 3 / 5)
         {
             AudioController.instance.PlayOneShot(FMODEventsController.instance.correctAnswerSound, transform.position);
         }

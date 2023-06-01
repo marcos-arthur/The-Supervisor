@@ -28,8 +28,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject explorerWindow;
     [SerializeField] private GameObject checkWindow;
     [SerializeField] private GameObject checkWindowInstance;
-    [SerializeField] private GameObject ScoreWindow;
-    [SerializeField] private GameObject selectionWindow;
+
+    [field: Header("Window Prefab references")]
+    [SerializeField] private GameObject ScoreWindowPrefab;
+    [SerializeField] private GameObject SelectionWindowPrefab;
 
     [field: Header("Minigame references")]
     [field: SerializeField] public GameObject minigameControllerReference { get; set; }
@@ -166,10 +168,10 @@ public class GameController : MonoBehaviour
                 yesButton.onClick.RemoveAllListeners();
                 Destroy(checkWindowInstance);
             }
-            if (CheckWindow.instance)
+            if (ScoreWindow.instance)
             {
-                Destroy(CheckWindow.instance);
-                Destroy(SelectionWindow.Instance);
+                /*Destroy(ScoreWindow.instance);
+                Destroy(SelectionWindow.Instance);*/
             }
             wasClickedinX = false;
         }
@@ -191,10 +193,11 @@ public class GameController : MonoBehaviour
 
     public void OpenSelectionWindow(List<GameObject> m_stolenItems)
     {
-        if(selectionWindow !=  null)
+        if(SelectionWindowPrefab !=  null)
         {
-            print("Abriu");
-            Instantiate(selectionWindow);
+            CloseGame();
+
+            Instantiate(SelectionWindowPrefab);
             SelectionWindow.Instance.SetValues(m_stolenItems);
         }
         else
@@ -203,56 +206,34 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public bool OpenScoreWindow()
+    public void OpenScoreWindow()
     {
-        List<GameObject> stolenAssetsList = SelectionWindow.Instance.StolenItems;
-        print(GameObject.FindGameObjectWithTag("CheckWindow"));
-        print(stolenAssetsList != null);
-
-        if (stolenAssetsList.Count == SelectionWindow.Instance.SelectLimit)
+        if (SelectionWindow.Instance.selectedItems.Count == SelectionWindow.Instance.SelectLimit)
         {
             AudioController.instance.PlayOneShot(FMODEventsController.instance.openWindowSound, transform.position);
-            Instantiate(ScoreWindow);
-            CheckWindow.instance.CheckItems(SelectionWindow.Instance.selectedItems, SelectionWindow.Instance.StolenItems);
+            Instantiate(ScoreWindowPrefab);
+            ScoreWindow.instance.CheckItems(SelectionWindow.Instance.selectedItems, SelectionWindow.Instance.StolenItems);
 
-            return true;
-        }
-        else
-        {
-            return false;
+            Destroy(SelectionWindow.Instance.gameObject);
         }
     }
 
-    
-    public void newButtonReponse()
+    public void CloseScoreWindow()
     {
-        /*if (OpenScoreWindow())
+        Destroy(ScoreWindow.instance.gameObject);
+
+        if (FinishedGameApps.Count == 6)
         {
-            CheckWindow.instance.CheckItems(SelectionWindow.Instance.selectedItems);
-            wasClickedinX = false;
-
-            CloseGame();
-
-            if (FinishedGameApps.Count == 6)
+            if (GlobalPointsController.instance.globalPoints > 1800)
             {
-                if (GlobalPointsController.instance.globalPoints > 0)
-                {
-                    SceneManager.LoadScene("GameFinalEndBom");
-                }
-                else
-                {
-                    SceneManager.LoadScene("GameFinalEndRuim");
-                }
+                SceneManager.LoadScene("GameFinalEndBom");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameFinalEndRuim");
             }
         }
-        else
-        {
-            Debug.Log("WAS NOT POSSIBLE TO OPEN THE SCORE WINDOW");
-        }*/
-        
     }
-
-
 
     public void OpenExplorerWindow()
     {

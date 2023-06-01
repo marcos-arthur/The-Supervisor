@@ -15,7 +15,7 @@ public class CheckButton : MonoBehaviour
         if (isContinue)
         {
             Button selfButton = GetComponent<Button>();
-            selfButton.onClick.AddListener(GameController.instance.newButtonReponse);
+            // selfButton.onClick.AddListener(GameController.instance.CloseScoreWindow);
         }
         else
         {

@@ -23,8 +23,16 @@ public class GameEnd : MonoBehaviour
         {
             results.text = "Congratulations!            Your score: " + finalScore;
         }
+    }
 
-        // GameController.instance.OpenCheckWindow();
+    private void OnDestroy()
+    {
+        // GameController.instance.OpenSelectionWindow(forestDodgeStolenAssetsList);
+    }
+
+    public void CloseGame()
+    {
         GameController.instance.OpenSelectionWindow(forestDodgeStolenAssetsList);
+        // GameController.instance.CloseGame();
     }
 }

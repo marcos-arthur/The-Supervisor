@@ -30,8 +30,6 @@ public class SelectionIcon : MonoBehaviour
 
     public void SelectIcon()
     {
-        print("Selecionou");
-
         ColorBlock colors = selfButon.colors;
 
         if (isSelected)
