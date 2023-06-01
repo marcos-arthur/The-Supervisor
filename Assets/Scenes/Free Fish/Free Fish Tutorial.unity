@@ -2331,7 +2331,7 @@ PrefabInstance:
       objectReference: {fileID: 1796927003572581719}
     - target: {fileID: 618438708123290002, guid: ce2f6617d2f49dd479bb618374ea6813, type: 3}
       propertyPath: timeLeft
-      value: 5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 618438708123290002, guid: ce2f6617d2f49dd479bb618374ea6813, type: 3}
       propertyPath: LineRenderer

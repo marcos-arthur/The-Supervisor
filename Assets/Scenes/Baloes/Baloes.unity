@@ -1008,7 +1008,7 @@ MonoBehaviour:
   texto: {fileID: 1668210831}
   qtdBaloes: 0
   delaySpawn: 0.3
-  tempoDeJogo: 5
+  tempoDeJogo: 60
 --- !u!4 &1559048899
 Transform:
   m_ObjectHideFlags: 0

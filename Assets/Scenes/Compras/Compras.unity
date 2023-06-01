@@ -1215,7 +1215,7 @@ MonoBehaviour:
   posicaoSpawn: {x: 0, y: 0, z: 0}
   qtdCompras: 0
   delaySpawn: 0.6
-  tempoDeJogo: 5
+  tempoDeJogo: 60
   pontuacaoTxt: {fileID: 1133258417}
   tempoTxt: {fileID: 271373190}
   texto: {fileID: 1133258417}
