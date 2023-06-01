@@ -62,11 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4925120973502173993, guid: 799395aa4093aeb468dfcb1b895714cb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 4925120973502173993, guid: 799395aa4093aeb468dfcb1b895714cb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 4925120973502173993, guid: 799395aa4093aeb468dfcb1b895714cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,11 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4925120973502173993, guid: 799395aa4093aeb468dfcb1b895714cb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 339.19202
       objectReference: {fileID: 0}
     - target: {fileID: 4925120973502173993, guid: 799395aa4093aeb468dfcb1b895714cb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 337.95193
       objectReference: {fileID: 0}
     - target: {fileID: 4925120973502173993, guid: 799395aa4093aeb468dfcb1b895714cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6589647206991648468, guid: 799395aa4093aeb468dfcb1b895714cb, type: 3}
       propertyPath: m_Name
-      value: Ballon_2 Variant
+      value: Ballon_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.004, g: 0.459, b: 0.925, a: 0.816}
     m_HighlightedColor: {r: 0.003921569, g: 0.45882353, b: 0.9254902, a: 0.5803922}
     m_PressedColor: {r: 0.003921569, g: 0.45882353, b: 0.9254902, a: 1}
     m_SelectedColor: {r: 0.003921569, g: 0.45882353, b: 0.9254902, a: 1}

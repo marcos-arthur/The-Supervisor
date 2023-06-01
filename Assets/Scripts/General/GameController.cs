@@ -43,13 +43,6 @@ public class GameController : MonoBehaviour
     [field: Header("Taskbar Items List")]
     [SerializeField] public List<GameObject> taskbarItemList;
 
-    [field: Header("Stolen Assets Lists")]
-    [SerializeField] public List<GameObject> tutorialStolenAssetsList;
-    [SerializeField] public List<GameObject> freeFishStolenAssetsList;
-    [SerializeField] public List<GameObject> popItStolenAssetsList;
-    [SerializeField] public List<GameObject> honeyPleaseStolenAssetsList;
-    [SerializeField] public List<GameObject> dragonSaysStolenAssetsList;
-
     public List<string> oppenedApps {  get; private set; }
 
     private void Awake()

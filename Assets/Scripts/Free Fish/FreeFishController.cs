@@ -27,6 +27,11 @@ public class FreeFishController : MonoBehaviour
     private Text points, timer;
     private GameObject aux;
 
+    [field: Header("Stolen Assets Lists")]
+    [SerializeField] public List<GameObject> freeFishStolenAssetsList;
+
+    public Button closeGameButton;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -115,8 +120,17 @@ public class FreeFishController : MonoBehaviour
         }
         if (scene.name.Equals("Game Over Free Fish"))
         {
-            GameController.instance.OpenCheckWindow();
+            // GameController.instance.OpenCheckWindow();
+
+            closeGameButton = GameObject.FindGameObjectWithTag("closeGameButton").GetComponent<Button>();
+            closeGameButton.onClick.AddListener(CloseGame);
         }
+    }
+
+    public void CloseGame()
+    {
+        GameController.instance.OpenSelectionWindow(freeFishStolenAssetsList);
+        // GameController.instance.CloseGame();
     }
 
     void EndGame()

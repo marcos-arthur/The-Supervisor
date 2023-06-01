@@ -9,6 +9,10 @@ public class BaloesEnd : MonoBehaviour
 {
     public Text endMenssage;
     // Start is called before the first frame update
+
+    [field: Header("Stolen Assets Lists")]
+    [SerializeField] public List<GameObject> popItStolenAssetsList;
+
     void Start()
     {
         int finalScore = BaloesGameController.pontuacao;
@@ -23,12 +27,12 @@ public class BaloesEnd : MonoBehaviour
             BaloesAudioController.Instance.PlayWinSound();
         }
         
-        GameController.instance.OpenCheckWindow();
+        // GameController.instance.OpenCheckWindow();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CloseGame()
     {
-        
+        GameController.instance.OpenSelectionWindow(popItStolenAssetsList);
+        // GameController.instance.CloseGame();
     }
 }

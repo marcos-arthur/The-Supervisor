@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1716519160599050323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2307087324094339946}
+  - component: {fileID: 4922139972553715985}
+  m_Layer: 0
+  m_Name: FreeFishFMODEventsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2307087324094339946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716519160599050323}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.888374, y: -2.400012, z: 12.412403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1933660956198834452}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4922139972553715985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716519160599050323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69343915e61ffd442b888cd76be9301b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ambienceSound>k__BackingField:
+    Guid:
+      Data1: 1493897296
+      Data2: 1268454068
+      Data3: 1885461669
+      Data4: -927463358
+    Path: event:/Pesca/Ambience
+  <backgroundSong>k__BackingField:
+    Guid:
+      Data1: -581536538
+      Data2: 1074157213
+      Data3: 1694291092
+      Data4: -1182635858
+    Path: event:/Pesca/BGM
+  <catchFishSound>k__BackingField:
+    Guid:
+      Data1: 903299146
+      Data2: 1304601912
+      Data3: -70780536
+      Data4: -284462190
+    Path: event:/Pesca/Point
+  <winFreeFishSound>k__BackingField:
+    Guid:
+      Data1: 1035272256
+      Data2: 1160171162
+      Data3: 479407290
+      Data4: 422096826
+    Path: event:/Pesca/Win
+--- !u!1 &8989257199205845548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1933660956198834452}
+  - component: {fileID: 618438708123290002}
+  - component: {fileID: 824450049496405030}
+  m_Layer: 0
+  m_Name: FreeFishController
+  m_TagString: MinigameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1933660956198834452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989257199205845548}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4, y: 13.700012, z: -10.0037365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2307087324094339946}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &618438708123290002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989257199205845548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831968ddec69de042bbd1594cac16a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishController: {fileID: 0}
+  Aim: {fileID: 0}
+  LineRenderer: {fileID: 0}
+  catchDuration: 0.5
+  timeLeft: 60
+  freeFishStolenAssetsList: []
+--- !u!114 &824450049496405030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989257199205845548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 1
+  UnloadEvent: 0
+  Banks:
+  - Pesca
+  CollisionTag: 
+  PreloadSamples: 0

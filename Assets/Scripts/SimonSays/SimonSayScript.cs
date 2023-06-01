@@ -38,7 +38,11 @@ public class SimonSayScript : MonoBehaviour
     public float upTimeCounter;
 
     private bool isGameFinished = false;
-    
+
+    [field: Header("Stolen Assets Lists")]
+    [SerializeField] public List<GameObject> dragonSaysStolenAssetsList;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -163,7 +167,7 @@ public class SimonSayScript : MonoBehaviour
                     DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.totalWinSound);
                 }
 
-                GameController.instance.OpenCheckWindow();
+                // GameController.instance.OpenCheckWindow();
             }
         }
 
@@ -176,6 +180,12 @@ public class SimonSayScript : MonoBehaviour
         {
             wrong = false;
         }
+    }
+
+    public void CloseGame()
+    {
+        GameController.instance.OpenSelectionWindow(dragonSaysStolenAssetsList);
+        // GameController.instance.CloseGame();
     }
 
     public void StartGame()

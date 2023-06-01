@@ -16,6 +16,15 @@ TagManager:
   - Points
   - folder
   - MinigameAudioController
+  - PlayerColision
+  - parallaxColider1
+  - Obstacle
+  - preto
+  - Balao_amarelo
+  - vermelho
+  - Balao_verde
+  - branco
+  - closeGameButton
   layers:
   - Default
   - TransparentFX
