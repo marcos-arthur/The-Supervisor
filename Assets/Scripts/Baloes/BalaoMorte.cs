@@ -5,7 +5,7 @@ using UnityEngine;
 public class BalaoMorte : MonoBehaviour
 {
 
-    public int valor = -100;
+    public int valor;
 
     private void OnMouseDown()
     {

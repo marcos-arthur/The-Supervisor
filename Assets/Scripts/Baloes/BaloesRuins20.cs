@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaloesRuins20 : MonoBehaviour
 {
-    public int valor = -20;
+    public int valor;
     private void OnMouseDown()
     {
         if (gameObject)
