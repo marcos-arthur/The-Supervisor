@@ -54,10 +54,6 @@ public class AudioController : MonoBehaviour
         musicBus = RuntimeManager.GetBus("bus:/Music");
         sfxBus = RuntimeManager.GetBus("bus:/SFX"); 
     }
-    //public void SetVolume(float sliderValue)
-    //{
-      //  AudioController.instance.musicVolume = sliderValue;
-    //}
 
     public void Update()
     {
