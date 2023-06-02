@@ -8,7 +8,7 @@ public class BaloesRuins10 : MonoBehaviour
    // private GameController gameController;
     
 
-    public int valor = -10;
+    public int valor;
     private void OnMouseDown()
     {
         if (gameObject)
