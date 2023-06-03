@@ -876,11 +876,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 0eb4db7dea206ba44840ba938c7824ba, type: 3}
-    m_FontSize: 22
+    m_Font: {fileID: 12800000, guid: 419a5b78b9acc874ea266b0d4c2fc1e4, type: 3}
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 2
     m_MaxSize: 48
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -916,6 +916,14 @@ PrefabInstance:
     - target: {fileID: 531758155125572537, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_margin.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 536149044117624163, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 536149044117624163, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2586798621710661769, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Enabled
@@ -1007,6 +1015,7 @@ PrefabInstance:
     - {fileID: 9121179062456141078, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     - {fileID: 619464973917671539, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     - {fileID: 1827541416831449160, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+    - {fileID: 2254528374762713354, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
@@ -1429,7 +1438,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 419a5b78b9acc874ea266b0d4c2fc1e4, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -1509,7 +1518,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 0eb4db7dea206ba44840ba938c7824ba, type: 3}
+    m_Font: {fileID: 12800000, guid: 419a5b78b9acc874ea266b0d4c2fc1e4, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
@@ -1521,7 +1530,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Blow the ballons!
+  m_Text: Pop It!
 --- !u!222 &2143123439
 CanvasRenderer:
   m_ObjectHideFlags: 0

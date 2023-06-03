@@ -217,6 +217,24 @@ public class SimonSayScript : MonoBehaviour
         firstPlay = true;
             
         colourSelect = Random.Range(0, 4);
+
+        if(colourSelect == 0)
+        {
+            DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.fireDragonSound);
+        }
+        else if( colourSelect == 1)
+        {
+            DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.iceDragonSound);
+        }
+        else if ( colourSelect == 2)
+        {
+            DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.thunderDragonSound);
+        }
+        else if (colourSelect == 3)
+        {
+            DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.groundDragonSound);
+        }
+
         buttonSelection.Add(colourSelect);
         chosenColour = colours[colourSelect].GetComponent<Image>();
         chosenColour.color = new Color(chosenColour.color.r, chosenColour.color.g, chosenColour.color.b, 1f);
@@ -225,7 +243,7 @@ public class SimonSayScript : MonoBehaviour
 
     public void RedButton()
     {
-        DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.fireDragonSound);
+        
 
         playerSelection.Add(0);
         Count = Count + 1;
@@ -263,7 +281,7 @@ public class SimonSayScript : MonoBehaviour
     }
     public void BlueButton()
     {
-        DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.iceDragonSound);
+       
 
         playerSelection.Add(1);
         Count = Count + 1;
@@ -300,8 +318,6 @@ public class SimonSayScript : MonoBehaviour
     }
     public void GreenButton()
     {
-        DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.groundDragonSound);
-
         playerSelection.Add(3);
         Count = Count + 1;
 
@@ -338,7 +354,6 @@ public class SimonSayScript : MonoBehaviour
     }
     public void YellowButton()
     {
-        DragonAudioController.Instance.PlaySound(DragonFMODEventsController.Instance.thunderDragonSound);
 
         playerSelection.Add(2);
         Count = Count + 1;

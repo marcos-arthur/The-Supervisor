@@ -404,6 +404,10 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2254528374762713354, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2586798621710661769, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -484,6 +488,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a4265f9c873bb6e4cad5f35996b2354c, type: 3}
+    - target: {fileID: 8131329095798432845, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8324241509535877289, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -494,6 +502,7 @@ PrefabInstance:
     - {fileID: 9121179062456141078, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     - {fileID: 619464973917671539, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     - {fileID: 1827541416831449160, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+    - {fileID: 5423767570122347396, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}

@@ -688,7 +688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.01, y: 135.34999}
+  m_AnchoredPosition: {x: -193.1, y: 135.34999}
   m_SizeDelta: {x: 70.8496, y: 22.0068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425829201
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Runner
+  m_text: Forest Jump
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7357885c67ce4148ba2a293f83bac29, type: 2}
   m_sharedMaterial: {fileID: 8677813066164173677, guid: f7357885c67ce4148ba2a293f83bac29, type: 2}
@@ -720,8 +720,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -44.52657, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1041,7 +1041,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press W, S or arrow up, arrow down to dodge the obstacles.
+  m_text: 'The night is getting dark and they are coming, You need to run!
+
+
+    Press
+    W, S or arrow up, arrow down to dodge the obstacles.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7357885c67ce4148ba2a293f83bac29, type: 2}
   m_sharedMaterial: {fileID: 8677813066164173677, guid: f7357885c67ce4148ba2a293f83bac29, type: 2}
@@ -2090,6 +2094,7 @@ PrefabInstance:
     - {fileID: 9121179062456141078, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     - {fileID: 619464973917671539, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     - {fileID: 1827541416831449160, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
+    - {fileID: 2254528374762713354, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f0c11a9e857494998c1a7fdf6a03e2, type: 3}
@@ -2734,7 +2739,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ed342370446eda43b2a162440fa0e73, type: 3}
-  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
