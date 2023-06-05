@@ -17,7 +17,6 @@ public class TurnOff : MonoBehaviour
 
     void turnOffGame()
     {
-       UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
 
     }

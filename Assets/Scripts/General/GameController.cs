@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
 
+
 public class GameController : MonoBehaviour
 {
     public List<string> FinishedGameApps = new List<string>();
