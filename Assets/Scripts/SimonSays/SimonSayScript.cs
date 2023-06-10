@@ -118,7 +118,7 @@ public class SimonSayScript : MonoBehaviour
             chosenColour.color = new Color(chosenColour.color.r, chosenColour.color.g, chosenColour.color.b, 0.50f);
             currently = false;
 
-            if(levelRoll > 0)
+            if(levelRoll > 0 && wrong != true)
             {
                 if(interval < 0 && currently == false)
                 {
@@ -196,6 +196,8 @@ public class SimonSayScript : MonoBehaviour
 
         if(firstPlay == false){
 
+            Debug.Log("FirstPlay");
+
             panel.SetActive(false);
             playButton.gameObject.SetActive(false);
             playButton.interactable = false;
@@ -213,8 +215,8 @@ public class SimonSayScript : MonoBehaviour
         blueButton.interactable = false;
         yellowButton.interactable = false;
         greenButton.interactable = false;
+        Debug.Log("StartGame");
 
-        firstPlay = true;
             
         colourSelect = Random.Range(0, 4);
 
@@ -238,7 +240,10 @@ public class SimonSayScript : MonoBehaviour
         buttonSelection.Add(colourSelect);
         chosenColour = colours[colourSelect].GetComponent<Image>();
         chosenColour.color = new Color(chosenColour.color.r, chosenColour.color.g, chosenColour.color.b, 1f);
+
+       
         upTimeCounter = upTime;
+        firstPlay = true;
     }
 
     public void RedButton()
